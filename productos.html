@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda de Hardware, Impresoras Térmicas Bluetooth, Fundas Protectoras y Equipamiento POS — Soluciones Digitales E.I.R.L.">
+  <meta name="keywords" content="Impresora Termica Bluetooth, Funda Impresora, Niimbot, Boleta Electronica, POS Chile, Soluciones Digitales, Yojann Cortes">
+  <meta name="author" content="Soluciones Digitales E.I.R.L. - Yojann Cortés Díaz">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_pequeno2.png">
+  
+  <title>Tienda & Productos POS | Soluciones Digitales E.I.R.L.</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Stylesheet with Cache Busting -->
+  <link rel="stylesheet" href="styles.css?v=20260831_08">
+
+  <!-- Embedded Critical Luxury Styles for Guaranteed Visual Excellence -->
+  <style>
+    :root {
+      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #060911;
+      color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .page-hero {
+      padding: 7.5rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .page-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.1rem;
+      border-radius: 9999px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: #00f2fe;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: #ffffff;
+    }
+
+    .page-hero-subtitle {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    /* Store Toolbar */
+    .store-controls-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      background: rgba(18, 26, 47, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .store-search-box {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+      max-width: 380px;
+    }
+
+    .store-search-box i {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .store-search-box input {
+      width: 100%;
+      padding: 0.75rem 1.1rem 0.75rem 2.8rem;
+      border-radius: 9999px;
+      background: rgba(6, 9, 17, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f8fafc;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .store-search-box input:focus {
+      border-color: #00f2fe;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+    }
+
+    .store-filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .store-filter-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .store-filter-btn:hover {
+      background: rgba(0, 242, 254, 0.12);
+      color: #ffffff;
+      border-color: rgba(0, 242, 254, 0.4);
+    }
+
+    .store-filter-btn.active {
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      color: #020617;
+      font-weight: 700;
+      border-color: transparent;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.35);
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .product-card {
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(22, 32, 58, 0.7) 0%, rgba(11, 16, 30, 0.85) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 242, 254, 0.4);
+      box-shadow: 0 15px 35px -10px rgba(0, 242, 254, 0.2);
+    }
+
+    .product-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      background: #090e1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Luxury White Canvas Frame for Clean Hardware Images */
+    .product-img-box {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-img-box {
+      transform: scale(1.03);
+    }
+
+    .product-card-img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .product-badge.popular {
+      background: rgba(0, 242, 254, 0.25);
+      color: #00f2fe;
+      border: 1px solid rgba(0, 242, 254, 0.5);
+    }
+
+    .product-badge.sale {
+      background: rgba(244, 63, 94, 0.25);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.5);
+    }
+
+    .product-badge.new {
+      background: rgba(16, 185, 129, 0.25);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+    }
+
+    .product-category-tag {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      background: rgba(6, 9, 17, 0.85);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      z-index: 2;
+    }
+
+    .product-card-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.5rem;
+      line-height: 1.35;
+    }
+
+    .product-description {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      margin-bottom: 1.1rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .product-specs-list {
+      list-style: none;
+      margin: 0 0 1.25rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .product-specs-list li {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .product-specs-list li i {
+      color: #10b981;
+      font-size: 0.78rem;
+    }
+
+    .product-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: auto;
+    }
+
+    .product-price-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-price-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #00f2fe;
+    }
+
+    .price-tax-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      display: inline-block;
+    }
+
+    .product-price-old {
+      font-size: 0.82rem;
+      color: #64748b;
+      text-decoration: line-through;
+      margin-left: 0.3rem;
+    }
+
+    .product-card-actions {
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .btn-quick-view {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f8fafc;
+      padding: 0.55rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-quick-view:hover {
+      background: rgba(0, 242, 254, 0.15);
+      border-color: #00f2fe;
+      color: #ffffff;
+    }
+
+    .btn-whatsapp-buy {
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      color: #ffffff !important;
+      border: none;
+      font-weight: 700;
+      padding: 0.55rem 1rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+      font-family: inherit;
+    }
+
+    .btn-whatsapp-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-container {
+      background: #0d1424;
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.15);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(244, 63, 94, 0.2);
+      color: #ff3366;
+      border-color: #ff3366;
+    }
+
+    @media (max-width: 768px) {
+      .store-controls-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .store-search-box {
+        max-width: 100%;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Canvas for Particles -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Soluciones Digitales E.I.R.L.">
+        <div class="logo-aura-wrap">
+          <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+          <span class="logo-pulse-ring"></span>
+        </div>
+        <div class="brand-text-wrap">
+          <div class="brand-top-row">
+            <span class="logo-main-text">Soluciones Digitales</span>
+            <span class="badge-eirl">E.I.R.L.</span>
+          </div>
+          <span class="logo-lead-sub">
+            <span class="lead-name">Yojann Cortés Díaz</span>
+            <span class="lead-sep">•</span>
+            <span class="lead-role">Ing. Informático</span>
+          </span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link">
+              <i class="fa-solid fa-house nav-ico"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="servicios.html" class="nav-link">
+              <i class="fa-solid fa-cubes nav-ico"></i>
+              <span>Servicios</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#proyectos" class="nav-link">
+              <i class="fa-solid fa-code nav-ico"></i>
+              <span>Proyectos</span>
+            </a>
+          </li>
+          <li>
+            <a href="productos.html" class="nav-link nav-link-store active">
+              <i class="fa-solid fa-cash-register nav-ico"></i>
+              <span>Tienda POS</span>
+              <span class="nav-badge-pill">Hardware</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#contacto" class="nav-link">
+              <i class="fa-solid fa-paper-plane nav-ico"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+          
+          <li class="mobile-cta-item">
+            <div class="mobile-menu-card">
+              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
+              </a>
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Cotizar</span>
+        </a>
+        <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="toggle-icon-bar"></span>
+          <span class="toggle-icon-bar"></span>
+          <span class="toggle-icon-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-badge">
+          <i class="fa-solid fa-store"></i> Equipamiento Tecnológico & POS
+        </div>
+        <h1 class="page-hero-title">
+          Catálogo de <span class="gradient-text">Hardware & Productos</span>
+        </h1>
+        <p class="page-hero-subtitle">
+          Impresoras térmicas Bluetooth para boletas, recibos y comprobantes de venta, fundas de transporte de alto impacto, etiquetadoras portátiles e insumos con entrega rápida y garantía directa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Store Section -->
+    <section class="store-section" style="padding-bottom: 5rem;">
+      <div class="container">
+        
+        <!-- Search & Category Filters -->
+        <div class="store-controls-wrap">
+          <div class="store-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="storeSearchInput" placeholder="Buscar por producto, modelo o marca...">
+          </div>
+          
+          <div class="store-filter-buttons" id="storeFilterBtns">
+            <button class="store-filter-btn active" data-filter="all">Todos</button>
+            <button class="store-filter-btn" data-filter="impresoras">Impresoras Térmicas</button>
+            <button class="store-filter-btn" data-filter="accesorios">Fundas & Protección</button>
+            <button class="store-filter-btn" data-filter="etiquetas">Etiquetadoras & Insumos</button>
+            <button class="store-filter-btn" data-filter="combos">Packs Pyme</button>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          
+          <!-- Product 1: Impresora Térmica -->
+          <article class="product-card" data-category="impresoras" data-name="impresora termica portatil bluetooth usb 58mm boleta">
+            <div class="product-card-img-wrap">
+              <span class="product-badge popular"><i class="fa-solid fa-fire"></i> Más Vendido</span>
+              <span class="product-category-tag">Impresoras</span>
+              <div class="product-img-box">
+                <img src="productos/impresa termica.PNG" alt="Impresora Térmica Portátil Bluetooth 58mm" class="product-card-img">
+              </div>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-title">Impresora Térmica Portátil 58mm Bluetooth & USB</h3>
+              <p class="product-description">
+                Ideal para emisión rápida de comprobantes, tickets de venta, comandas y recibos desde smartphone o PC.
+              </p>
+              <ul class="product-specs-list">
+                <li><i class="fa-solid fa-circle-check"></i> Conexión Bluetooth 4.0 + USB Tipo-C</li>
+                <li><i class="fa-solid fa-circle-check"></i> Batería recargable Li-ion 1500mAh de alta duración</li>
+                <li><i class="fa-solid fa-circle-check"></i> Compatible con Android, iOS, Windows & Linux</li>
+                <li><i class="fa-solid fa-circle-check"></i> Impresión térmica directa (sin tinta ni cartuchos)</li>
+              </ul>
+              <div class="product-card-footer">
+                <div class="product-price-box">
+                  <span class="product-price-label">Precio Oferta</span>
+                  <div>
+                    <span class="product-price">$29.990</span>
+                    <span class="price-tax-tag">+ IVA</span>
+                    <span class="product-price-old">$39.990</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn-quick-view" 
+                    data-title="Impresora Térmica Portátil 58mm Bluetooth & USB"
+                    data-price="$29.990 + IVA"
+                    data-img="productos/impresa termica.PNG"
+                    data-desc="Impresora térmica portátil de 58mm con conexión inalámbrica Bluetooth y cable USB. Especialmente optimizada para emitir boletas de honorarios y facturación electrónica desde apps móviles en Android y iPhone. Diseño ultra compacto y liviano para llevar en el bolsillo o cinturón."
+                    data-specs="Ancho de papel: 58mm (Diámetro 40mm)|Velocidad: 70-90mm/s|Resolución: 203 DPI (8 puntos/mm)|Batería: 1500mAh recargable|Interfaces: Bluetooth + USB|Compatibilidad: Android, iOS, Windows, ESC/POS|Garantía: 3 meses con soporte de configuración"
+                  >
+                    <i class="fa-solid fa-eye"></i> Detalle
+                  </button>
+                  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20deseo%20comprar%20la%20Impresora%20T%C3%A9rmica%20Port%C3%A1til%2058mm%20Bluetooth%20($29.990%20+%20IVA)" target="_blank" rel="noopener" class="btn-whatsapp-buy">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 2: Funda Impresora -->
+          <article class="product-card" data-category="accesorios" data-name="funda protectora cuero impresora termica 58mm correa antigolpes">
+            <div class="product-card-img-wrap">
+              <span class="product-badge new"><i class="fa-solid fa-shield"></i> Protección</span>
+              <span class="product-category-tag">Accesorios</span>
+              <div class="product-img-box">
+                <img src="productos/funda_impresora.PNG" alt="Funda Protectora Antigolpes para Impresora Térmica" class="product-card-img">
+              </div>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-title">Funda Protectora Reforzada con Correa para Impresora</h3>
+              <p class="product-description">
+                Funda de alta resistencia diseñada especialmente para impresoras térmicas de 58mm. Protege contra caídas, polvo, salpicaduras y facilita el trabajo en terreno.
+              </p>
+              <ul class="product-specs-list">
+                <li><i class="fa-solid fa-circle-check"></i> Material cuero sintético reforzado y costuras dobles</li>
+                <li><i class="fa-solid fa-circle-check"></i> Correa ajustable para hombro o acople al cinturón</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ventana frontal transparente para salida directa de ticket</li>
+                <li><i class="fa-solid fa-circle-check"></i> Acceso libre a botones y puerto de carga sin desmontar</li>
+              </ul>
+              <div class="product-card-footer">
+                <div class="product-price-box">
+                  <span class="product-price-label">Precio</span>
+                  <div>
+                    <span class="product-price">$12.990</span>
+                    <span class="price-tax-tag">+ IVA</span>
+                    <span class="product-price-old">$16.990</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn-quick-view" 
+                    data-title="Funda Protectora Reforzada con Correa para Impresora 58mm"
+                    data-price="$12.990 + IVA"
+                    data-img="productos/funda_impresora.PNG"
+                    data-desc="Funda ergonómica y duradera con cubierta frontal abatible. Permite imprimir boletas sin necesidad de sacar la máquina de la funda, protegiéndola en todo momento durante el transporte en ferias, entregas a domicilio, restaurantes y ventas en ruta."
+                    data-specs="Material: Cuero PU de alto calibre|Compatibilidad: Impresoras 58mm estándar|Incluye: Correa ajustable + gancho metálico|Ventana de salida de papel integrada"
+                  >
+                    <i class="fa-solid fa-eye"></i> Detalle
+                  </button>
+                  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20deseo%20comprar%20la%20Funda%20Protectora%20para%20Impresora%20T%C3%A9rmica%20($12.990%20+%20IVA)" target="_blank" rel="noopener" class="btn-whatsapp-buy">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 3: Niimbot Etiquetadora -->
+          <article class="product-card" data-category="etiquetas" data-name="etiquetadora termica niimbot bluetooth portatil rotuladora codigo barra qr">
+            <div class="product-card-img-wrap">
+              <span class="product-badge popular"><i class="fa-solid fa-star"></i> Destacado</span>
+              <span class="product-category-tag">Etiquetadoras</span>
+              <div class="product-img-box">
+                <img src="productos/nimbbot.jfif" alt="Etiquetadora Térmica Inteligente Niimbot Bluetooth" class="product-card-img">
+              </div>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-title">Etiquetadora Térmica Inteligente Niimbot Bluetooth</h3>
+              <p class="product-description">
+                Rotuladora térmica inteligente y portátil. Crea etiquetas autoadhesivas de precios, códigos de barra, códigos QR, fechas de vencimiento y organización.
+              </p>
+              <ul class="product-specs-list">
+                <li><i class="fa-solid fa-circle-check"></i> App móvil intuitiva con cientos de fuentes e iconos</li>
+                <li><i class="fa-solid fa-circle-check"></i> Impresión térmica sin tinta, resistente al agua y aceite</li>
+                <li><i class="fa-solid fa-circle-check"></i> Batería de 1200mAh con carga USB-C</li>
+                <li><i class="fa-solid fa-circle-check"></i> Ideal para inventario, comercio, bodega y hogar</li>
+              </ul>
+              <div class="product-card-footer">
+                <div class="product-price-box">
+                  <span class="product-price-label">Precio Oferta</span>
+                  <div>
+                    <span class="product-price">$45.000</span>
+                    <span class="price-tax-tag">+ IVA</span>
+                    <span class="product-price-old">$52.990</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn-quick-view" 
+                    data-title="Etiquetadora Térmica Inteligente Niimbot Bluetooth"
+                    data-price="$45.000 + IVA"
+                    data-img="productos/nimbbot.jfif"
+                    data-desc="Rotuladora y etiquetadora Bluetooth con aplicación gratuita para iOS y Android. Diseña etiquetas personalizadas en segundos, imprime tablas de precios, códigos de barra EAN-13, QR de pago o redes sociales, fecha de elaboración y rotulado de cajas."
+                    data-specs="Conexión: Bluetooth inalámbrico|Ancho de impresión: 12-15mm|Batería: 1200mAh (hasta 4 horas continuas)|App: Niimbot App Oficial (Android / iOS)|Incluye: 1 rollo de prueba inicial + cable USB"
+                  >
+                    <i class="fa-solid fa-eye"></i> Detalle
+                  </button>
+                  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20deseo%20comprar%20la%20Etiquetadora%20Niimbot%20Bluetooth%20($45.000%20+%20IVA)" target="_blank" rel="noopener" class="btn-whatsapp-buy">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 4: Pack Pyme Combo Completo -->
+          <article class="product-card" data-category="combos" data-name="pack pyme combo impresora termica bluetooth funda correa rollos papel">
+            <div class="product-card-img-wrap">
+              <span class="product-badge sale"><i class="fa-solid fa-percent"></i> Combo Ahorro</span>
+              <span class="product-category-tag">Pack Pyme</span>
+              <div class="product-img-box">
+                <img src="productos/impresa termica.PNG" alt="Pack Pyme Impresora + Funda + Rollos" class="product-card-img">
+              </div>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-title">Combo Pyme: Impresora 58mm + Funda Antigolpes + 5 Rollos</h3>
+              <p class="product-description">
+                El kit definitivo para comenzar a emitir comprobantes de inmediato. Incluye impresora bluetooth, funda de cuero con correa y 5 rollos térmicos de alta calidad.
+              </p>
+              <ul class="product-specs-list">
+                <li><i class="fa-solid fa-circle-check"></i> 1x Impresora Térmica Bluetooth 58mm</li>
+                <li><i class="fa-solid fa-circle-check"></i> 1x Funda protectora con correa de hombro/cinturón</li>
+                <li><i class="fa-solid fa-circle-check"></i> 5x Rollos de papel térmico 58mm x 40mm (Libre de BPA)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Soporte y asesoría para configuración inicial</li>
+              </ul>
+              <div class="product-card-footer">
+                <div class="product-price-box">
+                  <span class="product-price-label">Precio Pack</span>
+                  <div>
+                    <span class="product-price">$44.990</span>
+                    <span class="price-tax-tag">+ IVA</span>
+                    <span class="product-price-old">$59.990</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn-quick-view" 
+                    data-title="Combo Pyme: Impresora 58mm + Funda + 5 Rollos"
+                    data-price="$44.990 + IVA"
+                    data-img="productos/impresa termica.PNG"
+                    data-desc="Pack todo en uno pensado para feriantes, repartidores, food trucks, comercio ambulante y pymes. Ahorra comprando todo el equipamiento junto con soporte personalizado de instalación."
+                    data-specs="Contenido: Impresora 58mm + Funda Cuero + 5 Rollos Térmicos + Cable USB + Manual|Compatibilidad: Android / iOS / PC|Garantía: 3 meses directa"
+                  >
+                    <i class="fa-solid fa-eye"></i> Detalle
+                  </button>
+                  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20deseo%20comprar%20el%20Combo%20Pyme%20Impresora%20+%20Funda%20+%20Rollos%20($44.990%20+%20IVA)" target="_blank" rel="noopener" class="btn-whatsapp-buy">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product 5: Rollos Térmicos -->
+          <article class="product-card" data-category="etiquetas" data-name="pack rollos papel termico 58mm 40mm boletas insumos">
+            <div class="product-card-img-wrap">
+              <span class="product-badge new"><i class="fa-solid fa-box"></i> Insumos</span>
+              <span class="product-category-tag">Papel</span>
+              <div class="product-img-box">
+                <img src="productos/rollos_termicos.jpg" alt="Pack 10 Rollos Térmicos 58mm" class="product-card-img">
+              </div>
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-title">Pack 10 Rollos de Papel Térmico 58mm x 40mm</h3>
+              <p class="product-description">
+                Rollos de papel térmico premium de alta sensibilidad, blancura superior y durabilidad de impresión prolongada. Sin atascos.
+              </p>
+              <ul class="product-specs-list">
+                <li><i class="fa-solid fa-circle-check"></i> Medida exacta estándar: 58mm de ancho x 40mm de diámetro</li>
+                <li><i class="fa-solid fa-circle-check"></i> Libre de BPA y sustancias tóxicas</li>
+                <li><i class="fa-solid fa-circle-check"></i> Alta nitidez y contraste en texto y códigos QR</li>
+                <li><i class="fa-solid fa-circle-check"></i> Compatible con cualquier impresora térmica de 58mm</li>
+              </ul>
+              <div class="product-card-footer">
+                <div class="product-price-box">
+                  <span class="product-price-label">Precio Pack</span>
+                  <div>
+                    <span class="product-price">$8.990</span>
+                    <span class="price-tax-tag">+ IVA</span>
+                    <span class="product-price-old">$11.990</span>
+                  </div>
+                </div>
+                <div class="product-card-actions">
+                  <button class="btn-quick-view" 
+                    data-title="Pack 10 Rollos de Papel Térmico 58mm x 40mm"
+                    data-price="$8.990 + IVA"
+                    data-img="productos/rollos_termicos.jpg"
+                    data-desc="Papel térmico de primera calidad que cuida el cabezal de impresión y garantiza máxima legibilidad en comprobantes y tickets de venta."
+                    data-specs="Cantidad: 10 unidades|Dimensiones: 58mm x 40mm|Tipo: Térmico directo sin pelusa"
+                  >
+                    <i class="fa-solid fa-eye"></i> Detalle
+                  </button>
+                  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20deseo%20comprar%20el%20Pack%2010%20Rollos%20T%C3%A9rmicos%20($8.990%20+%20IVA)" target="_blank" rel="noopener" class="btn-whatsapp-buy">
+                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Store Guarantees Banner -->
+        <div style="background: rgba(18, 26, 47, 0.7); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 18px; padding: 2rem; margin-top: 2rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+            <div>
+              <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: #00f2fe; margin-bottom: 0.75rem;"></i>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Envíos a Todo Chile</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8;">Despacho rápido por Starken, Chilexpress o Correos.</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: #10b981; margin-bottom: 0.75rem;"></i>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Garantía Directa 3 Meses</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8;">Soporte técnico y cambio directo ante fallas de fábrica.</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-file-invoice-dollar" style="font-size: 2rem; color: #a855f7; margin-bottom: 0.75rem;"></i>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Facturación Formal</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8;">Emitimos boleta o factura con Soluciones Digitales E.I.R.L.</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-headset" style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.75rem;"></i>
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Asesoría de Configuración</h4>
+              <p style="font-size: 0.85rem; color: #94a3b8;">Te ayudamos paso a paso a vincularla con tu app de boletas.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modalProductContent">
+        <div style="background: #ffffff; border-radius: 12px; padding: 1rem; text-align: center; margin-bottom: 1.25rem; max-height: 220px; display: flex; align-items: center; justify-content: center;">
+          <img id="modalProductImg" src="" alt="" style="max-height: 200px; max-width: 100%; object-fit: contain;">
+        </div>
+        <h2 id="modalProductTitle" style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.5rem;"></h2>
+        <div id="modalProductPrice" style="font-size: 1.5rem; font-weight: 800; color: #00f2fe; margin-bottom: 1rem;"></div>
+        <p id="modalProductDesc" style="font-size: 0.92rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.25rem;"></p>
+        
+        <h4 style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.6rem;"><i class="fa-solid fa-list-check" style="color: #00f2fe;"></i> Especificaciones Técnicas:</h4>
+        <ul id="modalSpecsList" style="list-style: none; padding: 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #cbd5e1;"></ul>
+        
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener" class="btn-whatsapp-buy" style="flex: 1; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.95rem;">
+            <i class="fa-brands fa-whatsapp"></i> Comprar / Pedir por WhatsApp
+          </a>
+          <button id="modalCloseBtn2" class="btn-quick-view" style="padding: 0.75rem 1.25rem;">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="padding: 3rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); background: #060911;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="logo_pequeno2.png" alt="Logo" style="height: 38px;">
+            <div>
+              <strong style="color: #ffffff; font-size: 1.1rem; display: block;">Soluciones Digitales E.I.R.L.</strong>
+              <small style="color: #00f2fe;">RUT & Empresa Constituida</small>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
+            Comercialización de hardware POS, impresoras térmicas e insumos certificados para microempresas, pymes y profesionales en todo Chile.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: #ffffff; margin-bottom: 1rem; font-size: 1rem;">Enlaces Rápidos</h4>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+            <li><a href="index.html" style="color: #94a3b8; text-decoration: none;">Inicio</a></li>
+            <li><a href="servicios.html" style="color: #94a3b8; text-decoration: none;">Servicios de Desarrollo</a></li>
+            <li><a href="productos.html" style="color: #00f2fe; text-decoration: none;">Tienda / Catálogo</a></li>
+            <li><a href="index.html#cotizador" style="color: #94a3b8; text-decoration: none;">Cotizador Online</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #ffffff; margin-bottom: 1rem; font-size: 1rem;">Canales de Venta & Soporte</h4>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.5rem;">
+            <i class="fa-brands fa-whatsapp" style="color: #25d366; margin-right: 0.5rem;"></i> +56 9 8663 5815
+          </p>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-envelope" style="color: #00f2fe; margin-right: 0.5rem;"></i> yojanncortesdiaz@gmail.com
+          </p>
+          <p style="font-size: 0.88rem; color: #94a3b8;">
+            <i class="fa-solid fa-location-dot" style="color: #a855f7; margin-right: 0.5rem;"></i> Región de Valparaíso, Chile
+          </p>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.82rem; color: #64748b;">
+        <p>&copy; <span id="currentYear"></span> <strong>Soluciones Digitales E.I.R.L.</strong> — Yojann Cortés Díaz.</p>
+        <p style="color: #34d399;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #34d399; margin-right: 6px;"></span> Tienda Online & Stock Activo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultar%20por%20un%20producto%20de%20la%20tienda" target="_blank" rel="noopener" class="whatsapp-float-wrap" aria-label="Contactar por WhatsApp">
+    <span class="whatsapp-float-tooltip">Consultar Stock por WhatsApp 💬</span>
+    <div class="whatsapp-float-btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="whatsapp-float-badge"></span>
+    </div>
+  </a>
+
+  <!-- Scripts -->
+  <script src="main.js?v=20260831_05"></script>
+  <script>
+    // Store Logic: Search, Category Filtering, and Quick View Modal
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('storeSearchInput');
+      const filterBtns = document.querySelectorAll('.store-filter-btn');
+      const productCards = document.querySelectorAll('.product-card');
+
+      function filterProducts() {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const activeBtn = document.querySelector('.store-filter-btn.active');
+        const currentFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+
+        productCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          const name = (card.getAttribute('data-name') || '').toLowerCase();
+          const title = card.querySelector('.product-title').textContent.toLowerCase();
+          const desc = card.querySelector('.product-description').textContent.toLowerCase();
+
+          const matchesFilter = (currentFilter === 'all' || category === currentFilter);
+          const matchesSearch = (!query || name.includes(query) || title.includes(query) || desc.includes(query));
+
+          if (matchesFilter && matchesSearch) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterProducts);
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filterProducts();
+        });
+      });
+
+      // Quick View Modal
+      const modal = document.getElementById('productModal');
+      const modalImg = document.getElementById('modalProductImg');
+      const modalTitle = document.getElementById('modalProductTitle');
+      const modalPrice = document.getElementById('modalProductPrice');
+      const modalDesc = document.getElementById('modalProductDesc');
+      const modalSpecsList = document.getElementById('modalSpecsList');
+      const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+      const modalClose = document.getElementById('modalCloseBtn');
+      const modalClose2 = document.getElementById('modalCloseBtn2');
+
+      const quickViewBtns = document.querySelectorAll('.btn-quick-view');
+      quickViewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const title = btn.getAttribute('data-title');
+          const price = btn.getAttribute('data-price');
+          const img = btn.getAttribute('data-img');
+          const desc = btn.getAttribute('data-desc');
+          const specs = (btn.getAttribute('data-specs') || '').split('|');
+
+          modalImg.src = img;
+          modalImg.alt = title;
+          modalTitle.textContent = title;
+          modalPrice.textContent = price;
+          modalDesc.textContent = desc;
+
+          modalSpecsList.innerHTML = '';
+          specs.forEach(spec => {
+            if (spec.trim()) {
+              const li = document.createElement('li');
+              li.innerHTML = `<i class="fa-solid fa-check" style="color: #10b981; margin-right: 0.4rem;"></i> ${spec.trim()}`;
+              modalSpecsList.appendChild(li);
+            }
+          });
+
+          const waUrl = `https://wa.me/56986635815?text=${encodeURIComponent('Hola Yojann, deseo comprar ' + title + ' (' + price + ')')}`;
+          modalWhatsappBtn.href = waUrl;
+
+          modal.classList.add('active');
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('active');
+      }
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modalClose2) modalClose2.addEventListener('click', closeModal);
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal) closeModal();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yojann Cortés Díaz - Ingeniero Informático con +4 años de experiencia en Desarrollo Web Full-Stack, SaaS, Aplicaciones Móviles y Consultoría Tecnológica.">
+  <meta name="keywords" content="Yojann Cortés Díaz, Ingeniero Informático, Desarrollador Full Stack, Software Engineer, React, Node.js, Cloud, SaaS, Desarrollo Web">
+  <meta name="author" content="Yojann Cortés Díaz">
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yojann Cortés Díaz | Ingeniero Informático & Desarrollador Full-Stack">
+  <meta property="og:description" content="Transformo requerimientos complejos en software escalable, interfaces modernas y soluciones digitales de alto impacto.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_pequeno2.png">
+  
+  <title>Soluciones Digitales E.I.R.L. | Yojann Cortés Díaz — Ingeniero Informático</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=20260831_08">
+</head>
+<body>
+  <!-- Background Canvas for Particles -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Soluciones Digitales E.I.R.L.">
+        <div class="logo-aura-wrap">
+          <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+          <span class="logo-pulse-ring"></span>
+        </div>
+        <div class="brand-text-wrap">
+          <div class="brand-top-row">
+            <span class="logo-main-text">Soluciones Digitales</span>
+            <span class="badge-eirl">E.I.R.L.</span>
+          </div>
+          <span class="logo-lead-sub">
+            <span class="lead-name">Yojann Cortés Díaz</span>
+            <span class="lead-sep">•</span>
+            <span class="lead-role">Ing. Informático</span>
+          </span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link active">
+              <i class="fa-solid fa-house nav-ico"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="servicios.html" class="nav-link">
+              <i class="fa-solid fa-cubes nav-ico"></i>
+              <span>Servicios</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#proyectos" class="nav-link">
+              <i class="fa-solid fa-code nav-ico"></i>
+              <span>Proyectos</span>
+            </a>
+          </li>
+          <li>
+            <a href="productos.html" class="nav-link nav-link-store">
+              <i class="fa-solid fa-cash-register nav-ico"></i>
+              <span>Tienda POS</span>
+              <span class="nav-badge-pill">Hardware</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#contacto" class="nav-link">
+              <i class="fa-solid fa-paper-plane nav-ico"></i>
+              <span>Contacto</span>
+            </a>
+          </li>
+          
+          <li class="mobile-cta-item">
+            <div class="mobile-menu-card">
+              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
+              </a>
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Cotizar</span>
+        </a>
+        <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span class="toggle-icon-bar"></span>
+          <span class="toggle-icon-bar"></span>
+          <span class="toggle-icon-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-badge">
+          <span class="status-dot"></span>
+          <span>Soluciones Digitales E.I.R.L. | Proyectos & Consultoría Tecnológica</span>
+        </div>
+
+        <h1 class="hero-title">
+          Construyo <span class="gradient-text">Software de Alto Impacto</span> y Soluciones Digitales Escalables.
+        </h1>
+
+        <p class="hero-description">
+          Bienvenido a <strong>Soluciones Digitales E.I.R.L.</strong>, liderada por <strong>Yojann Cortés Díaz</strong>, Ingeniero Informático con <strong>+4 años de experiencia</strong>. Desarrollamos y lanzamos plataformas web, aplicaciones móviles, software SaaS y arquitecturas cloud para potenciar tu negocio.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#cotizador" class="btn btn-lg btn-primary pulse-btn">
+            <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
+          </a>
+          <a href="#proyectos" class="btn btn-lg btn-glass">
+            <i class="fa-solid fa-laptop-code"></i> Explorar Trabajos
+          </a>
+          <a href="https://github.com/YojanCortes" target="_blank" rel="noopener" class="btn btn-lg btn-icon" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener" class="btn btn-lg btn-icon" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <!-- Metrics Ticker -->
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <div class="metric-number"><span class="counter" data-target="4">0</span><span class="accent-symbol">+</span></div>
+            <div class="metric-label">Años de Experiencia</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number"><span class="counter" data-target="8">0</span><span class="accent-symbol">+</span></div>
+            <div class="metric-label">Proyectos Desarrollados</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number"><span class="counter" data-target="100">0</span><span class="accent-symbol">%</span></div>
+            <div class="metric-label">Código Propio & Garantía</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number"><span class="counter" data-target="100">0</span><span class="accent-symbol">%</span></div>
+            <div class="metric-label">Compromiso & Soporte</div>
+          </div>
+        </div>
+
+        <!-- Tech Marquee -->
+        <div class="tech-marquee-wrapper">
+          <p class="tech-marquee-label">Tecnologías & Herramientas que domino:</p>
+          <div class="tech-marquee">
+            <div class="tech-track">
+              <span class="tech-pill"><i class="fa-brands fa-react"></i> React / Next.js</span>
+              <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js / Express</span>
+              <span class="tech-pill"><i class="fa-brands fa-python"></i> Python / FastAPI</span>
+              <span class="tech-pill"><i class="fa-brands fa-js"></i> TypeScript & Modern JS</span>
+              <span class="tech-pill"><i class="fa-solid fa-database"></i> PostgreSQL / MongoDB</span>
+              <span class="tech-pill"><i class="fa-brands fa-docker"></i> Docker & DevOps</span>
+              <span class="tech-pill"><i class="fa-brands fa-aws"></i> AWS & Cloud Arch</span>
+              <span class="tech-pill"><i class="fa-solid fa-mobile-screen"></i> Flutter / React Native</span>
+              <span class="tech-pill"><i class="fa-brands fa-git-alt"></i> Git & CI/CD</span>
+              <!-- Repeated for continuous marquee -->
+              <span class="tech-pill"><i class="fa-brands fa-react"></i> React / Next.js</span>
+              <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js / Express</span>
+              <span class="tech-pill"><i class="fa-brands fa-python"></i> Python / FastAPI</span>
+              <span class="tech-pill"><i class="fa-brands fa-js"></i> TypeScript & Modern JS</span>
+              <span class="tech-pill"><i class="fa-solid fa-database"></i> PostgreSQL / MongoDB</span>
+              <span class="tech-pill"><i class="fa-brands fa-docker"></i> Docker & DevOps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Soluciones Section -->
+    <section class="section services-section" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-cubes"></i> Lo que hago por tu negocio</span>
+          <h2 class="section-title">Servicios de <span class="gradient-text">Ingeniería & Desarrollo</span></h2>
+          <p class="section-subtitle">Soluciones tecnológicas a medida, diseñadas con arquitectura robusta, código limpio y rendimiento de clase mundial.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-cyan">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="service-title">Desarrollo Web Full-Stack & SaaS</h3>
+            <p class="service-desc">
+              Creación de plataformas web de última generación, portales interactivos, paneles de administración (dashboards) y plataformas SaaS escalables con arquitecturas modernas.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Single Page Applications & SSR ultra rápidas</li>
+              <li><i class="fa-solid fa-check"></i> Paneles de control y gestión de datos en tiempo real</li>
+              <li><i class="fa-solid fa-check"></i> Pasarelas de pago seguras (Stripe, PayPal, MercadoPago)</li>
+            </ul>
+            <div class="service-footer">
+              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-purple">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="service-title">Aplicaciones Móviles & PWA</h3>
+            <p class="service-desc">
+              Desarrollo de aplicaciones móviles intuitivas y fluidas para iOS y Android, además de Progressive Web Apps con capacidad offline y notificaciones push.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Rendimiento nativo multiplataforma</li>
+              <li><i class="fa-solid fa-check"></i> Experiencias fluidas de usuario (UI/UX)</li>
+              <li><i class="fa-solid fa-check"></i> Publicación y optimización en tiendas de apps</li>
+            </ul>
+            <div class="service-footer">
+              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-blue">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="service-title">APIs, Backend & Arquitectura Cloud</h3>
+            <p class="service-desc">
+              Diseño e implementación de microservicios, bases de datos optimizadas, APIs REST / GraphQL robustas e infraestructura en la nube segura y automatizada.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> APIs escalables y con alta seguridad</li>
+              <li><i class="fa-solid fa-check"></i> Bases de datos SQL / NoSQL de alto tráfico</li>
+              <li><i class="fa-solid fa-check"></i> Despliegues automáticos (CI/CD) y contenedores Docker</li>
+            </ul>
+            <div class="service-footer">
+              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-emerald">
+              <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <h3 class="service-title">Consultoría, Auditoría & SEO Técnico</h3>
+            <p class="service-desc">
+              Diagnóstico de rendimiento, refactorización de código legacy, optimización de velocidad de carga (Core Web Vitals) y estrategias de SEO técnico para máxima visibilidad.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Auditoría de seguridad y calidad de código</li>
+              <li><i class="fa-solid fa-check"></i> Optimización de velocidad (Score 95+ en PageSpeed)</li>
+              <li><i class="fa-solid fa-check"></i> Asesoría técnica para toma de decisiones</li>
+            </ul>
+            <div class="service-footer">
+              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-cyan">
+              <i class="fa-solid fa-print"></i>
+            </div>
+            <h3 class="service-title">Sistemas POS & Control de Caja</h3>
+            <p class="service-desc">
+              Puntos de venta a medida integrados directamente con impresoras térmicas Bluetooth/USB para emisión rápida de tickets de venta, control de inventario y caja.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Impresión térmica 58mm y 80mm en 1 clic</li>
+              <li><i class="fa-solid fa-check"></i> Control de inventario, stock y reportes de caja</li>
+              <li><i class="fa-solid fa-check"></i> Venta directa de impresoras y fundas de transporte</li>
+            </ul>
+            <div class="service-footer">
+              <a href="productos.html" class="service-link">Ver Tienda & Equipamiento <i class="fa-solid fa-store"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card" data-tilt>
+            <div class="service-icon-box icon-purple">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="service-title">Automatización & Asistentes con IA</h3>
+            <p class="service-desc">
+              Bots inteligentes para WhatsApp y web con integración de Inteligencia Artificial para atención 24/7 y automatización de flujos comerciales.
+            </p>
+            <ul class="service-features">
+              <li><i class="fa-solid fa-check"></i> Respuestas inteligentes y captación de clientes</li>
+              <li><i class="fa-solid fa-check"></i> Conexión con hojas de cálculo y CRMs</li>
+              <li><i class="fa-solid fa-check"></i> Reducción de tiempos operativos repetitivos</li>
+            </ul>
+            <div class="service-footer">
+              <a href="servicios.html" class="service-link">Ver Más Detalles <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="servicios.html" class="btn btn-primary">
+            <i class="fa-solid fa-layer-group"></i> Ver Todos los Servicios & Planes Detallados
+          </a>
+          <a href="productos.html" class="btn btn-outline">
+            <i class="fa-solid fa-store"></i> Explorar Tienda de Impresoras & Insumos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Project Budget Calculator / Cotizador -->
+    <section class="section calculator-section" id="cotizador">
+      <div class="container">
+        <div class="calculator-wrapper">
+          <div class="section-header text-center">
+            <span class="section-tag"><i class="fa-solid fa-calculator"></i> Estimador Interactivo</span>
+            <h2 class="section-title">Calcula el Presupuesto de tu <span class="gradient-text">Próximo Proyecto</span></h2>
+            <p class="section-subtitle">Selecciona los componentes que necesitas y obtén un estimado inmediato en tiempo real con opción de envío directo a WhatsApp.</p>
+          </div>
+
+          <div class="calculator-grid">
+            <!-- Options Column -->
+            <div class="calc-options-card">
+              <!-- Step 1: Project Type -->
+              <div class="calc-group">
+                <label class="calc-group-title"><span class="step-num">1</span> Tipo de Proyecto Principal</label>
+                <div class="calc-pill-options" id="projectTypeOptions">
+                  <label class="calc-radio-card active">
+                    <input type="radio" name="project_type" value="landing" data-base-price="350" data-time="1 semana" checked>
+                    <div class="radio-content">
+                      <i class="fa-solid fa-pager"></i>
+                      <span class="title">Landing Page / Web Comercial</span>
+                      <span class="desc">Ideal para promocionar servicios, productos o captación</span>
+                    </div>
+                  </label>
+
+                  <label class="calc-radio-card">
+                    <input type="radio" name="project_type" value="webapp" data-base-price="850" data-time="2-3 semanas">
+                    <div class="radio-content">
+                      <i class="fa-solid fa-laptop-code"></i>
+                      <span class="title">Plataforma Web / SaaS</span>
+                      <span class="desc">Sistemas con usuarios, panel de control y lógica compleja</span>
+                    </div>
+                  </label>
+
+                  <label class="calc-radio-card">
+                    <input type="radio" name="project_type" value="ecommerce" data-base-price="750" data-time="2-3 semanas">
+                    <div class="radio-content">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <span class="title">Tienda Online / E-Commerce</span>
+                      <span class="desc">Catálogo de productos, carrito, pagos online y envíos</span>
+                    </div>
+                  </label>
+
+                  <label class="calc-radio-card">
+                    <input type="radio" name="project_type" value="mobile" data-base-price="1200" data-time="4-5 semanas">
+                    <div class="radio-content">
+                      <i class="fa-solid fa-mobile-screen"></i>
+                      <span class="title">App Móvil (iOS / Android)</span>
+                      <span class="desc">Aplicación nativa o multiplataforma completa</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 2: Extra Modules / Features -->
+              <div class="calc-group">
+                <label class="calc-group-title"><span class="step-num">2</span> Módulos & Características Adicionales</label>
+                <div class="calc-checkbox-grid">
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="auth" data-price="150" checked>
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>Autenticación & Roles</strong>
+                      <small>Registro, Login, Google Auth, Permisos</small>
+                    </div>
+                  </label>
+
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="payments" data-price="200" checked>
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>Pasarela de Pagos Online</strong>
+                      <small>Stripe, MercadoPago, PayPal, Suscripciones</small>
+                    </div>
+                  </label>
+
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="admin" data-price="250">
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>Panel de Administración Avanzado</strong>
+                      <small>Gestión de usuarios, métricas y reportes</small>
+                    </div>
+                  </label>
+
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="seo_opt" data-price="120">
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>SEO Técnico & Velocidad 99+</strong>
+                      <small>Indexación Google, Core Web Vitals, Schema</small>
+                    </div>
+                  </label>
+
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="ai_integration" data-price="220">
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>Integración Inteligencia Artificial</strong>
+                      <small>Chatbot inteligente, automatización, OpenAI API</small>
+                    </div>
+                  </label>
+
+                  <label class="calc-checkbox-card">
+                    <input type="checkbox" name="module" value="multilang" data-price="100">
+                    <span class="custom-chk"></span>
+                    <div class="chk-info">
+                      <strong>Multilenguaje (Español / Inglés)</strong>
+                      <small>Traducción dinámica y soporte global</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 3: Priority/Urgency -->
+              <div class="calc-group">
+                <label class="calc-group-title"><span class="step-num">3</span> Plazo de Entrega Deseado</label>
+                <div class="calc-speed-options">
+                  <label class="speed-radio active">
+                    <input type="radio" name="speed" value="standard" data-multiplier="1.0" checked>
+                    <span>⚡ Estándar (Recomendado)</span>
+                  </label>
+                  <label class="speed-radio">
+                    <input type="radio" name="speed" value="express" data-multiplier="1.25">
+                    <span>🚀 Entrega Express Prioritaria (+25%)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Column -->
+            <div class="calc-summary-card">
+              <div class="summary-header">
+                <h3>Resumen de Cotización</h3>
+                <span class="badge-live">En tiempo real</span>
+              </div>
+
+              <div class="summary-breakdown" id="calcBreakdown">
+                <!-- Dynamically updated -->
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-total-box">
+                <span class="total-label">Inversión Estimada:</span>
+                <div class="total-price" id="calcTotalPrice">$700 <small>USD</small></div>
+                <span class="total-time" id="calcDeliveryTime"><i class="fa-regular fa-clock"></i> Tiempo estimado: 1-2 semanas</span>
+              </div>
+
+              <div class="summary-features-included">
+                <p class="incl-title"><i class="fa-solid fa-shield-halved"></i> Todo proyecto incluye:</p>
+                <ul>
+                  <li><i class="fa-solid fa-check"></i> Código fuente 100% tuyo (Repositorio privado)</li>
+                  <li><i class="fa-solid fa-check"></i> Diseño 100% responsivo para móviles y PCs</li>
+                  <li><i class="fa-solid fa-check"></i> Despliegue en servidor / hosting de producción</li>
+                  <li><i class="fa-solid fa-check"></i> 30 días de garantía y soporte técnico gratuito</li>
+                </ul>
+              </div>
+
+              <div class="summary-actions">
+                <button class="btn btn-primary btn-block" id="btnSendQuoteWhatsapp">
+                  <i class="fa-brands fa-whatsapp"></i> Solicitar Esta Cotización
+                </button>
+                <button class="btn btn-glass btn-block" id="btnCopyQuote">
+                  <i class="fa-regular fa-copy"></i> Copiar Resumen
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Proyectos Section -->
+    <section class="section portfolio-section" id="proyectos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Casos de Éxito</span>
+          <h2 class="section-title">Proyectos <span class="gradient-text">Destacados</span></h2>
+          <p class="section-subtitle">Una muestra de proyectos reales desarrollados con foco en arquitectura sólida, experiencia de usuario y resultados comerciales.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="mobile">Apps Móviles</button>
+          <button class="filter-btn" data-filter="saas">SaaS & Gestión</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce & Pagos</button>
+          <button class="filter-btn" data-filter="ai">IA & Automatización</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          
+          <!-- Project 1: MappsCotas -->
+          <article class="project-card" data-category="mobile ai">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-brands fa-google-play"></i> En Google Play</span>
+              <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="1">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">IA Visión</span>
+                <span class="tag">Google Play</span>
+              </div>
+              <h3 class="project-title">MappsCotas / MascotaJan — App Móvil con IA</h3>
+              <p class="project-summary">
+                App publicada en Google Play para dueños de mascotas. Escaneo inteligente de ingredientes con IA, mapa colaborativo pet-friendly y reporte de mascotas extraviadas.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="1">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: FoodJan -->
+          <article class="project-card" data-category="saas mobile">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-solid fa-utensils"></i> Sistema Restaurantes</span>
+              <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Restaurantes" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="2">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">Flutter</span>
+                <span class="tag">POS Térmico</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <h3 class="project-title">FoodJan — Sistema Integral para Restaurantes & POS</h3>
+              <p class="project-summary">
+                Plataforma completa de comanderos móviles, pantalla de cocina (KDS), menú digital interactivo, control de inventario y emisión de boletas/tickets térmicos.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="2">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Venta de Pasajes -->
+          <article class="project-card" data-category="ecommerce saas">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-solid fa-bus"></i> Transbank Integrado</span>
+              <img src="Proyectos/pagina_buses/menupasjaeros.PNG" alt="Sistema Venta de Pasajes" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="3">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">Webpay Plus</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Tickets QR</span>
+              </div>
+              <h3 class="project-title">Venta de Pasajes de Buses con Webpay Transbank</h3>
+              <p class="project-summary">
+                Sistema web de pasajes con selección y bloqueo de asientos en tiempo real, checkout seguro Webpay Transbank, tickets con código QR y panel administrativo de rutas.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="3">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: STOCKJAN -->
+          <article class="project-card" data-category="saas ai">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-solid fa-industry"></i> Empresas Torre</span>
+              <img src="Proyectos/sistema gestion empresas torre/pagina.jfif" alt="STOCKJAN Empresas Torre" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="4">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">IoT Sensores</span>
+                <span class="tag">Chatbot NLP</span>
+                <span class="tag">Python</span>
+                <span class="tag">KPIs Industrial</span>
+              </div>
+              <h3 class="project-title">STOCKJAN — Gestión Industrial con IA (Empresas Torre)</h3>
+              <p class="project-summary">
+                Implementado en planta de Productos Torre S.A. Conecta sensores IoT de maquinaria, chatbot tipo ChatGPT conectado a la base de datos de la empresa y dashboard de producción.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="4">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Bodega Escuela -->
+          <article class="project-card" data-category="saas">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-solid fa-school"></i> EdTech / Bodega</span>
+              <img src="Proyectos/sistema bodega escuela/menu.jfif" alt="Sistema Bodega Escuela" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="5">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">Python</span>
+                <span class="tag">Check-in QR</span>
+                <span class="tag">CSV/Excel</span>
+              </div>
+              <h3 class="project-title">Sistema de Bodega & Comedor Escolar (EdTech)</h3>
+              <p class="project-summary">
+                Control de ingreso y raciones con check-in express mediante códigos QR, tablero diario por turnos y cursos, kardex de bodega escolar y exportación automatizada a Excel.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="5">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: POS Java -->
+          <article class="project-card" data-category="saas">
+            <div class="project-img-wrapper">
+              <span class="project-badge-live"><i class="fa-solid fa-cash-register"></i> Software POS & Caja</span>
+              <img src="productos/impresa termica.PNG" alt="Software POS Java" class="project-real-img">
+              <div class="project-overlay">
+                <button class="btn btn-sm btn-primary view-project-btn" data-project="6">Ver Ficha & Métricas</button>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tag">Java 11+</span>
+                <span class="tag">Swing / JDBC</span>
+                <span class="tag">Impresora Térmica</span>
+                <span class="tag">Control de Caja</span>
+              </div>
+              <h3 class="project-title">Software POS Java — Caja de Pago & Control de Stock</h3>
+              <p class="project-summary">
+                Software de caja con emisión de tickets y boletas térmicas USB/Bluetooth (ESC/POS), arqueo de caja diario, conciliación de pagos y control de inventario.
+              </p>
+              <div class="project-links">
+                <button class="project-link-action view-project-btn" data-project="6">Detalles de Arquitectura <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div class="modal-backdrop" id="projectModal">
+      <div class="modal-card">
+        <button class="modal-close" id="modalCloseBtn" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-content" id="modalContent">
+          <!-- Dynamic Content Injected by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- About Me / Sobre Mí Section -->
+    <section class="section about-section" id="sobre-mi">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="avatar-card">
+              <div class="avatar-glow"></div>
+              <div class="avatar-inner">
+                <div class="code-badge-top">E.I.R.L.</div>
+                <div class="avatar-logo-sphere">
+                  <img src="logo2.png" alt="Soluciones Digitales E.I.R.L. Logo" class="avatar-company-logo">
+                </div>
+                <h3 class="avatar-name">Soluciones Digitales <span class="badge-eirl">E.I.R.L.</span></h3>
+                <p class="avatar-title">Fundador: Yojann Cortés Díaz (Ing. Informático)</p>
+                <div class="avatar-socials">
+                  <a href="https://github.com/YojanCortes" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="mailto:yojanncortesdiaz@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="experience-badge">
+                  <i class="fa-solid fa-certificate"></i> +4 Años de Experiencia Profesional
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text-content">
+            <span class="section-tag"><i class="fa-solid fa-id-card"></i> Perfil Profesional</span>
+            <h2 class="section-title">Pasión por la <span class="gradient-text">Ingeniería de Software</span> bien hecha</h2>
+            <p class="about-paragraph">
+              Soy <strong>Yojann Cortés Díaz</strong>, Ingeniero Informático enfocado en la creación de aplicaciones web, móviles y sistemas escalables. Durante los últimos <strong>4 años</strong> he trabajado en el ciclo de vida completo del desarrollo de software: desde el levantamiento de requerimientos y diseño de arquitectura, hasta la codificación frontend/backend, despliegue cloud y optimización.
+            </p>
+            <p class="about-paragraph">
+              A través de <strong>Soluciones Digitales E.I.R.L.</strong> entrego un servicio integral de consultoría y desarrollo tecnológico para empresas y emprendedores que buscan digitalizarse con estándares de calidad y soporte de primer nivel.
+            </p>
+
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <i class="fa-solid fa-graduation-cap highlight-icon"></i>
+                <div class="highlight-info">
+                  <h4>Formación Académica</h4>
+                  <p>Ingeniería Informática y Telecomunicaciones (Duoc UC) & Bachelor of Computer Science (IACC).</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-industry highlight-icon"></i>
+                <div class="highlight-info">
+                  <h4>Experiencia Industrial & Corporativa</h4>
+                  <p>Desarrollo de sistemas de automatización, IoT e IA en Productos Torre S.A. y clientes B2B.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-mobile-screen-button highlight-icon"></i>
+                <div class="highlight-info">
+                  <h4>Desarrollo Full-Stack & Móvil</h4>
+                  <p>Flutter, Dart, Python (Django/FastAPI), Java SE (Swing/JDBC), React, Node.js y MySQL/Postgres.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-handshake highlight-icon"></i>
+                <div class="highlight-info">
+                  <h4>Soluciones Digitales E.I.R.L.</h4>
+                  <p>Empresa constituida formalmente para contratos y facturación de proyectos de software y hardware POS.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta-row">
+              <a href="#cotizador" class="btn btn-primary">
+                <i class="fa-solid fa-calculator"></i> Cotizar con Yojann
+              </a>
+              <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener" class="btn btn-glass">
+                <i class="fa-brands fa-linkedin-in"></i> Ver Perfil LinkedIn
+              </a>
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20agendar%20una%20reunion%20técnica" target="_blank" rel="noopener" class="btn btn-outline">
+                <i class="fa-brands fa-whatsapp"></i> Hablar Directo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section class="section process-section" id="proceso">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Flujo de Trabajo Profesional</span>
+          <h2 class="section-title">¿Cómo <span class="gradient-text">Trabajamos Juntos?</span></h2>
+          <p class="section-subtitle">Metodología ágil, entregas transparentes y comunicación constante en cada etapa.</p>
+        </div>
+
+        <div class="process-steps-grid">
+          <div class="process-step-card">
+            <div class="step-badge">Paso 01</div>
+            <h4 class="step-title">Levantamiento & Alcance</h4>
+            <p class="step-desc">Analizamos tus objetivos, requerimientos técnicos y definimos el cronograma con presupuesto cerrado.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-badge">Paso 02</div>
+            <h4 class="step-title">Diseño UX/UI & Prototipo</h4>
+            <p class="step-desc">Diseñamos la estructura interactiva y la identidad visual para validar flujos antes del código.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-badge">Paso 03</div>
+            <h4 class="step-title">Desarrollo Sprint a Sprint</h4>
+            <p class="step-desc">Construcción modular con entregas parciales y testing continuo en ambiente de pruebas.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-badge">Paso 04</div>
+            <h4 class="step-title">Despliegue & Producción</h4>
+            <p class="step-desc">Lanzamiento en servidores de producción, configuración de dominio, SSL y auditoría final.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="step-badge">Paso 05</div>
+            <h4 class="step-title">Garantía & Soporte</h4>
+            <p class="step-desc">30 días de garantía total post-entrega y opciones de mantenimiento evolutivo continuo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Client Trust Section -->
+    <section class="section testimonials-section" id="testimonios">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-comments"></i> Opiniones de Clientes</span>
+          <h2 class="section-title">Confianza & <span class="gradient-text">Resultados Comprobados</span></h2>
+          <p class="section-subtitle">Lo que dicen fundadores, líderes de producto y empresas que han trabajado conmigo.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Yojann entendió a la perfección la arquitectura que necesitábamos para nuestro SaaS. Entregó a tiempo, con código limpio y una velocidad de carga que asombró a nuestros inversionistas."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
+              <div class="author-info">
+                <strong>Matías V.</strong>
+                <span>CEO en TechStartup Chile</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Excelente profesional. Desarrolló nuestra plataforma de e-commerce e integró el sistema de facturación electrónica sin ningún inconveniente. Comunicación 10/10 en todo momento."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-gear"></i></div>
+              <div class="author-info">
+                <strong>Camila R.</strong>
+                <span>Directora de Operaciones Pyme</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "El trabajo en nuestra aplicación móvil superó expectativas. Muy riguroso con la seguridad y el rendimiento. Sin duda seguiremos trabajando juntos en las siguientes fases."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar"><i class="fa-solid fa-user-check"></i></div>
+              <div class="author-info">
+                <strong>Ignacio S.</strong>
+                <span>Product Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Direct Call to Action Section -->
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info-side">
+            <span class="section-tag"><i class="fa-solid fa-envelope-open-text"></i> Conversemos</span>
+            <h2 class="section-title">¿Listo para hacer realidad tu <span class="gradient-text">Proyecto?</span></h2>
+            <p class="contact-desc">
+              Cuéntame sobre tu idea o negocio. Te responderé en menos de 24 horas con una propuesta clara y sin compromiso.
+            </p>
+
+            <div class="contact-channels">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="contact-item">
+                <div class="contact-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="contact-meta">
+                  <span class="label">WhatsApp Directo</span>
+                  <span class="value">+56 9 8663 5815 (Respuesta Rápida)</span>
+                </div>
+              </a>
+
+              <a href="mailto:yojanncortesdiaz@gmail.com" class="contact-item">
+                <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-meta">
+                  <span class="label">Correo Electrónico</span>
+                  <span class="value">yojanncortesdiaz@gmail.com</span>
+                </div>
+              </a>
+
+              <div class="contact-item">
+                <div class="contact-icon location"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-meta">
+                  <span class="label">Ubicación & Modalidad</span>
+                  <span class="value">Chile / Remoto a Todo el Mundo</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="guarantee-box">
+              <i class="fa-solid fa-shield-check"></i>
+              <div>
+                <strong>Garantía de Satisfacción y Confidencialidad</strong>
+                <p>Firma de acuerdo de confidencialidad (NDA) disponible para proteger tu propiedad intelectual.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-side">
+            <form class="contact-form" id="contactForm">
+              <h3 class="form-title">Envíame un Mensaje</h3>
+              
+              <div class="form-group">
+                <label for="name">Nombre / Empresa <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez o MiStartup SpA" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Correo Electrónico <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Teléfono / WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+56 9 ...">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service">Servicio de Interés</label>
+                <select id="service" name="service">
+                  <option value="web_fullstack">Desarrollo Web Full-Stack / SaaS</option>
+                  <option value="ecommerce">Tienda Online / E-Commerce</option>
+                  <option value="mobile_app">Aplicación Móvil (iOS / Android)</option>
+                  <option value="api_cloud">APIs, Backend & Arquitectura Cloud</option>
+                  <option value="consultancy">Consultoría / Auditoría Técnica</option>
+                  <option value="other">Otro Requerimiento</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Detalles del Proyecto <span class="req">*</span></label>
+                <textarea id="message" name="message" rows="4" placeholder="Describe brevemente qué necesitas construir, plazos deseados o presupuesto estimado..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-submit" id="btnSubmitForm">
+                <span><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</span>
+              </button>
+
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo footer-logo">
+            <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+            <div class="brand-text-wrap">
+              <span class="logo-main-text">Soluciones Digitales <span class="badge-eirl">E.I.R.L.</span></span>
+              <span class="logo-lead-sub">Por Yojann Cortés Díaz</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Empresa especializada en ingeniería de software, plataformas web modernas, SaaS y desarrollo de aplicaciones de alto rendimiento.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios Detallados</a></li>
+            <li><a href="productos.html">Tienda / Productos</a></li>
+            <li><a href="index.html#proyectos">Portafolio</a></li>
+            <li><a href="index.html#cotizador">Cotizador Online</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Especialidades</h4>
+          <ul>
+            <li><span>React & Next.js</span></li>
+            <li><span>Node.js & Python</span></li>
+            <li><span>Arquitecturas Cloud</span></li>
+            <li><span>E-Commerce & SaaS</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Contacto Rápido</h4>
+          <p class="footer-text">¿Tienes una propuesta o consulta?</p>
+          <a href="mailto:yojanncortesdiaz@gmail.com" class="footer-mail">yojanncortesdiaz@gmail.com</a>
+          <div class="footer-social-icons">
+            <a href="https://github.com/YojanCortes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/56986635815?text=Hola%20Yojann" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> <strong>Yojann Cortés Díaz</strong>. Todos los derechos reservados.</p>
+        <p class="footer-sys-status"><span class="status-dot"></span> Sistemas & Servidores Operativos (100%)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="whatsapp-float-wrap" aria-label="Contactar por WhatsApp">
+    <span class="whatsapp-float-tooltip">¿Conversamos por WhatsApp? 💬</span>
+    <div class="whatsapp-float-btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="whatsapp-float-badge"></span>
+    </div>
+  </a>
+
+  <!-- Scripts -->
+  <script src="main.js?v=20260831_05"></script>
+</body>
+</html>
