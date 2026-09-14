@@ -384,10 +384,11 @@
         </a>
 
         <div class="project-switcher-tabs" id="projectSwitcher">
-          <button class="project-switcher-btn" data-target="mappscotas"><i class="fa-solid fa-paw"></i> MappsCotas</button>
-          <button class="project-switcher-btn" data-target="foodjan"><i class="fa-solid fa-utensils"></i> FoodJan POS</button>
+          <button class="project-switcher-btn active" data-target="hotel"><i class="fa-solid fa-hotel"></i> Hotel PMS & Webpay</button>
           <button class="project-switcher-btn" data-target="buses"><i class="fa-solid fa-bus"></i> Pasajes Webpay</button>
           <button class="project-switcher-btn" data-target="stockjan"><i class="fa-solid fa-industry"></i> STOCKJAN IA</button>
+          <button class="project-switcher-btn" data-target="foodjan"><i class="fa-solid fa-utensils"></i> FoodJan POS</button>
+          <button class="project-switcher-btn" data-target="mappscotas"><i class="fa-solid fa-paw"></i> MappsCotas</button>
           <button class="project-switcher-btn" data-target="bodega-escuela"><i class="fa-solid fa-school"></i> Bodega Escolar</button>
           <button class="project-switcher-btn" data-target="pos-java"><i class="fa-solid fa-cash-register"></i> POS Java</button>
         </div>
@@ -398,125 +399,64 @@
     <div class="container">
 
       <!-- ===================================================================
-           CASO 1: MappsCotas (App Móvil con IA)
+           CASO 1: Hotel PMS & Reservas Webpay (PRIMERO)
            =================================================================== -->
-      <article class="project-showcase-card" id="mappscotas" data-category="mobile ai">
+      <article class="project-showcase-card" id="hotel" data-category="saas ecommerce">
         <div class="project-showcase-grid">
           <div class="project-gallery-wrap">
-            <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con Inteligencia Artificial" class="main-project-image" id="img-mappscotas">
+            <img src="Proyectos/hotel/1.PNG" alt="Satrana Hotel PMS & Motor de Reservas Online" class="main-project-image" id="img-hotel">
             <div class="gallery-thumbnails">
-              <img src="Proyectos/mappscotas/inicio.jfif" alt="Inicio MappsCotas" class="thumb-img active" onclick="swapImage('img-mappscotas', this.src, this)">
-              <img src="Proyectos/mappscotas/mapa.jfif" alt="Mapa Geolocalizado" class="thumb-img" onclick="swapImage('img-mappscotas', this.src, this)">
+              <img src="Proyectos/hotel/1.PNG" alt="Vista Principal & Reservas" class="thumb-img active" onclick="swapImage('img-hotel', this.src, this)" title="Pantalla 1: Reservas">
+              <img src="Proyectos/hotel/2.PNG" alt="Habitaciones & Tarifas" class="thumb-img" onclick="swapImage('img-hotel', this.src, this)" title="Pantalla 2: Habitaciones">
+              <img src="Proyectos/hotel/3.PNG" alt="Pasarela Webpay Plus" class="thumb-img" onclick="swapImage('img-hotel', this.src, this)" title="Pantalla 3: Webpay Plus">
+              <img src="Proyectos/hotel/4.PNG" alt="Dashboard PMS & Habitaciones" class="thumb-img" onclick="swapImage('img-hotel', this.src, this)" title="Pantalla 4: Dashboard PMS">
+              <img src="Proyectos/hotel/5.PNG" alt="Plano 2D Interactivo de Pisos" class="thumb-img" onclick="swapImage('img-hotel', this.src, this)" title="Pantalla 5: Plano 2D">
             </div>
-            
+
             <div class="project-spec-box" style="margin-top: 0.5rem;">
               <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
               <ul class="spec-list">
-                <li><i class="fa-solid fa-circle-check"></i> Publicada oficialmente en Google Play Store.</li>
-                <li><i class="fa-solid fa-circle-check"></i> Reconocimiento de ingredientes con Visión e IA en tiempo real.</li>
-                <li><i class="fa-solid fa-circle-check"></i> Base de datos en Firebase Firestore con sincronización reactiva.</li>
-                <li><i class="fa-solid fa-circle-check"></i> Geolocalización en vivo con Google Maps Platform.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Motor de reservas online 24/7 con Webpay Plus Transbank integrado.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Calendario de ocupación en tiempo real y prevención de overbooking.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Emisión automática de comprobantes y vouchers PDF con ReportLab.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Módulos interconectados: Habitaciones, Huéspedes, Restaurante y Spa.</li>
               </ul>
             </div>
           </div>
 
           <div class="project-content-side">
             <div class="project-header-row">
-              <span class="project-type-badge"><i class="fa-solid fa-mobile-screen"></i> App Móvil & Visión IA</span>
-              <span class="project-status-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
-            </div>
-
-            <h1 class="project-item-title">MappsCotas / MascotaJan — App Móvil con IA Nutricional</h1>
-
-            <p class="project-overview-text">
-              Aplicación móvil nativa multiplataforma creada en <strong>Flutter</strong> para dueños de mascotas. Incorpora un modelo de <strong>Inteligencia Artificial de Visión por Computadora</strong> para escanear etiquetas de alimentos y alertar instantáneamente sobre componentes dañinos, además de mapa colaborativo georreferenciado y reporte urgente de extravíos.
-            </p>
-
-            <div class="project-spec-box">
-              <div class="spec-title"><i class="fa-solid fa-microchip"></i> Arquitectura Técnica</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
-                State Management reactivo con Provider/Bloc, arquitectura limpia desacoplada, reglas de seguridad granulares en Firebase Cloud Firestore, autenticación social OAuth y procesamiento de imágenes con modelos optimizados para respuesta en milisegundos.
-              </p>
-            </div>
-
-            <div class="tech-stack-row">
-              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter / Dart</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-fire"></i> Firebase Firestore</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-brain"></i> Computer Vision IA</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-map-location-dot"></i> Google Maps SDK</span>
-              <span class="tech-badge-item"><i class="fa-brands fa-google-play"></i> Play Store</span>
-            </div>
-
-            <div class="project-action-buttons">
-              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20MappsCotas%20y%20me%20gustar%C3%ADa%20cotizar%20una%20app%20m%C3%B3vil%20similar%20o%20con%20IA" target="_blank" rel="noopener" class="btn btn-primary">
-                <i class="fa-brands fa-whatsapp"></i> Cotizar una App Móvil Similar
-              </a>
-              <a href="index.html#cotizador" class="btn btn-glass">
-                <i class="fa-solid fa-calculator"></i> Calcular Presupuesto
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- ===================================================================
-           CASO 2: FoodJan (SaaS Restaurantes & POS)
-           =================================================================== -->
-      <article class="project-showcase-card" id="foodjan" data-category="saas mobile">
-        <div class="project-showcase-grid">
-          <div class="project-gallery-wrap">
-            <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Restaurantes" class="main-project-image" id="img-foodjan">
-            <div class="gallery-thumbnails">
-              <img src="Proyectos/foodjan/paginaweb.jfif" alt="Panel Web Restaurantes" class="thumb-img active" onclick="swapImage('img-foodjan', this.src, this)">
-              <img src="Proyectos/foodjan/vistacocinero.jfif" alt="Pantalla Cocina KDS" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
-              <img src="Proyectos/foodjan/boleto.jfif" alt="Impresión de Comandas & Boletas" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
-              <img src="Proyectos/foodjan/logoapp.jfif" alt="App Móvil Garzones" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
-            </div>
-
-            <div class="project-spec-box" style="margin-top: 0.5rem;">
-              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
-              <ul class="spec-list">
-                <li><i class="fa-solid fa-circle-check"></i> 50% de reducción en el tiempo de pedido entre mesa y cocina.</li>
-                <li><i class="fa-solid fa-circle-check"></i> Cero pedidos extraviados con pantalla KDS en cocina en tiempo real.</li>
-                <li><i class="fa-solid fa-circle-check"></i> Emisión de comandas y boletas térmicas ESC/POS (USB/Bluetooth).</li>
-                <li><i class="fa-solid fa-circle-check"></i> Control estricto de inventario y recetas con descuento automático.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="project-content-side">
-            <div class="project-header-row">
-              <span class="project-type-badge"><i class="fa-solid fa-utensils"></i> SaaS Gastronómico & POS</span>
+              <span class="project-type-badge"><i class="fa-solid fa-hotel"></i> Hotel PMS & Booking Engine</span>
               <span class="project-status-badge"><i class="fa-solid fa-circle-check"></i> Producción Operativa</span>
             </div>
 
-            <h1 class="project-item-title">FoodJan — Sistema Integral para Restaurantes, Comandas & POS</h1>
+            <h1 class="project-item-title">Hotel PMS — Gestión Hotelera, Reservas Online & Webpay</h1>
 
             <p class="project-overview-text">
-              Solución completa end-to-end compuesta por panel web administrativo, aplicación móvil para garzones y pantalla interactiva para cocina (KDS). Automatiza la toma de pedidos en sala, sincroniza cocina en milisegundos e imprime tickets en comanderas térmicas.
+              Sistema integral de gestión de propiedades (PMS) y plataforma de reservas en línea para el rubro hotelero y turístico. Centraliza el ciclo completo del huésped: desde la reserva y pago seguro vía Transbank Webpay Plus, hasta el check-in/out, consumos en restaurante/spa y facturación automatizada en PDF.
             </p>
 
             <div class="project-spec-box">
-              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
+              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica & Pagos</div>
               <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
-                Backend robusto en Django REST Framework con base de datos relacional MySQL. Integración directa de protocolos ESC/POS para impresoras térmicas de 58mm y 80mm. WebSockets para actualización instantánea del estado de los platos en cocina.
+                Desarrollado sobre Django 5.0 con ORM relacional y transacciones seguras con base de datos. Integración certificada del SDK de Webpay Plus Transbank para procesamiento de tarjetas de débito/crédito, y pipeline automatizado con ReportLab para renderizado de vouchers y contratos de hospedaje en PDF.
               </p>
             </div>
 
             <div class="tech-stack-row">
-              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django / Python</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL</span>
-              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter Mobile</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-print"></i> ESC/POS Térmico</span>
-              <span class="tech-badge-item"><i class="fa-solid fa-arrows-rotate"></i> REST API</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django 5.0 / Python</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-credit-card"></i> Webpay Plus Transbank</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-calendar-days"></i> Motor Reservas</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-file-pdf"></i> ReportLab PDF</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL / PostgreSQL</span>
             </div>
 
             <div class="project-action-buttons">
-              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20FoodJan%20y%20me%20interesa%20implementar%20un%20sistema%20para%20restaurante/comercio" target="_blank" rel="noopener" class="btn btn-primary">
-                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Gastronómico
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20del%20sistema%20Hotel%20PMS%20y%20quisiera%20cotizar%20un%20sistema%20para%20hotel%20o%20caba%C3%B1as" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Hotelero
               </a>
-              <a href="productos.html" class="btn btn-glass">
-                <i class="fa-solid fa-cash-register"></i> Ver Impresoras Térmicas POS
+              <a href="index.html#cotizador" class="btn btn-glass">
+                <i class="fa-solid fa-calculator"></i> Cotizar Plataforma Web
               </a>
             </div>
           </div>
@@ -524,7 +464,7 @@
       </article>
 
       <!-- ===================================================================
-           CASO 3: Pasajes de Buses con Webpay Transbank
+           CASO 2: Pasajes de Buses con Webpay Transbank (SEGUNDO)
            =================================================================== -->
       <article class="project-showcase-card" id="buses" data-category="ecommerce saas">
         <div class="project-showcase-grid">
@@ -588,7 +528,7 @@
       </article>
 
       <!-- ===================================================================
-           CASO 4: STOCKJAN — Gestión Industrial con IA (Empresas Torre)
+           CASO 3: STOCKJAN — Gestión Industrial con IA (TERCERO)
            =================================================================== -->
       <article class="project-showcase-card" id="stockjan" data-category="saas ai">
         <div class="project-showcase-grid">
@@ -643,6 +583,132 @@
               </a>
               <a href="servicios.html" class="btn btn-glass">
                 <i class="fa-solid fa-cubes"></i> Ver Servicios de Consultoría
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 4: FoodJan (SaaS Restaurantes & POS)
+           =================================================================== -->
+      <article class="project-showcase-card" id="foodjan" data-category="saas mobile">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Restaurantes" class="main-project-image" id="img-foodjan">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/foodjan/paginaweb.jfif" alt="Panel Web Restaurantes" class="thumb-img active" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/vistacocinero.jfif" alt="Pantalla Cocina KDS" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/boleto.jfif" alt="Impresión de Comandas & Boletas" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/logoapp.jfif" alt="App Móvil Garzones" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> 50% de reducción en el tiempo de pedido entre mesa y cocina.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Cero pedidos extraviados con pantalla KDS en cocina en tiempo real.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Emisión de comandas y boletas térmicas ESC/POS (USB/Bluetooth).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Control estricto de inventario y recetas con descuento automático.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-utensils"></i> SaaS Gastronómico & POS</span>
+              <span class="project-status-badge"><i class="fa-solid fa-circle-check"></i> Producción Operativa</span>
+            </div>
+
+            <h1 class="project-item-title">FoodJan — Sistema Integral para Restaurantes, Comandas & POS</h1>
+
+            <p class="project-overview-text">
+              Solución completa end-to-end compuesta por panel web administrativo, aplicación móvil para garzones y pantalla interactiva para cocina (KDS). Automatiza la toma de pedidos en sala, sincroniza cocina en milisegundos e imprime tickets en comanderas térmicas.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Backend robusto en Django REST Framework con base de datos relacional MySQL. Integración directa de protocolos ESC/POS para impresoras térmicas de 58mm y 80mm. WebSockets para actualización instantánea del estado de los platos en cocina.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django / Python</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter Mobile</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-print"></i> ESC/POS Térmico</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-arrows-rotate"></i> REST API</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20FoodJan%20y%20me%20interesa%20implementar%20un%20sistema%20para%20restaurante/comercio" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Gastronómico
+              </a>
+              <a href="productos.html" class="btn btn-glass">
+                <i class="fa-solid fa-cash-register"></i> Ver Impresoras Térmicas POS
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 5: MappsCotas (App Móvil con IA)
+           =================================================================== -->
+      <article class="project-showcase-card" id="mappscotas" data-category="mobile ai">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con Inteligencia Artificial" class="main-project-image" id="img-mappscotas">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/mappscotas/inicio.jfif" alt="Inicio MappsCotas" class="thumb-img active" onclick="swapImage('img-mappscotas', this.src, this)">
+              <img src="Proyectos/mappscotas/mapa.jfif" alt="Mapa Geolocalizado" class="thumb-img" onclick="swapImage('img-mappscotas', this.src, this)">
+            </div>
+            
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Publicada oficialmente en Google Play Store.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Reconocimiento de ingredientes con Visión e IA en tiempo real.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Base de datos en Firebase Firestore con sincronización reactiva.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Geolocalización en vivo con Google Maps Platform.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-mobile-screen"></i> App Móvil & Visión IA</span>
+              <span class="project-status-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
+            </div>
+
+            <h1 class="project-item-title">MappsCotas / MascotaJan — App Móvil con IA Nutricional</h1>
+
+            <p class="project-overview-text">
+              Aplicación móvil nativa multiplataforma creada en <strong>Flutter</strong> para dueños de mascotas. Incorpora un modelo de <strong>Inteligencia Artificial de Visión por Computadora</strong> para escanear etiquetas de alimentos y alertar instantáneamente sobre componentes dañinos, además de mapa colaborativo georreferenciado y reporte urgente de extravíos.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-microchip"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                State Management reactivo con Provider/Bloc, arquitectura limpia desacoplada, reglas de seguridad granulares en Firebase Cloud Firestore, autenticación social OAuth y procesamiento de imágenes con modelos optimizados para respuesta en milisegundos.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter / Dart</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-fire"></i> Firebase Firestore</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-brain"></i> Computer Vision IA</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-map-location-dot"></i> Google Maps SDK</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-google-play"></i> Play Store</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20MappsCotas%20y%20me%20gustar%C3%ADa%20cotizar%20una%20app%20m%C3%B3vil%20similar%20o%20con%20IA" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar una App Móvil Similar
+              </a>
+              <a href="index.html#cotizador" class="btn btn-glass">
+                <i class="fa-solid fa-calculator"></i> Calcular Presupuesto
               </a>
             </div>
           </div>
@@ -718,10 +784,13 @@
       <article class="project-showcase-card" id="pos-java" data-category="pos saas">
         <div class="project-showcase-grid">
           <div class="project-gallery-wrap">
-            <img src="productos/pos_java_portada.jpg" alt="Software POS Java" class="main-project-image" id="img-pos">
+            <img src="Proyectos/cajpago/6.PNG" alt="Software POS Java — Control de Caja & Ventas" class="main-project-image" id="img-pos" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
             <div class="gallery-thumbnails">
-              <img src="productos/pos_java_portada.jpg" alt="Punto de Venta POS" class="thumb-img active" onclick="swapImage('img-pos', this.src, this)">
-              <img src="productos/impresa termica.PNG" alt="Impresora Térmica" class="thumb-img" onclick="swapImage('img-pos', this.src, this)">
+              <img src="Proyectos/cajpago/6.PNG" alt="Pantalla de Venta & Caja" class="thumb-img active" onclick="swapImage('img-pos', this.src, this)" title="1. Pantalla de Venta & Cobro" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
+              <img src="Proyectos/cajpago/12.PNG" alt="Menú Contabilidad & Cierres" class="thumb-img" onclick="swapImage('img-pos', this.src, this)" title="2. Menú Contabilidad & Cierre de Caja">
+              <img src="Proyectos/cajpago/17.PNG" alt="Registro & Lector de Códigos" class="thumb-img" onclick="swapImage('img-pos', this.src, this)" title="3. Registro y Escáner de Productos">
+              <img src="Proyectos/cajpago/BOLETA.jpg" alt="Boleta Térmica Impresa" class="thumb-img" onclick="swapImage('img-pos', this.src, this)" title="4. Boleta Térmica con QR y Logo">
+              <img src="productos/impresa termica.PNG" alt="Hardware Impresora Térmica" class="thumb-img" onclick="swapImage('img-pos', this.src, this)" title="5. Impresora Térmica ESC/POS">
             </div>
             
             <div class="project-spec-box" style="margin-top: 1rem;">
@@ -879,19 +948,27 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       const idMap = {
-        '1': 'mappscotas',
-        '2': 'foodjan',
-        '3': 'buses',
-        '4': 'stockjan',
-        '5': 'bodega-escuela',
-        '6': 'pos-java'
+        '1': 'hotel',
+        'hotel': 'hotel',
+        '2': 'buses',
+        'buses': 'buses',
+        '3': 'stockjan',
+        'stockjan': 'stockjan',
+        '4': 'foodjan',
+        'foodjan': 'foodjan',
+        '5': 'mappscotas',
+        'mappscotas': 'mappscotas',
+        '6': 'bodega-escuela',
+        'bodega-escuela': 'bodega-escuela',
+        '7': 'pos-java',
+        'pos-java': 'pos-java'
       };
 
       const params = new URLSearchParams(window.location.search);
       let queryId = params.get('id') || params.get('project');
       if (queryId && idMap[queryId]) queryId = idMap[queryId];
       const hashId = window.location.hash ? window.location.hash.replace('#', '') : null;
-      let targetId = queryId || hashId || 'mappscotas';
+      let targetId = queryId || hashId || 'hotel';
 
       const cards = document.querySelectorAll('.project-showcase-card');
       const switcherBtns = document.querySelectorAll('.project-switcher-btn');

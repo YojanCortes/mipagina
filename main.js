@@ -482,6 +482,22 @@ function initPortfolio() {
 
   // Project Details Database - Real Projects & Experience
   const projectDatabase = {
+    hotel: {
+      title: 'Satrana Hotel PMS — Gestión Hotelera, Reservas & Webpay',
+      category: 'Hotel PMS & Booking Engine',
+      img: 'Proyectos/hotel/1.PNG',
+      description:
+        'Plataforma integral para hoteles y resorts: motor de reservas online 24/7 con Webpay Plus Transbank, disponibilidad de habitaciones en tiempo real, facturación PDF y CRM de huéspedes.',
+      metrics: [
+        '🏨 Motor de reservas online 24/7 con Webpay Transbank',
+        '📊 Dashboard administrativo y plano 2D de habitaciones en vivo',
+        '📑 Emisión de comprobantes y contratos de hospedaje en PDF',
+        '💳 Integración oficial Webpay Plus (Crédito, Débito, Redcompra)'
+      ],
+      stack: ['Django 5.0', 'Python', 'Webpay Plus Transbank', 'ReportLab PDF', 'MySQL / PostgreSQL', 'JavaScript', 'CSS3'],
+      architecture:
+        'Backend en Django 5.0 con ORM relacional, control transaccional de disponibilidad, webhook firmado criptográficamente para Webpay y pipeline ReportLab para generación instantánea de comprobantes PDF.'
+    },
     1: {
       title: 'MappsCotas / MascotaJan — App Móvil de Mascotas con IA',
       category: 'App Móvil iOS / Android & IA',
@@ -565,7 +581,7 @@ function initPortfolio() {
     6: {
       title: 'Software POS Java — Caja de Pago, Inventario & Tickets',
       category: 'Software de Escritorio / POS & Control de Caja',
-      img: 'productos/impresa termica.PNG',
+      img: 'Proyectos/cajpago/6.PNG',
       description:
         'Software integral tipo caja registradora (POS) para comercios. Controla el registro de ventas, medios de pago (efectivo/tarjeta), emisión de tickets digitales y físicos con impresoras térmicas USB/Bluetooth, kardex de inventario y arqueo diario.',
       metrics: [

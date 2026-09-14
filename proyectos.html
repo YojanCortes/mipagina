@@ -561,67 +561,45 @@
       <!-- Cuadros Grid -->
       <div class="projects-cuadros-grid">
 
-        <!-- Cuadro 1: MappsCotas -->
+        <!-- Cuadro 1: Hotel PMS & Reservas Webpay (PRIMERO) -->
         <article class="project-cuadro-card">
           <div class="cuadro-img-wrapper">
-            <span class="cuadro-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
-            <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con IA" class="cuadro-img" loading="lazy">
+            <span class="cuadro-badge"><i class="fa-solid fa-hotel"></i> Hotel PMS & Booking</span>
+            <img src="Proyectos/hotel/1.PNG" alt="Sistema de Gestión Hotelera & Reservas" class="cuadro-img" loading="lazy" id="cuadro-hotel-img">
             <div class="cuadro-overlay">
-              <a href="proyecto-detalle.html?id=mappscotas" class="btn btn-sm btn-primary">
+              <a href="proyecto-detalle.html?id=hotel" class="btn btn-sm btn-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
               </a>
             </div>
           </div>
           <div class="cuadro-body">
-            <div class="cuadro-tags">
-              <span class="cuadro-tag"><i class="fa-brands fa-android"></i> Flutter</span>
-              <span class="cuadro-tag"><i class="fa-solid fa-brain"></i> IA Visión</span>
-              <span class="cuadro-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
-              <span class="cuadro-tag"><i class="fa-solid fa-map-location-dot"></i> Maps SDK</span>
+            <!-- Mini Selector de Pantallas -->
+            <div style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.25rem;">
+              <img src="Proyectos/hotel/1.PNG" alt="Reservas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="1. Reservas Web">
+              <img src="Proyectos/hotel/4.PNG" alt="Dashboard" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="4. Dashboard PMS">
+              <img src="Proyectos/hotel/2.PNG" alt="Habitaciones" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="2. Habitaciones">
+              <img src="Proyectos/hotel/3.PNG" alt="Webpay" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="3. Webpay Plus">
+              <img src="Proyectos/hotel/5.PNG" alt="Plano 2D" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="5. Plano 2D">
             </div>
-            <h3 class="cuadro-title">MappsCotas / MascotaJan — App Móvil con IA</h3>
+            <div class="cuadro-tags">
+              <span class="cuadro-tag"><i class="fa-brands fa-python"></i> Django 5.0</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-credit-card"></i> Webpay Transbank</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-calendar-check"></i> Motor Reservas</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-file-pdf"></i> ReportLab PDF</span>
+            </div>
+            <h3 class="cuadro-title">Hotel PMS — Gestión Hotelera, Reservas & Webpay</h3>
             <p class="cuadro-desc">
-              App nativa multiplataforma publicada en Google Play. Reconocimiento de ingredientes con Visión por Computadora, mapa georreferenciado colaborativo y reportes de extravío.
+              Plataforma integral para hoteles y resorts: motor de reservas online con Webpay Plus Transbank, gestión de habitaciones y disponibilidad en tiempo real, facturación PDF, restaurante y CRM de huéspedes.
             </p>
             <div class="cuadro-footer">
-              <a href="proyecto-detalle.html?id=mappscotas" class="btn btn-primary btn-block">
+              <a href="proyecto-detalle.html?id=hotel" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-circle-info"></i> Ver en Detalle <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Cuadro 2: FoodJan -->
-        <article class="project-cuadro-card">
-          <div class="cuadro-img-wrapper">
-            <span class="cuadro-badge"><i class="fa-solid fa-utensils"></i> Producción Operativa</span>
-            <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Gastronómico" class="cuadro-img" loading="lazy">
-            <div class="cuadro-overlay">
-              <a href="proyecto-detalle.html?id=foodjan" class="btn btn-sm btn-primary">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
-              </a>
-            </div>
-          </div>
-          <div class="cuadro-body">
-            <div class="cuadro-tags">
-              <span class="cuadro-tag"><i class="fa-brands fa-python"></i> Django</span>
-              <span class="cuadro-tag"><i class="fa-brands fa-android"></i> Flutter</span>
-              <span class="cuadro-tag"><i class="fa-solid fa-print"></i> POS Térmico</span>
-              <span class="cuadro-tag"><i class="fa-solid fa-database"></i> MySQL</span>
-            </div>
-            <h3 class="cuadro-title">FoodJan — Sistema Gastronómico, KDS & POS</h3>
-            <p class="cuadro-desc">
-              Solución integral para restaurantes con comanderos móviles para garzones, pantalla interactiva de cocina (KDS) y emisión de boletas/comandas en impresoras térmicas ESC/POS.
-            </p>
-            <div class="cuadro-footer">
-              <a href="proyecto-detalle.html?id=foodjan" class="btn btn-primary btn-block">
-                <i class="fa-solid fa-circle-info"></i> Ver en Detalle <i class="fa-solid fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Cuadro 3: Pasajes Webpay -->
+        <!-- Cuadro 2: Pasajes Webpay (SEGUNDO) -->
         <article class="project-cuadro-card">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-shield-check"></i> Transbank Certificado</span>
@@ -651,7 +629,7 @@
           </div>
         </article>
 
-        <!-- Cuadro 4: STOCKJAN IA -->
+        <!-- Cuadro 3: STOCKJAN IA (TERCERO) -->
         <article class="project-cuadro-card">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-industry"></i> Empresas Torre S.A.</span>
@@ -681,7 +659,67 @@
           </div>
         </article>
 
-        <!-- Cuadro 5: Bodega Escolar -->
+        <!-- Cuadro 4: FoodJan -->
+        <article class="project-cuadro-card">
+          <div class="cuadro-img-wrapper">
+            <span class="cuadro-badge"><i class="fa-solid fa-utensils"></i> Producción Operativa</span>
+            <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Gastronómico" class="cuadro-img" loading="lazy">
+            <div class="cuadro-overlay">
+              <a href="proyecto-detalle.html?id=foodjan" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
+              </a>
+            </div>
+          </div>
+          <div class="cuadro-body">
+            <div class="cuadro-tags">
+              <span class="cuadro-tag"><i class="fa-brands fa-python"></i> Django</span>
+              <span class="cuadro-tag"><i class="fa-brands fa-android"></i> Flutter</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-print"></i> POS Térmico</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+            </div>
+            <h3 class="cuadro-title">FoodJan — Sistema Gastronómico, KDS & POS</h3>
+            <p class="cuadro-desc">
+              Solución integral para restaurantes con comanderos móviles para garzones, pantalla interactiva de cocina (KDS) y emisión de boletas/comandas en impresoras térmicas ESC/POS.
+            </p>
+            <div class="cuadro-footer">
+              <a href="proyecto-detalle.html?id=foodjan" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-circle-info"></i> Ver en Detalle <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cuadro 5: MappsCotas -->
+        <article class="project-cuadro-card">
+          <div class="cuadro-img-wrapper">
+            <span class="cuadro-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
+            <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con IA" class="cuadro-img" loading="lazy">
+            <div class="cuadro-overlay">
+              <a href="proyecto-detalle.html?id=mappscotas" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
+              </a>
+            </div>
+          </div>
+          <div class="cuadro-body">
+            <div class="cuadro-tags">
+              <span class="cuadro-tag"><i class="fa-brands fa-android"></i> Flutter</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-brain"></i> IA Visión</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-map-location-dot"></i> Maps SDK</span>
+            </div>
+            <h3 class="cuadro-title">MappsCotas / MascotaJan — App Móvil con IA</h3>
+            <p class="cuadro-desc">
+              App nativa multiplataforma publicada en Google Play. Reconocimiento de ingredientes con Visión por Computadora, mapa georreferenciado colaborativo y reportes de extravío.
+            </p>
+            <div class="cuadro-footer">
+              <a href="proyecto-detalle.html?id=mappscotas" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-circle-info"></i> Ver en Detalle <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Cuadro 6: Bodega Escolar -->
         <article class="project-cuadro-card">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-school"></i> En Uso Institucional</span>
@@ -711,11 +749,11 @@
           </div>
         </article>
 
-        <!-- Cuadro 6: POS Java -->
+        <!-- Cuadro 7: POS Java -->
         <article class="project-cuadro-card">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-cash-register"></i> Punto de Venta Retail</span>
-            <img src="productos/pos_java_portada.jpg" alt="Software POS Java" class="cuadro-img" loading="lazy">
+            <img src="Proyectos/cajpago/6.PNG" alt="Software POS Java" class="cuadro-img" loading="lazy" id="cuadro-pos-img" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
             <div class="cuadro-overlay">
               <a href="proyecto-detalle.html?id=pos-java" class="btn btn-sm btn-primary">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
@@ -723,6 +761,13 @@
             </div>
           </div>
           <div class="cuadro-body">
+            <!-- Mini Selector de Pantallas POS -->
+            <div style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.25rem;">
+              <img src="Proyectos/cajpago/6.PNG" alt="Ventas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="1. Pantalla Venta y Cobro" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
+              <img src="Proyectos/cajpago/12.PNG" alt="Contabilidad" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="2. Menú Contabilidad y Cierre">
+              <img src="Proyectos/cajpago/17.PNG" alt="Registro" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="3. Registro y Escáner">
+              <img src="Proyectos/cajpago/BOLETA.jpg" alt="Boleta" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="4. Boleta Térmica Impresa">
+            </div>
             <div class="cuadro-tags">
               <span class="cuadro-tag"><i class="fa-brands fa-java"></i> Java 11+ SE</span>
               <span class="cuadro-tag"><i class="fa-solid fa-print"></i> ESC/POS Driver</span>
