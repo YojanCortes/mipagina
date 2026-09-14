@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ficha Técnica y Arquitectura de Proyectos — Soluciones Digitales E.I.R.L. Yojann Cortés Díaz.">
+  <meta name="keywords" content="Arquitectura de Software, Casos de Estudio, Flutter, Django, Python, Webpay Plus, POS, Yojann Cortes Diaz">
+  <meta name="author" content="Soluciones Digitales E.I.R.L. - Yojann Cortés Díaz">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo_pequeno2.png">
+  
+  <title>Detalle de Proyecto & Arquitectura | Soluciones Digitales E.I.R.L.</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=20260914_01">
+
+  <!-- Embedded Luxury Styles for Detail Page -->
+  <style>
+    :root {
+      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+      --container-max: 1240px;
+    }
+
+    body {
+      background-color: #030712;
+      color: #f3f4f6;
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Detail Top Control Bar */
+    .detail-nav-bar {
+      position: sticky;
+      top: 75px;
+      z-index: 100;
+      background: rgba(6, 9, 17, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.85rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .detail-nav-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-back-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-back-catalog:hover {
+      background: rgba(0, 242, 254, 0.15);
+      border-color: #00f2fe;
+      color: #00f2fe;
+      transform: translateX(-3px);
+    }
+
+    .project-switcher-tabs {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      max-width: 100%;
+    }
+
+    .project-switcher-btn {
+      background: rgba(18, 26, 47, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .project-switcher-btn:hover,
+    .project-switcher-btn.active {
+      background: rgba(0, 242, 254, 0.15);
+      border-color: #00f2fe;
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+    }
+
+    /* Detailed Showcase Card */
+    .project-showcase-card {
+      background: rgba(13, 20, 36, 0.85);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 242, 254, 0.08);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .project-showcase-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .project-gallery-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .main-project-image {
+      width: 100%;
+      height: 420px;
+      object-fit: contain;
+      background: #020617;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-thumbnails {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+
+    .thumb-img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+      background: #020617;
+    }
+
+    .thumb-img:hover, .thumb-img.active {
+      opacity: 1;
+      border-color: #00f2fe;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+    }
+
+    .project-content-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .project-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .project-type-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background: rgba(0, 242, 254, 0.12);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: #00f2fe;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: #10b981;
+      font-weight: 600;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .project-item-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .project-overview-text {
+      color: #94a3b8;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .project-spec-box {
+      background: rgba(6, 9, 17, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .spec-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .spec-title i {
+      color: #00f2fe;
+    }
+
+    .spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .spec-list li {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.45;
+    }
+
+    .spec-list li i {
+      color: #10b981;
+      font-size: 0.85rem;
+      margin-top: 0.2rem;
+    }
+
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .tech-badge-item i {
+      color: #00f2fe;
+    }
+
+    .project-action-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .project-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .main-project-image {
+        height: 320px;
+      }
+      .project-showcase-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Canvas for Particles -->
+  <canvas id="bgCanvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Soluciones Digitales E.I.R.L. - Inicio">
+        <div class="logo-aura-wrap">
+          <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+          <span class="logo-pulse-ring"></span>
+        </div>
+        <div class="brand-text-wrap">
+          <div class="brand-top-row">
+            <span class="logo-main-text">Soluciones Digitales</span>
+            <span class="badge-eirl">E.I.R.L.</span>
+          </div>
+          <span class="logo-lead-sub">
+            <span class="lead-name">Yojann Cortés Díaz</span>
+            <span class="lead-sep">•</span>
+            <span class="lead-role">CEO & Ing. Informático</span>
+          </span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Inicio</a></li>
+          <li class="nav-item"><a href="proyectos.html" class="nav-link active"><i class="fa-solid fa-shapes"></i> Proyectos</a></li>
+          <li class="nav-item"><a href="servicios.html" class="nav-link"><i class="fa-solid fa-code"></i> Servicios</a></li>
+          <li class="nav-item"><a href="productos.html" class="nav-link"><i class="fa-solid fa-store"></i> Tienda POS</a></li>
+          <li class="nav-item"><a href="index.html#cotizador" class="nav-link"><i class="fa-solid fa-calculator"></i> Cotizador</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultar%20por%20tus%20servicios%20de%20ingenier%C3%ADa" target="_blank" rel="noopener" class="btn btn-sm btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 85px; padding-bottom: 5rem;">
+
+    <!-- Top Action / Switcher Bar -->
+    <div class="detail-nav-bar">
+      <div class="detail-nav-inner">
+        <a href="proyectos.html" class="btn-back-catalog">
+          <i class="fa-solid fa-arrow-left"></i> Volver al Catálogo de Proyectos
+        </a>
+
+        <div class="project-switcher-tabs" id="projectSwitcher">
+          <button class="project-switcher-btn" data-target="mappscotas"><i class="fa-solid fa-paw"></i> MappsCotas</button>
+          <button class="project-switcher-btn" data-target="foodjan"><i class="fa-solid fa-utensils"></i> FoodJan POS</button>
+          <button class="project-switcher-btn" data-target="buses"><i class="fa-solid fa-bus"></i> Pasajes Webpay</button>
+          <button class="project-switcher-btn" data-target="stockjan"><i class="fa-solid fa-industry"></i> STOCKJAN IA</button>
+          <button class="project-switcher-btn" data-target="bodega-escuela"><i class="fa-solid fa-school"></i> Bodega Escolar</button>
+          <button class="project-switcher-btn" data-target="pos-java"><i class="fa-solid fa-cash-register"></i> POS Java</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container of Detailed Project Cases -->
+    <div class="container">
+
+      <!-- ===================================================================
+           CASO 1: MappsCotas (App Móvil con IA)
+           =================================================================== -->
+      <article class="project-showcase-card" id="mappscotas" data-category="mobile ai">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con Inteligencia Artificial" class="main-project-image" id="img-mappscotas">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/mappscotas/inicio.jfif" alt="Inicio MappsCotas" class="thumb-img active" onclick="swapImage('img-mappscotas', this.src, this)">
+              <img src="Proyectos/mappscotas/mapa.jfif" alt="Mapa Geolocalizado" class="thumb-img" onclick="swapImage('img-mappscotas', this.src, this)">
+            </div>
+            
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Publicada oficialmente en Google Play Store.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Reconocimiento de ingredientes con Visión e IA en tiempo real.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Base de datos en Firebase Firestore con sincronización reactiva.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Geolocalización en vivo con Google Maps Platform.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-mobile-screen"></i> App Móvil & Visión IA</span>
+              <span class="project-status-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
+            </div>
+
+            <h1 class="project-item-title">MappsCotas / MascotaJan — App Móvil con IA Nutricional</h1>
+
+            <p class="project-overview-text">
+              Aplicación móvil nativa multiplataforma creada en <strong>Flutter</strong> para dueños de mascotas. Incorpora un modelo de <strong>Inteligencia Artificial de Visión por Computadora</strong> para escanear etiquetas de alimentos y alertar instantáneamente sobre componentes dañinos, además de mapa colaborativo georreferenciado y reporte urgente de extravíos.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-microchip"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                State Management reactivo con Provider/Bloc, arquitectura limpia desacoplada, reglas de seguridad granulares en Firebase Cloud Firestore, autenticación social OAuth y procesamiento de imágenes con modelos optimizados para respuesta en milisegundos.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter / Dart</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-fire"></i> Firebase Firestore</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-brain"></i> Computer Vision IA</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-map-location-dot"></i> Google Maps SDK</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-google-play"></i> Play Store</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20MappsCotas%20y%20me%20gustar%C3%ADa%20cotizar%20una%20app%20m%C3%B3vil%20similar%20o%20con%20IA" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar una App Móvil Similar
+              </a>
+              <a href="index.html#cotizador" class="btn btn-glass">
+                <i class="fa-solid fa-calculator"></i> Calcular Presupuesto
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 2: FoodJan (SaaS Restaurantes & POS)
+           =================================================================== -->
+      <article class="project-showcase-card" id="foodjan" data-category="saas mobile">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Restaurantes" class="main-project-image" id="img-foodjan">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/foodjan/paginaweb.jfif" alt="Panel Web Restaurantes" class="thumb-img active" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/vistacocinero.jfif" alt="Pantalla Cocina KDS" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/boleto.jfif" alt="Impresión de Comandas & Boletas" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+              <img src="Proyectos/foodjan/logoapp.jfif" alt="App Móvil Garzones" class="thumb-img" onclick="swapImage('img-foodjan', this.src, this)">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> 50% de reducción en el tiempo de pedido entre mesa y cocina.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Cero pedidos extraviados con pantalla KDS en cocina en tiempo real.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Emisión de comandas y boletas térmicas ESC/POS (USB/Bluetooth).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Control estricto de inventario y recetas con descuento automático.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-utensils"></i> SaaS Gastronómico & POS</span>
+              <span class="project-status-badge"><i class="fa-solid fa-circle-check"></i> Producción Operativa</span>
+            </div>
+
+            <h1 class="project-item-title">FoodJan — Sistema Integral para Restaurantes, Comandas & POS</h1>
+
+            <p class="project-overview-text">
+              Solución completa end-to-end compuesta por panel web administrativo, aplicación móvil para garzones y pantalla interactiva para cocina (KDS). Automatiza la toma de pedidos en sala, sincroniza cocina en milisegundos e imprime tickets en comanderas térmicas.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Backend robusto en Django REST Framework con base de datos relacional MySQL. Integración directa de protocolos ESC/POS para impresoras térmicas de 58mm y 80mm. WebSockets para actualización instantánea del estado de los platos en cocina.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django / Python</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter Mobile</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-print"></i> ESC/POS Térmico</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-arrows-rotate"></i> REST API</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20FoodJan%20y%20me%20interesa%20implementar%20un%20sistema%20para%20restaurante/comercio" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Gastronómico
+              </a>
+              <a href="productos.html" class="btn btn-glass">
+                <i class="fa-solid fa-cash-register"></i> Ver Impresoras Térmicas POS
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 3: Pasajes de Buses con Webpay Transbank
+           =================================================================== -->
+      <article class="project-showcase-card" id="buses" data-category="ecommerce saas">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/pagina_buses/menupasjaeros.PNG" alt="Sistema Venta de Pasajes Webpay" class="main-project-image" id="img-buses">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/pagina_buses/menupasjaeros.PNG" alt="Selección Asientos" class="thumb-img active" onclick="swapImage('img-buses', this.src, this)">
+              <img src="Proyectos/pagina_buses/comprar_pasaje_webpay.PNG" alt="Checkout Webpay" class="thumb-img" onclick="swapImage('img-buses', this.src, this)">
+              <img src="Proyectos/pagina_buses/boletos.PNG" alt="Boletos QR" class="thumb-img" onclick="swapImage('img-buses', this.src, this)">
+              <img src="Proyectos/pagina_buses/menu_trabajador.PNG" alt="Panel Chofer" class="thumb-img" onclick="swapImage('img-buses', this.src, this)">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Integración certificada de Webpay Plus Transbank (Crédito, Débito, Redcompra).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Bloqueo transaccional de asientos para evitar compras duplicadas.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Generación automática de pasaje con Código QR único para abordaje.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Módulo móvil para choferes y auxiliares de validación de pasajeros.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-credit-card"></i> E-Commerce & Pagos Online</span>
+              <span class="project-status-badge"><i class="fa-solid fa-shield-check"></i> Transbank Certificado</span>
+            </div>
+
+            <h1 class="project-item-title">Venta de Pasajes de Buses Interurbanos con Webpay Transbank</h1>
+
+            <p class="project-overview-text">
+              Plataforma transaccional de alta concurrencia para empresas de transporte. Permite a los pasajeros buscar itinerarios, seleccionar asientos en el croquis 2D del bus, pagar vía Webpay Plus y recibir su comprobante con código QR validable en puerta.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-lock"></i> Seguridad & Concurrencia Transaccional</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Manejo de transacciones atómicas con bloqueos `SELECT FOR UPDATE` en base de datos para garantizar que dos usuarios no reserven el mismo asiento en milésimas de segundo. Webhook con firma criptográfica de Transbank para verificación de pagos.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-credit-card"></i> Webpay Plus Transbank</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-qrcode"></i> Generador QR</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL Relacional</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-js"></i> UI Asientos Reactiva</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20la%20plataforma%20de%20pasajes%20con%20Webpay%20y%20quisiera%20cotizar%20un%20sistema%20con%20pasarela%20de%20pago" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema con Pasarela de Pago
+              </a>
+              <a href="index.html#cotizador" class="btn btn-glass">
+                <i class="fa-solid fa-calculator"></i> Cotizar E-Commerce
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 4: STOCKJAN — Gestión Industrial con IA (Empresas Torre)
+           =================================================================== -->
+      <article class="project-showcase-card" id="stockjan" data-category="saas ai">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/sistema gestion empresas torre/pagina.jfif" alt="STOCKJAN Gestión Industrial con IA" class="main-project-image" id="img-stockjan">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/sistema gestion empresas torre/pagina.jfif" alt="Dashboard Industrial" class="thumb-img active" onclick="swapImage('img-stockjan', this.src, this)">
+              <img src="Proyectos/sistema gestion empresas torre/appmovil.jfif" alt="App Móvil Planta" class="thumb-img" onclick="swapImage('img-stockjan', this.src, this)">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Implementado en planta productiva de Productos Torre S.A.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Asistente de IA (NLP) conectado a la base de datos empresarial.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Telemetría de sensores IoT y brazos robóticos en tiempo real.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Monitoreo de KPIs de producción y asistencia laboral automatizada.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-robot"></i> SaaS Industrial & Asistente IA</span>
+              <span class="project-status-badge"><i class="fa-solid fa-industry"></i> Empresas Torre S.A.</span>
+            </div>
+
+            <h1 class="project-item-title">STOCKJAN — Gestión de Producción e IA Industrial (Empresas Torre)</h1>
+
+            <p class="project-overview-text">
+              Solución integral de industria 4.0 desarrollada para la planta de manufactura de <strong>Productos Torre S.A.</strong> Integra telemetría de maquinaria y sensores IoT con una aplicación móvil y dashboard ejecutivo, además de un <strong>asistente conversacional de Inteligencia Artificial</strong> para responder preguntas de stock y líneas de producción.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-brain"></i> Inteligencia Artificial & IoT</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Microservicio NLP de IA que interpreta consultas en lenguaje natural ("¿cuál es el stock de bobinas tipo A en línea 3?") y ejecuta queries automáticas y seguras contra el almacén de datos, reduciendo tiempos de consulta en planta a 2 segundos.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-solid fa-brain"></i> Chatbot IA / NLP</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-microchip"></i> Sensores IoT</span>
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Python Backend</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-barcode"></i> Lectura Código Barras</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-chart-pie"></i> Dashboard KPIs</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20STOCKJAN%20en%20Empresas%20Torre%20y%20quiero%20integrar%20IA%20o%20un%20asistente%20en%20mi%20empresa" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Integrar Asistente IA en Mi Empresa
+              </a>
+              <a href="servicios.html" class="btn btn-glass">
+                <i class="fa-solid fa-cubes"></i> Ver Servicios de Consultoría
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 5: Sistema de Bodega Escuela (EdTech)
+           =================================================================== -->
+      <article class="project-showcase-card" id="bodega-escuela" data-category="saas">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/sistema bodega escuela/portada_bodega.jpg" alt="Sistema Bodega Escuela" class="main-project-image" id="img-bodega">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/sistema bodega escuela/portada_bodega.jpg" alt="Portada Bodega y Raciones" class="thumb-img active" onclick="swapImage('img-bodega', this.src, this)">
+              <img src="Proyectos/sistema bodega escuela/menu.jfif" alt="Menú Bodega" class="thumb-img" onclick="swapImage('img-bodega', this.src, this)">
+              <img src="Proyectos/sistema bodega escuela/perosnal.jfif" alt="Personal y Raciones" class="thumb-img" onclick="swapImage('img-bodega', this.src, this)">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Check-in express de raciones con lector de credenciales QR.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Cero mermas no registradas mediante kardex escolar de bodega.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Tablero diario por turnos, cursos y beneficiarios.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Exportación automática de informes de gestión a CSV y Excel.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-school"></i> EdTech & Logística</span>
+              <span class="project-status-badge"><i class="fa-solid fa-circle-check"></i> En Uso Institucional</span>
+            </div>
+
+            <h1 class="project-item-title">Sistema de Bodega, Inventario y Comedor Escolar (EdTech)</h1>
+
+            <p class="project-overview-text">
+              Software de logística para establecimientos educativos. Controla el flujo diario de raciones alimenticias y préstamos de insumos de bodega mediante escaneo instantáneo de códigos QR, eliminando las planillas de papel y entregando reportes listos para auditorías.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Construido en Python y Django con base de datos MySQL relacional. Roles de usuario estrictos (administrador, bodeguero, inspector), vistas optimizadas para tablets y lectores de pistola USB, y generador de reportes Excel asíncrono.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-python"></i> Django / Python</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-qrcode"></i> Lector QR</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-boxes-stacked"></i> Kardex Inventario</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-file-excel"></i> Exportación Excel</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20del%20sistema%20de%20bodega%20y%20quisiera%20cotizar%20un%20sistema%20de%20gesti%C3%B3n" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema de Bodega
+              </a>
+              <a href="index.html#cotizador" class="btn btn-glass">
+                <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO 6: Software POS Java — Control de Caja & Boletas
+           =================================================================== -->
+      <article class="project-showcase-card" id="pos-java" data-category="pos saas">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="productos/pos_java_portada.jpg" alt="Software POS Java" class="main-project-image" id="img-pos">
+            <div class="gallery-thumbnails">
+              <img src="productos/pos_java_portada.jpg" alt="Punto de Venta POS" class="thumb-img active" onclick="swapImage('img-pos', this.src, this)">
+              <img src="productos/impresa termica.PNG" alt="Impresora Térmica" class="thumb-img" onclick="swapImage('img-pos', this.src, this)">
+            </div>
+            
+            <div class="project-spec-box" style="margin-top: 1rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Métricas & Resultados Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Compatibilidad con cualquier impresora térmica ESC/POS USB y Bluetooth.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Arqueo de caja ciego y conciliación diaria de efectivo/tarjeta.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Control de stock en vivo con alertas automáticas de reposición.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Funcionamiento 100% offline o conectado a base de datos central.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-cash-register"></i> Software POS de Escritorio</span>
+              <span class="project-status-badge"><i class="fa-solid fa-circle-check"></i> Punto de Venta Retail</span>
+            </div>
+
+            <h1 class="project-item-title">Software POS Java — Caja de Pago, Boletas Térmicas & Stock</h1>
+
+            <p class="project-overview-text">
+              Sistema de punto de venta (POS) para comercios minoristas, ferreterías, almacenes y distribuidoras. Permite registrar ventas a alta velocidad, emitir tickets con logotipo de la empresa, realizar cierres de caja (X y Z) y gestionar el catálogo completo de productos.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+                Arquitectura Modelo-Vista-Controlador (MVC) en Java 11+, interfaz Swing de respuesta inmediata a atajos de teclado numérico, persistencia transaccional con JDBC y driver universal de impresión térmica por socket y puerto serie.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-java"></i> Java 11+ SE</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-print"></i> ESC/POS Driver</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-database"></i> MySQL / SQLite</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-barcode"></i> Lector Código de Barras</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-receipt"></i> Tickets Térmicos</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20del%20software%20POS%20y%20quisiera%20cotizar%20la%20soluci%C3%B3n%20o%20un%20pack%20con%20hardware" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar Software POS & Hardware
+              </a>
+              <a href="productos.html" class="btn btn-glass">
+                <i class="fa-solid fa-store"></i> Ver Tienda de Hardware
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <section class="section" style="padding: 1rem 0 4rem;">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, rgba(14,24,47,0.85) 0%, rgba(8,12,22,0.95) 100%); border: 1px solid rgba(0,242,254,0.3); border-radius: 24px; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(0,242,254,0.15);">
+          <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.3rem); color:#ffffff; font-weight:800; margin-bottom:1rem;">
+            ¿Necesitas una Arquitectura Similar para tu Empresa?
+          </h2>
+          <p style="color:#94a3b8; font-size:1rem; max-width:650px; margin:0 auto 2rem; line-height:1.6;">
+            Diseñamos soluciones personalizadas bajo estrictos estándares de ingeniería, seguridad y escalabilidad con facturación formal E.I.R.L.
+          </p>
+          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="proyectos.html" class="btn btn-glass btn-lg">
+              <i class="fa-solid fa-shapes"></i> Ver Catálogo Completo
+            </a>
+            <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20cotizar%20un%20desarrollo%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+              <i class="fa-brands fa-whatsapp"></i> Contactar al WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo footer-logo">
+            <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+            <div class="brand-text-wrap">
+              <span class="logo-main-text">Soluciones Digitales <span class="badge-eirl">E.I.R.L.</span></span>
+              <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Empresa de consultoría e ingeniería de software, especializada en aplicaciones web, móviles y modelos de inteligencia artificial para optimizar negocios.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios Detallados</a></li>
+            <li><a href="proyectos.html">Proyectos Realizados</a></li>
+            <li><a href="productos.html">Tienda POS & Hardware</a></li>
+            <li><a href="index.html#cotizador">Cotizador Online</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Especialidades</h4>
+          <ul>
+            <li><span><i class="fa-solid fa-brain" style="color:#00f2fe;"></i> Inteligencia Artificial & NLP</span></li>
+            <li><span><i class="fa-brands fa-android" style="color:#10b981;"></i> Flutter Móvil iOS & Android</span></li>
+            <li><span><i class="fa-brands fa-python" style="color:#f59e0b;"></i> Python, Django & FastAPI</span></li>
+            <li><span><i class="fa-solid fa-credit-card" style="color:#a855f7;"></i> Pasarelas Webpay & Pagos</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Contacto Directo</h4>
+          <p class="footer-text">¿Tienes un proyecto en mente?</p>
+          <a href="mailto:yojanncortesdiaz@gmail.com" class="footer-mail">yojanncortesdiaz@gmail.com</a>
+          <div class="footer-social-icons">
+            <a href="https://github.com/YojanCortes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/56986635815?text=Hola%20Yojann" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>Yojann Cortés Díaz</strong>. Soluciones Digitales E.I.R.L. Todos los derechos reservados.</p>
+        <p class="footer-sys-status"><span class="status-dot"></span> Sistemas & Asistente IA Operativos (100%)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20proyectos" class="whatsapp-floating" target="_blank" rel="noopener" aria-label="Contacto directo por WhatsApp">
+    <div class="whatsapp-float-btn">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="whatsapp-float-badge"></span>
+    </div>
+  </a>
+
+  <!-- Detail Switcher & Gallery Swap Script -->
+  <script>
+    function swapImage(targetId, newSrc, thumbEl) {
+      const img = document.getElementById(targetId);
+      if (img) {
+        img.src = newSrc;
+      }
+      if (thumbEl && thumbEl.parentElement) {
+        thumbEl.parentElement.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+        thumbEl.classList.add('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const idMap = {
+        '1': 'mappscotas',
+        '2': 'foodjan',
+        '3': 'buses',
+        '4': 'stockjan',
+        '5': 'bodega-escuela',
+        '6': 'pos-java'
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      let queryId = params.get('id') || params.get('project');
+      if (queryId && idMap[queryId]) queryId = idMap[queryId];
+      const hashId = window.location.hash ? window.location.hash.replace('#', '') : null;
+      let targetId = queryId || hashId || 'mappscotas';
+
+      const cards = document.querySelectorAll('.project-showcase-card');
+      const switcherBtns = document.querySelectorAll('.project-switcher-btn');
+
+      function activateProject(id) {
+        let found = false;
+        cards.forEach(card => {
+          if (card.id === id) {
+            card.style.display = 'block';
+            found = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // If not found, show first
+        if (!found && cards.length > 0) {
+          cards[0].style.display = 'block';
+          id = cards[0].id;
+        }
+
+        switcherBtns.forEach(btn => {
+          if (btn.getAttribute('data-target') === id) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      }
+
+      switcherBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+          if (target) {
+            activateProject(target);
+            if (history.pushState) {
+              const newUrl = window.location.pathname + '?id=' + target;
+              window.history.pushState({ path: newUrl }, '', newUrl);
+            }
+          }
+        });
+      });
+
+      // Initial activation
+      activateProject(targetId);
+    });
+  </script>
+
+  <!-- Main Scripts -->
+  <script src="main.js?v=20260914_01"></script>
+</body>
+</html>

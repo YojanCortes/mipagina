@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolio();
   initContactForm();
   initCurrentYear();
+  initAiCopilot();
+  initAutomatedMessaging();
 });
 
 /* --------------------------------------------------------------------------
@@ -30,12 +32,13 @@ function initParticleCanvas() {
   });
 
   const particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 20), 65);
+  // Increased density for rich neural network aesthetic
+  const particleCount = Math.min(Math.floor(window.innerWidth / 11), 125);
 
   const mouse = {
     x: null,
     y: null,
-    radius: 140
+    radius: 170
   };
 
   window.addEventListener('mousemove', (e) => {
@@ -48,26 +51,76 @@ function initParticleCanvas() {
     mouse.y = null;
   });
 
+  // Lucky primed numbers (12, 17, 33) subtly integrated for subconscious priming
+  const primedNumbers = [12, 17, 33];
+  let primeIndex = 0;
+
   class Particle {
-    constructor() {
+    constructor(index) {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 1;
+      this.size = Math.random() * 2.2 + 1;
       this.baseX = this.x;
       this.baseY = this.y;
-      this.speedX = (Math.random() - 0.5) * 0.7;
-      this.speedY = (Math.random() - 0.5) * 0.7;
-      this.color = Math.random() > 0.5 ? '#00f2fe' : '#7f00ff';
+      this.speedX = (Math.random() - 0.5) * 0.85;
+      this.speedY = (Math.random() - 0.5) * 0.85;
+      this.color = Math.random() > 0.45 ? '#00f2fe' : (Math.random() > 0.5 ? '#7f00ff' : '#38bdf8');
+      
+      // Sparsely assign lucky primed numbers to a tiny fraction of nodes (~7% of nodes)
+      this.primedNum = null;
+      if (index % 15 === 0) {
+        this.primedNum = primedNumbers[primeIndex % primedNumbers.length];
+        primeIndex++;
+      }
+
+      // Security trust sigil on 2 special guardian nodes
+      this.isSecuritySigil = (index === 7 || index === 33);
+      this.pulsePhase = Math.random() * Math.PI * 2;
     }
 
     draw() {
+      this.pulsePhase += 0.02;
+      const pulseAlpha = 0.45 + Math.sin(this.pulsePhase) * 0.25;
+
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = this.color;
-      ctx.shadowBlur = 8;
+      ctx.shadowBlur = 9;
       ctx.shadowColor = this.color;
       ctx.fill();
       ctx.shadowBlur = 0;
+
+      // Subconscious primed lucky numbers (rendered softly in tiny mono font)
+      if (this.primedNum) {
+        ctx.font = '500 8.5px "JetBrains Mono", monospace';
+        ctx.fillStyle = `rgba(0, 242, 254, ${pulseAlpha * 0.38})`;
+        ctx.fillText(this.primedNum, this.x + 4, this.y - 4);
+      }
+
+      // Subtle security trust sigil: glowing shield / lock glyph to inspire safety & client confidence
+      if (this.isSecuritySigil) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.strokeStyle = `rgba(16, 185, 129, ${pulseAlpha * 0.55})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        // Security shield path
+        ctx.moveTo(0, -7);
+        ctx.lineTo(6, -4);
+        ctx.lineTo(5, 3);
+        ctx.lineTo(0, 7);
+        ctx.lineTo(-5, 3);
+        ctx.lineTo(-6, -4);
+        ctx.closePath();
+        ctx.stroke();
+
+        // Inner lock/key core
+        ctx.beginPath();
+        ctx.arc(0, -1, 1.6, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(52, 211, 153, ${pulseAlpha * 0.65})`;
+        ctx.fill();
+        ctx.restore();
+      }
     }
 
     update() {
@@ -86,15 +139,15 @@ function initParticleCanvas() {
         if (distance < mouse.radius) {
           const angle = Math.atan2(dy, dx);
           const force = (mouse.radius - distance) / mouse.radius;
-          this.x -= Math.cos(angle) * force * 3;
-          this.y -= Math.sin(angle) * force * 3;
+          this.x -= Math.cos(angle) * force * 3.5;
+          this.y -= Math.sin(angle) * force * 3.5;
         }
       }
     }
   }
 
   for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
+    particles.push(new Particle(i));
   }
 
   function connect() {
@@ -104,10 +157,10 @@ function initParticleCanvas() {
         const dy = particles[a].y - particles[b].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 120) {
-          const alpha = 1 - dist / 120;
-          ctx.strokeStyle = `rgba(0, 242, 254, ${alpha * 0.18})`;
-          ctx.lineWidth = 1;
+        if (dist < 140) {
+          const alpha = 1 - dist / 140;
+          ctx.strokeStyle = `rgba(0, 242, 254, ${alpha * 0.22})`;
+          ctx.lineWidth = 0.9;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
           ctx.lineTo(particles[b].x, particles[b].y);
@@ -333,10 +386,11 @@ function initCalculator() {
 
     const subtotal = basePrice + modulesPrice;
     const total = Math.round(subtotal * multiplier);
+    const formatCLP = (val) => new Intl.NumberFormat('es-CL').format(Math.round(val));
 
-    // Update UI Price
+    // Update UI Price in Chilean Pesos
     if (totalPriceEl) {
-      totalPriceEl.innerHTML = `$${total} <small>USD</small>`;
+      totalPriceEl.innerHTML = `$${formatCLP(total)} <small>CLP</small>`;
     }
 
     if (deliveryTimeEl) {
@@ -346,12 +400,12 @@ function initCalculator() {
       }`;
     }
 
-    // Update Breakdown
+    // Update Breakdown in Chilean Pesos
     if (breakdownEl) {
       let html = `
         <div class="breakdown-item">
           <span>${typeLabels[selectedType] || 'Base'}</span>
-          <span>$${basePrice} USD</span>
+          <span>$${formatCLP(basePrice)} CLP</span>
         </div>
       `;
 
@@ -359,7 +413,7 @@ function initCalculator() {
         html += `
           <div class="breakdown-item">
             <span>+ ${moduleLabels[mod.id] || mod.id}</span>
-            <span>$${mod.price} USD</span>
+            <span>$${formatCLP(mod.price)} CLP</span>
           </div>
         `;
       });
@@ -376,14 +430,14 @@ function initCalculator() {
       breakdownEl.innerHTML = html;
     }
 
-    // Prepare WhatsApp Quotation Message
+    // Prepare WhatsApp Quotation Message in Chilean Pesos
     const modulesText = selectedModules.map((m) => `• ${moduleLabels[m.id]}`).join('%0A');
     const waMessage = `Hola Yojann! He calculado un presupuesto en tu sitio web:%0A%0A` +
       `📌 *Tipo de Proyecto:* ${typeLabels[selectedType]}%0A` +
       `⚙️ *Módulos seleccionados:*%0A${modulesText ? modulesText : '• Ninguno adicional'}%0A` +
       `⚡ *Plazo:* ${speedType === 'express' ? 'Express Prioritario' : 'Estándar'} (${estimatedTime})%0A` +
-      `💰 *Presupuesto Estimado:* $${total} USD%0A%0A` +
-      `¿Podemos coordinar una llamada o detalles para comenzar?`;
+      `💰 *Presupuesto Estimado:* $${formatCLP(total)} CLP%0A%0A` +
+      `¿Podemos coordinar una llamada o reunión para definir los detalles?`;
 
     if (btnSendWhatsapp) {
       btnSendWhatsapp.onclick = () => {
@@ -393,11 +447,11 @@ function initCalculator() {
 
     if (btnCopy) {
       btnCopy.onclick = () => {
-        const plainText = `Cotización para Yojann Cortés Díaz (Ingeniero Informático):\n` +
+        const plainText = `Cotización para Yojann Cortés Díaz (Fundador & CEO - Soluciones Digitales E.I.R.L.):\n` +
           `- Proyecto: ${typeLabels[selectedType]}\n` +
           `- Módulos: ${selectedModules.map((m) => moduleLabels[m.id]).join(', ') || 'Básicos'}\n` +
           `- Tiempo estimado: ${estimatedTime}\n` +
-          `- Total estimado: $${total} USD`;
+          `- Total estimado: $${formatCLP(total)} CLP`;
 
         navigator.clipboard.writeText(plainText).then(() => {
           showToast('¡Resumen de cotización copiado al portapapeles!');
@@ -629,13 +683,31 @@ function initContactForm() {
       submitBtn.innerHTML = `<span><i class="fa-solid fa-spinner fa-spin"></i> Enviando Mensaje...</span>`;
     }
 
-    // Simulate sending & generate WhatsApp fallback
+    // Simulate sending & generate enhanced WhatsApp fallback
     setTimeout(() => {
+      const waText = encodeURIComponent(
+        `Hola Yojann, te escribo desde tu formulario web:\n\n` +
+        `• Nombre: ${name}\n` +
+        `• Correo: ${email}\n` +
+        `• Teléfono: ${phone || 'No especificado'}\n` +
+        `• Servicio: ${service}\n` +
+        `• Detalle: ${message}\n\n` +
+        `Quedo atento a tu respuesta. ¡Gracias!`
+      );
+
       if (statusEl) {
-        statusEl.innerHTML = `<span style="color:#34d399;"><i class="fa-solid fa-circle-check"></i> ¡Gracias ${name}! Tu mensaje ha sido recibido. Te responderé en breve.</span>`;
+        statusEl.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:0.6rem; margin-top:0.75rem; padding:0.85rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:10px;">
+            <span style="color:#34d399; font-weight:600;"><i class="fa-solid fa-circle-check"></i> ¡Gracias ${name}! Tu mensaje ha sido registrado correctamente.</span>
+            <span style="font-size:0.83rem; color:#94a3b8;">Para atención inmediata, también puedes enviar una copia directa a WhatsApp con 1 clic:</span>
+            <a href="https://wa.me/56986635815?text=${waText}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; width:fit-content;">
+              <i class="fa-brands fa-whatsapp"></i> Abrir Copia en WhatsApp
+            </a>
+          </div>
+        `;
       }
 
-      showToast(`¡Mensaje enviado con éxito, ${name}!`);
+      showToast(`¡Mensaje procesado con éxito, ${name}!`);
       form.reset();
 
       if (submitBtn) {
@@ -675,4 +747,224 @@ function initCurrentYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+/* --------------------------------------------------------------------------
+   9. AI Copilot & Automated Interactive Assistant
+   -------------------------------------------------------------------------- */
+function initAiCopilot() {
+  if (document.getElementById('aiCopilotLauncher')) return;
+
+  const launcher = document.createElement('div');
+  launcher.id = 'aiCopilotLauncher';
+  launcher.className = 'ai-copilot-launcher';
+  launcher.innerHTML = `
+    <button class="ai-copilot-btn" id="aiCopilotToggle" aria-label="Abrir Asistente IA">
+      <i class="fa-solid fa-brain"></i>
+      <span class="ai-copilot-badge"></span>
+    </button>
+  `;
+
+  const modal = document.createElement('div');
+  modal.id = 'aiCopilotModal';
+  modal.className = 'ai-copilot-modal';
+  modal.innerHTML = `
+    <div class="copilot-modal-header">
+      <div class="copilot-header-info">
+        <div class="copilot-avatar-circle">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="copilot-header-titles">
+          <h4>Soluciones Digitales AI <i class="fa-solid fa-sparkles" style="color:#00f2fe; font-size:0.75rem;"></i></h4>
+          <span><i class="fa-solid fa-circle" style="font-size:0.5rem; color:#10b981;"></i> En línea • IA Copilot v3.8</span>
+        </div>
+      </div>
+      <button class="copilot-close-btn" id="copilotCloseBtn" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="copilot-chat-body" id="copilotChatBody">
+      <div class="copilot-msg bot">
+        <div class="copilot-msg-bubble">
+          👋 ¡Hola! Soy el <strong>Asistente IA de Soluciones Digitales</strong>, entrenado con la experiencia técnica de <strong>Yojann Cortés Díaz</strong>.<br><br>
+          ¿En qué puedo ayudarte a potenciar tu proyecto hoy?
+        </div>
+      </div>
+
+      <div class="copilot-quick-prompts" id="copilotQuickPrompts">
+        <button class="prompt-chip" data-prompt="cotizar">
+          <span><i class="fa-solid fa-bolt"></i> Cotizar App Móvil o Sistema Web</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button class="prompt-chip" data-prompt="ia">
+          <span><i class="fa-solid fa-brain"></i> Integrar Inteligencia Artificial / NLP</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button class="prompt-chip" data-prompt="proyectos">
+          <span><i class="fa-solid fa-folder-open"></i> Ver Proyectos en Página Aparte</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button class="prompt-chip" data-prompt="transbank">
+          <span><i class="fa-solid fa-credit-card"></i> Sistema con Pagos Webpay Transbank</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button class="prompt-chip" data-prompt="whatsapp">
+          <span><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> Hablar directo con Yojann por WhatsApp</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <form class="copilot-chat-footer" id="copilotForm">
+      <input type="text" class="copilot-input" id="copilotInput" placeholder="Escribe tu consulta o requerimiento..." autocomplete="off">
+      <button type="submit" class="copilot-send-btn" aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  `;
+
+  document.body.appendChild(launcher);
+  document.body.appendChild(modal);
+
+  const toggleBtn = document.getElementById('aiCopilotToggle');
+  const closeBtn = document.getElementById('copilotCloseBtn');
+  const chatBody = document.getElementById('copilotChatBody');
+  const form = document.getElementById('copilotForm');
+  const input = document.getElementById('copilotInput');
+
+  function openCopilot() {
+    modal.classList.add('open');
+    setTimeout(() => input.focus(), 200);
+  }
+
+  function closeCopilot() {
+    modal.classList.remove('open');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (modal.classList.contains('open')) {
+      closeCopilot();
+    } else {
+      openCopilot();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeCopilot);
+  }
+
+  // Answer Knowledge Base
+  const aiAnswers = {
+    cotizar: {
+      text: `🚀 <strong>Cotización Rápida de Software:</strong><br><br>
+      • <strong>Desarrollo Web / SaaS:</strong> Paneles modernos, dashboards y conexión con APIs.<br>
+      • <strong>Apps Móviles:</strong> Creadas en Flutter (código único para iOS + Android con rendimiento nativo).<br>
+      • <strong>Tiempos estimados:</strong> De 2 a 6 semanas según requerimientos.<br><br>
+      Usa nuestro cotizador o envíame la solicitud directa por WhatsApp:`,
+      waText: 'Hola Yojann, estuve consultando con tu Asistente IA y quisiera cotizar un desarrollo de software/app para mi negocio.'
+    },
+    ia: {
+      text: `🧠 <strong>Soluciones con Inteligencia Artificial:</strong><br><br>
+      • <strong>Chatbots & Asistentes NLP:</strong> Conectados a bases de datos y manuales (caso <em>STOCKJAN en Empresas Torre</em>).<br>
+      • <strong>Visión Artificial:</strong> Escaneo en tiempo real de etiquetas y objetos (caso <em>MappsCotas</em>).<br>
+      • <strong>Automatización de Procesos:</strong> Extracción inteligente de datos y pipelines cloud.<br><br>
+      ¿Deseas una propuesta técnica personalizada?`,
+      waText: 'Hola Yojann, quisiera evaluar la integración de Inteligencia Artificial / Chatbot o Visión en mi empresa.'
+    },
+    proyectos: {
+      text: `📁 <strong>Casos de Éxito & Portafolio Completo:</strong><br><br>
+      • <strong>MappsCotas:</strong> App Flutter con IA en Google Play Store.<br>
+      • <strong>FoodJan:</strong> SaaS gastronómico con comanderas y tickets térmicos.<br>
+      • <strong>Venta de Pasajes:</strong> Conexión transaccional Webpay Plus Transbank.<br>
+      • <strong>STOCKJAN:</strong> IA industrial operativa en Productos Torre S.A.<br><br>
+      <a href="proyectos.html" class="btn btn-sm btn-primary" style="display:inline-block; margin-top:0.4rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir Página Dedicada de Proyectos</a>`,
+      waText: 'Hola Yojann, estuve revisando tus proyectos y me gustaría consultar por una arquitectura similar.'
+    },
+    transbank: {
+      text: `💳 <strong>Integración Transbank Webpay Plus:</strong><br><br>
+      • Pagos seguros con Tarjetas de Crédito, Débito y Redcompra.<br>
+      • Bloqueo transaccional atómico de asientos o stock para evitar compras duplicadas.<br>
+      • Confirmación instantánea por Webhook criptográfico y generación de vouchers/boletos QR.`,
+      waText: 'Hola Yojann, necesito integrar Webpay Plus Transbank o pasarela de pagos en mi plataforma.'
+    },
+    whatsapp: {
+      text: `💬 <strong>Conexión Directa con Yojann Cortés Díaz:</strong><br><br>
+      Respondo habitualmente en menos de 15 minutos en horario laboral. ¡Conversemos sobre tu proyecto!`,
+      waText: 'Hola Yojann, te escribo desde tu sitio web para conversar sobre un requerimiento tecnológico.'
+    }
+  };
+
+  function appendMessage(sender, htmlContent, waData = null) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `copilot-msg ${sender}`;
+    
+    let extraBtn = '';
+    if (waData) {
+      const waUrl = `https://wa.me/56986635815?text=${encodeURIComponent(waData)}`;
+      extraBtn = `
+        <div style="margin-top:0.75rem;">
+          <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; font-size:0.8rem; padding:0.4rem 0.8rem;">
+            <i class="fa-brands fa-whatsapp"></i> Continuar por WhatsApp con este mensaje
+          </a>
+        </div>
+      `;
+    }
+
+    msgDiv.innerHTML = `<div class="copilot-msg-bubble">${htmlContent}${extraBtn}</div>`;
+    chatBody.appendChild(msgDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  // Handle Quick Prompts
+  document.querySelectorAll('.prompt-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const promptType = btn.getAttribute('data-prompt');
+      const data = aiAnswers[promptType];
+
+      // Append user chip as message
+      appendMessage('user', btn.querySelector('span').innerText);
+
+      // Bot typing simulation
+      setTimeout(() => {
+        if (data) {
+          appendMessage('bot', data.text, data.waText);
+        }
+      }, 400);
+    });
+  });
+
+  // Handle text input form
+  if (form && input) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      appendMessage('user', userText);
+      input.value = '';
+
+      // AI Response generator
+      setTimeout(() => {
+        let botResponse = `¡Excelente consulta! Para darte el alcance exacto, plazos y presupuesto formal con facturación E.I.R.L., podemos continuar directo por WhatsApp con tu mensaje listo:`;
+        let waPrompt = `Hola Yojann, tengo una consulta sobre mi proyecto: "${userText}". ¿Podemos revisarlo?`;
+
+        const lower = userText.toLowerCase();
+        if (lower.includes('precio') || lower.includes('costo') || lower.includes('cuanto') || lower.includes('cotiz')) {
+          botResponse = `💰 Los presupuestos parten desde $175.000 CLP para módulos o landing pages y desde $425.000 CLP para plataformas SaaS o aplicaciones móviles con IA. Entregamos factura E.I.R.L. y soporte garantizado.`;
+          waPrompt = `Hola Yojann, quisiera una cotización formal para: "${userText}".`;
+        } else if (lower.includes('ia') || lower.includes('inteligencia') || lower.includes('bot') || lower.includes('chat')) {
+          botResponse = `🤖 Integramos modelos de lenguaje (LLM), visión artificial y microservicios de IA adaptados a tu base de datos y flujo comercial.`;
+          waPrompt = `Hola Yojann, me interesa integrar Inteligencia Artificial en: "${userText}".`;
+        } else if (lower.includes('proyecto') || lower.includes('portafolio') || lower.includes('trabajo') || lower.includes('caso')) {
+          botResponse = `📁 Puedes revisar todos los proyectos detallados con fotos reales y arquitectura técnica en nuestra página aparte: <br><br><a href="proyectos.html" class="btn btn-sm btn-primary" style="display:inline-block; margin-top:0.3rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Proyectos</a>`;
+        }
+
+        appendMessage('bot', botResponse, waPrompt);
+      }, 450);
+    });
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Automated Messaging & Social Proof Tickers
+   -------------------------------------------------------------------------- */
+function initAutomatedMessaging() {
+  // Automated popup toasts disabled to ensure clean, uninterrupted browsing
 }
