@@ -3751,3 +3751,184 @@ select option {
 
 
 
+
+/* ==========================================================================
+   KAIROS BRAND — logo circular rojo/negro
+   ========================================================================== */
+:root {
+  --kairos-red: #c8202d;
+  --kairos-dark: #202022;
+}
+
+.nav-logo-img, .footer-logo .nav-logo-img {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  box-shadow: 0 0 16px rgba(200, 32, 45, 0.55) !important;
+}
+
+.brand-logo:hover .nav-logo-img {
+  box-shadow: 0 0 24px rgba(200, 32, 45, 0.85) !important;
+}
+
+.logo-pulse-ring {
+  background: radial-gradient(circle, rgba(200, 32, 45, 0.45) 0%, transparent 70%);
+}
+
+.logo-main-text {
+  letter-spacing: 0.06em;
+}
+
+.logo-tagline {
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #cbd5e1;
+  margin-left: 0.2rem;
+}
+
+.avatar-logo-sphere {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: 0 0 30px rgba(200, 32, 45, 0.55), 0 0 55px rgba(200, 32, 45, 0.25) !important;
+}
+
+@media (max-width: 480px) {
+  .logo-tagline { display: none; }
+}
+
+/* ==========================================================================
+   KAIROS — Logo 3D en el hero (moneda que gira 360°)
+   ========================================================================== */
+.kairos-3d-stage {
+  --coin: clamp(160px, 24vw, 240px);
+  --thick: 22px;
+  position: relative;
+  width: var(--coin);
+  height: calc(var(--coin) + 40px);
+  margin: 0 auto 1.25rem;
+  perspective: 1000px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.kairos-3d-stage.is-dragging { cursor: grabbing; }
+
+.kairos-3d-float {
+  width: var(--coin);
+  height: var(--coin);
+  transform-style: preserve-3d;
+  animation: kairosFloat 4s ease-in-out infinite;
+}
+
+.kairos-3d-coin {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* sin JS: giro continuo solo con CSS */
+  animation: kairosSpin360 7s linear infinite;
+}
+
+.kairos-3d-coin.js-driven { animation: none; }
+
+.coin-face,
+.coin-edge,
+.coin-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.coin-face {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  backface-visibility: hidden;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.coin-front { transform: translateZ(calc(var(--thick) / 2 + 0.5px)); }
+.coin-back  { transform: rotateY(180deg) translateZ(calc(var(--thick) / 2 + 0.5px)); }
+
+.coin-edge {
+  background: #c8202d;
+  transform: translateZ(var(--z));
+  inset: 0.4%;
+  /* corte del anillo (el ciclo de Cronos cortado) atraviesa todo el grosor */
+  -webkit-mask: conic-gradient(from 35.5deg, transparent 0deg 20deg, #000 20deg 360deg),
+                radial-gradient(circle closest-side, #000 93%, transparent 93.5%);
+          mask: conic-gradient(from 35.5deg, transparent 0deg 20deg, #000 20deg 360deg),
+                radial-gradient(circle closest-side, #000 93%, transparent 93.5%);
+}
+
+.coin-edge.ridge { background: #8f1520; }
+
+.coin-shine {
+  transform: translateZ(calc(var(--thick) / 2 + 1px));
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.4) 47%, transparent 60%);
+  background-size: 250% 100%;
+  animation: kairosShine 3.5s ease-in-out infinite;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+.kairos-3d-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 70%;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(200, 32, 45, 0.6) 0%, transparent 70%);
+  filter: blur(4px);
+  animation: kairosShadow 4s ease-in-out infinite;
+}
+
+@keyframes kairosFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes kairosSpin360 {
+  from { transform: rotateX(10deg) rotateY(0deg); }
+  to   { transform: rotateX(10deg) rotateY(360deg); }
+}
+
+@keyframes kairosShine {
+  0%, 100% { background-position: 120% 0; }
+  50% { background-position: -20% 0; }
+}
+
+@keyframes kairosShadow {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+  50% { transform: translateX(-50%) scale(0.75); opacity: 0.5; }
+}
+
+
+.hero-brand {
+  display: block;
+  font-size: 0.42em;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+
+.hero-brand-red { color: var(--kairos-red); text-shadow: 0 0 18px rgba(200, 32, 45, 0.45); }
+
+.hero-location {
+  margin: -1.1rem 0 2rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  letter-spacing: 0.01em;
+}
+
+.hero-location i { color: var(--kairos-red); margin-right: 0.35rem; }

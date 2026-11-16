@@ -447,7 +447,7 @@ function initCalculator() {
 
     if (btnCopy) {
       btnCopy.onclick = () => {
-        const plainText = `Cotización para Yojann Cortés Díaz (Fundador & CEO - Soluciones Digitales E.I.R.L.):\n` +
+        const plainText = `Cotización para Yojann Cortés Díaz (Fundador & CEO - KAIROS Soluciones Digitales):\n` +
           `- Proyecto: ${typeLabels[selectedType]}\n` +
           `- Módulos: ${selectedModules.map((m) => moduleLabels[m.id]).join(', ') || 'Básicos'}\n` +
           `- Tiempo estimado: ${estimatedTime}\n` +
@@ -791,7 +791,7 @@ function initAiCopilot() {
           <i class="fa-solid fa-robot"></i>
         </div>
         <div class="copilot-header-titles">
-          <h4>Soluciones Digitales AI <i class="fa-solid fa-sparkles" style="color:#00f2fe; font-size:0.75rem;"></i></h4>
+          <h4>KAIROS AI <i class="fa-solid fa-sparkles" style="color:#00f2fe; font-size:0.75rem;"></i></h4>
           <span><i class="fa-solid fa-circle" style="font-size:0.5rem; color:#10b981;"></i> En línea • IA Copilot v3.8</span>
         </div>
       </div>
@@ -801,7 +801,7 @@ function initAiCopilot() {
     <div class="copilot-chat-body" id="copilotChatBody">
       <div class="copilot-msg bot">
         <div class="copilot-msg-bubble">
-          👋 ¡Hola! Soy el <strong>Asistente IA de Soluciones Digitales</strong>, entrenado con la experiencia técnica de <strong>Yojann Cortés Díaz</strong>.<br><br>
+          👋 ¡Hola! Soy el <strong>Asistente IA de KAIROS</strong>, entrenado con la experiencia técnica de <strong>Yojann Cortés Díaz</strong>.<br><br>
           ¿En qué puedo ayudarte a potenciar tu proyecto hoy?
         </div>
       </div>
@@ -958,12 +958,12 @@ function initAiCopilot() {
 
       // AI Response generator
       setTimeout(() => {
-        let botResponse = `¡Excelente consulta! Para darte el alcance exacto, plazos y presupuesto formal con facturación E.I.R.L., podemos continuar directo por WhatsApp con tu mensaje listo:`;
+        let botResponse = `¡Excelente consulta! Para darte el alcance exacto, plazos y presupuesto formal con facturación, podemos continuar directo por WhatsApp con tu mensaje listo:`;
         let waPrompt = `Hola Yojann, tengo una consulta sobre mi proyecto: "${userText}". ¿Podemos revisarlo?`;
 
         const lower = userText.toLowerCase();
         if (lower.includes('precio') || lower.includes('costo') || lower.includes('cuanto') || lower.includes('cotiz')) {
-          botResponse = `💰 Los presupuestos parten desde $175.000 CLP para módulos o landing pages y desde $425.000 CLP para plataformas SaaS o aplicaciones móviles con IA. Entregamos factura E.I.R.L. y soporte garantizado.`;
+          botResponse = `💰 Los presupuestos parten desde $175.000 CLP para módulos o landing pages y desde $425.000 CLP para plataformas SaaS o aplicaciones móviles con IA. Entregamos factura y soporte garantizado.`;
           waPrompt = `Hola Yojann, quisiera una cotización formal para: "${userText}".`;
         } else if (lower.includes('ia') || lower.includes('inteligencia') || lower.includes('bot') || lower.includes('chat')) {
           botResponse = `🤖 Integramos modelos de lenguaje (LLM), visión artificial y microservicios de IA adaptados a tu base de datos y flujo comercial.`;
@@ -984,3 +984,64 @@ function initAiCopilot() {
 function initAutomatedMessaging() {
   // Automated popup toasts disabled to ensure clean, uninterrupted browsing
 }
+
+// KAIROS — logo 3D del hero: giro continuo 360°, arrastrable con mouse o dedo
+(function () {
+  const coin = document.getElementById('kairosCoin');
+  if (!coin) return;
+  const stage = coin.closest('.kairos-3d-stage');
+
+  // Canto de la moneda: discos apilados que dan grosor real
+  const thick = parseFloat(getComputedStyle(stage).getPropertyValue('--thick')) || 22;
+  const frag = document.createDocumentFragment();
+  for (let z = -thick / 2; z <= thick / 2; z += 1) {
+    const d = document.createElement('span');
+    d.className = 'coin-edge' + (Math.round(z) % 4 === 0 ? ' ridge' : '');
+    d.style.setProperty('--z', z + 'px');
+    frag.appendChild(d);
+  }
+  coin.insertBefore(frag, coin.firstChild);
+
+  // Siempre gira; si el sistema pide "reducir movimiento", gira más lento
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  coin.classList.add('js-driven');
+  const BASE_SPEED = reduced ? 30 : 55;   // grados por segundo
+  let angleY = 0, angleX = 10;
+  let speed = BASE_SPEED;
+  let dragging = false, lastX = 0, lastY = 0, lastT = 0;
+  let prev = performance.now();
+
+  function frame(now) {
+    const dt = Math.min((now - prev) / 1000, 0.05);
+    prev = now;
+    if (!dragging) {
+      // vuelve suavemente a la velocidad base después de un arrastre
+      speed += (BASE_SPEED * Math.sign(speed || 1) - speed) * Math.min(dt * 1.5, 1);
+      angleY += speed * dt;
+      angleX += (10 - angleX) * Math.min(dt * 2, 1);
+    }
+    coin.style.transform = `rotateX(${angleX.toFixed(2)}deg) rotateY(${angleY.toFixed(2)}deg)`;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  stage.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    lastX = e.clientX; lastY = e.clientY; lastT = performance.now();
+    stage.classList.add('is-dragging');
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const now = performance.now();
+    const dx = e.clientX - lastX, dy = e.clientY - lastY;
+    angleY += dx * 0.8;
+    angleX = Math.max(-35, Math.min(35, angleX - dy * 0.4));
+    const dt = Math.max((now - lastT) / 1000, 0.001);
+    speed = Math.max(-900, Math.min(900, (dx * 0.8) / dt));
+    lastX = e.clientX; lastY = e.clientY; lastT = now;
+  });
+  const end = () => { dragging = false; stage.classList.remove('is-dragging'); };
+  stage.addEventListener('pointerup', end);
+  stage.addEventListener('pointercancel', end);
+})();

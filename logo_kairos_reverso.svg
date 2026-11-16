@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640">
+  <!-- Reverso KAIROS: anillo de Cronos (uróboro) cortado, balanza inclinada y espada de doble filo -->
+  <defs>
+    <radialGradient id="disc" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#26262a"/>
+      <stop offset="100%" stop-color="#121214"/>
+    </radialGradient>
+    <linearGradient id="blade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#e2323f"/>
+      <stop offset="50%" stop-color="#e2323f"/>
+      <stop offset="50%" stop-color="#a5161f"/>
+      <stop offset="100%" stop-color="#a5161f"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Anillo blanco interior y disco oscuro -->
+  <circle cx="320" cy="320" r="299" fill="#ffffff"/>
+  <circle cx="320" cy="320" r="286" fill="url(#disc)"/>
+
+  <!-- Anillo rojo cortado (espejo del frente: el corte queda arriba a la izquierda) -->
+  <path d="M 66.9 142.8 A 309 309 0 1 0 142.8 66.9" fill="none" stroke="#c8202d" stroke-width="21"/>
+
+  <!-- Balanza inclinada -->
+  <g fill="none" stroke="#f5f5f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- brazo -->
+    <line x1="132" y1="304" x2="508" y2="250"/>
+    <!-- plato izquierdo (más bajo) -->
+    <line x1="132" y1="304" x2="132" y2="352"/>
+    <path d="M 92 360 Q 132 392 172 360"/>
+    <!-- plato derecho (más alto) -->
+    <line x1="508" y1="250" x2="508" y2="298"/>
+    <path d="M 468 306 Q 508 338 548 306"/>
+  </g>
+
+  <!-- Espada de doble filo como fiel de la balanza -->
+  <g filter="url(#glow)">
+    <path d="M 320 280 L 340 392 L 320 486 L 300 392 Z" fill="url(#blade)"/>
+    <line x1="320" y1="300" x2="320" y2="470" stroke="#7d111a" stroke-width="2.5"/>
+    <rect x="284" y="494" width="72" height="9" rx="4.5" fill="#c8202d"/>
+  </g>
+  <circle cx="320" cy="277" r="7" fill="#f5f5f5"/>
+</svg>

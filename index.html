@@ -3,19 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yojann Cortés Díaz - Ingeniero Informático con +4 años de experiencia en Desarrollo Web Full-Stack, SaaS, Aplicaciones Móviles y Consultoría Tecnológica.">
-  <meta name="keywords" content="Yojann Cortés Díaz, Ingeniero Informático, Desarrollador Full Stack, Software Engineer, React, Node.js, Cloud, SaaS, Desarrollo Web">
-  <meta name="author" content="Yojann Cortés Díaz">
-  
+  <meta name="description" content="Software a medida en Chile: apps móviles, páginas web, sistemas POS e Inteligencia Artificial. KAIROS Soluciones Digitales, Combarbalá y Puerto Montt.">
+  <meta name="keywords" content="KAIROS Soluciones Digitales, desarrollo de software Chile, software a medida, páginas web, aplicaciones móviles, sistemas POS, inteligencia artificial, desarrollo de software Combarbalá, desarrollo de software Puerto Montt, Yojann Cortés Díaz">
+  <meta name="author" content="KAIROS Soluciones Digitales - Yojann Cortés Díaz">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#c8202d">
+
   <!-- Open Graph / Meta Social -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yojann Cortés Díaz | Ingeniero Informático & Desarrollador Full-Stack">
-  <meta property="og:description" content="Transformo requerimientos complejos en software escalable, interfaces modernas y soluciones digitales de alto impacto.">
-  
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="KAIROS Soluciones Digitales">
+  <meta property="og:title" content="KAIROS | Desarrollo de Software a Medida en Chile">
+  <meta property="og:description" content="Software a medida en Chile: apps móviles, páginas web, sistemas POS e Inteligencia Artificial. KAIROS Soluciones Digitales, Combarbalá y Puerto Montt.">
+  <meta property="og:image" content="logo_kairos.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Datos estructurados para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KAIROS Soluciones Digitales",
+    "legalName": "Desarrollo Digital Yojann Brandon Cortes Diaz E.I.R.L.",
+    "alternateName": "Kairos",
+    "description": "Software a medida en Chile: apps móviles, páginas web, sistemas POS e Inteligencia Artificial. KAIROS Soluciones Digitales, Combarbalá y Puerto Montt.",
+    "areaServed": [
+      { "@type": "Country", "name": "Chile" },
+      { "@type": "City", "name": "Combarbalá" },
+      { "@type": "City", "name": "Puerto Montt" }
+    ],
+    "location": [
+      { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Combarbalá", "addressRegion": "Región de Coquimbo", "addressCountry": "CL" } },
+      { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Puerto Montt", "addressRegion": "Región de Los Lagos", "addressCountry": "CL" } }
+    ],
+    "telephone": "+56986635815",
+    "founder": {
+      "@type": "Person",
+      "name": "Yojann Cortés Díaz",
+      "jobTitle": "CEO & Ingeniero Informático"
+    },
+    "sameAs": [
+      "https://github.com/YojanCortes",
+      "https://cl.linkedin.com/in/yojanncortes"
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo_pequeno2.png">
+  <link rel="icon" type="image/png" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="logo_kairos_icono.png">
   
-  <title>Soluciones Digitales E.I.R.L. | Yojann Cortés Díaz — CEO & Ingeniero Informático</title>
+  <title>KAIROS | Desarrollo de Software a Medida en Chile</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +64,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=20260914_02">
+  <link rel="stylesheet" href="styles.css?v=20261116_kairos4">
 </head>
 <body>
   <!-- Background Canvas for Particles -->
@@ -38,15 +76,14 @@
   <!-- Header / Navbar -->
   <header class="site-header" id="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="brand-logo" aria-label="Soluciones Digitales E.I.R.L. - Inicio">
+      <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
           <div class="brand-top-row">
-            <span class="logo-main-text">Soluciones Digitales</span>
-            <span class="badge-eirl">E.I.R.L.</span>
+            <span class="logo-main-text">KAIROS <span class="logo-tagline">Soluciones Digitales</span></span>
           </div>
           <span class="logo-lead-sub">
             <span class="lead-name">Yojann Cortés Díaz</span>
@@ -126,12 +163,29 @@
     <section class="hero-section" id="hero">
       <div class="container hero-container">
 
+        <!-- Logo 3D KAIROS -->
+        <div class="kairos-3d-stage" aria-hidden="true">
+          <div class="kairos-3d-float">
+            <div class="kairos-3d-coin" id="kairosCoin">
+              <!-- el canto (grosor) se genera con main.js -->
+              <img src="logo_kairos.png" alt="" class="coin-face coin-front" width="640" height="640">
+              <img src="logo_kairos_reverso.svg" alt="" class="coin-face coin-back" width="640" height="640">
+              <span class="coin-shine"></span>
+            </div>
+          </div>
+          <div class="kairos-3d-shadow"></div>
+        </div>
+
         <h1 class="hero-title">
-          Desarrollamos <span class="gradient-text">Software de Alto Impacto</span> & Soluciones Empresariales con <span class="gradient-text">Inteligencia Artificial</span>.
+          <span class="hero-brand"><span class="hero-brand-red">KAIROS</span> Soluciones Digitales</span>
+          Desarrollo de <span class="gradient-text">Software a Medida</span> y Soluciones con <span class="gradient-text">Inteligencia Artificial</span> en Chile
         </h1>
 
         <p class="hero-description">
-          Liderado por <strong>Yojann Cortés Díaz</strong> (CEO Soluciones Digitales E.I.R.L., Ing. Informático). Diseñamos software a medida, apps móviles, plataformas web y soluciones con <strong>Inteligencia Artificial</strong> para potenciar tu empresa.
+          En <strong>KAIROS Soluciones Digitales</strong> desarrollamos <strong>software a medida</strong> para empresas y emprendedores en Chile. Creamos aplicaciones móviles, páginas web, sistemas POS y soluciones con <strong>Inteligencia Artificial</strong> que automatizan procesos y hacen crecer tu negocio.
+        </p>
+        <p class="hero-location">
+          <i class="fa-solid fa-location-dot"></i> Combarbalá &middot; Puerto Montt &mdash; atendemos todo Chile, también de forma remota
         </p>
 
         <div class="hero-cta-group">
@@ -783,11 +837,11 @@
             <div class="avatar-card">
               <div class="avatar-glow"></div>
               <div class="avatar-inner">
-                <div class="code-badge-top">E.I.R.L.</div>
+                <div class="code-badge-top">KAIROS</div>
                 <div class="avatar-logo-sphere">
-                  <img src="logo2.png" alt="Soluciones Digitales E.I.R.L. Logo" class="avatar-company-logo">
+                  <img src="logo_kairos.png" alt="Logo KAIROS Soluciones Digitales" class="avatar-company-logo">
                 </div>
-                <h3 class="avatar-name">Soluciones Digitales <span class="badge-eirl">E.I.R.L.</span></h3>
+                <h3 class="avatar-name">KAIROS Soluciones Digitales</h3>
                 <p class="avatar-title">Fundador & CEO: Yojann Cortés Díaz (Ing. Informático)</p>
                 <div class="avatar-socials">
                   <a href="https://github.com/YojanCortes" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
@@ -808,7 +862,7 @@
               Soy <strong>Yojann Cortés Díaz</strong>, Ingeniero Informático enfocado en la creación de aplicaciones web, móviles y sistemas escalables. Durante los últimos <strong>4 años</strong> he trabajado en el ciclo de vida completo del desarrollo de software: desde el levantamiento de requerimientos y diseño de arquitectura, hasta la codificación frontend/backend, despliegue cloud y optimización.
             </p>
             <p class="about-paragraph">
-              A través de <strong>Soluciones Digitales E.I.R.L.</strong> entrego un servicio integral de consultoría y desarrollo tecnológico para empresas y emprendedores que buscan digitalizarse con estándares de calidad y soporte de primer nivel.
+              Somos liderados por <strong>Yojann Cortés Díaz</strong>, Ingeniero Informático y CEO, con experiencia en proyectos reales de gestión, reservas, inventario y control de calidad. Cada solución se diseña según lo que tu empresa necesita, no con plantillas genéricas.
             </p>
 
             <div class="about-highlights-grid">
@@ -836,8 +890,8 @@
               <div class="highlight-item">
                 <i class="fa-solid fa-handshake highlight-icon"></i>
                 <div class="highlight-info">
-                  <h4>Soluciones Digitales E.I.R.L.</h4>
-                  <p>Empresa constituida formalmente para contratos y facturación de proyectos de software y hardware POS.</p>
+                  <h4>KAIROS Soluciones Digitales</h4>
+                  <p>Marca de Desarrollo Digital Yojann Brandon Cortes Diaz E.I.R.L., empresa constituida formalmente para contratos y facturación de proyectos de software y hardware POS.</p>
                 </div>
               </div>
             </div>
@@ -990,7 +1044,7 @@
                 <div class="contact-icon location"><i class="fa-solid fa-location-dot"></i></div>
                 <div class="contact-meta">
                   <span class="label">Ubicación & Modalidad</span>
-                  <span class="value">Chile / Remoto a Todo el Mundo</span>
+                  <span class="value">Combarbalá y Puerto Montt, Chile / Remoto a todo el mundo</span>
                 </div>
               </div>
             </div>
@@ -1059,9 +1113,9 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="logo_pequeno2.png" alt="Soluciones Digitales E.I.R.L." class="nav-logo-img">
+            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
             <div class="brand-text-wrap">
-              <span class="logo-main-text">Soluciones Digitales <span class="badge-eirl">E.I.R.L.</span></span>
+              <span class="logo-main-text">KAIROS Soluciones Digitales</span>
               <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
             </div>
           </a>
@@ -1123,6 +1177,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="main.js?v=20260914_01"></script>
+  <script src="main.js?v=20261116_kairos4"></script>
 </body>
 </html>
