@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Proyectos de Software, Apps Móviles, SaaS y Sistemas de Inteligencia Artificial desarrollados por Yojann Cortés Díaz — KAIROS Soluciones Digitales">
-  <meta name="keywords" content="Proyectos Software, Flutter, Python, Django, Inteligencia Artificial, MappsCotas, FoodJan, STOCKJAN, Yojann Cortés Díaz, KAIROS Soluciones Digitales">
+  <meta name="keywords" content="Proyectos Software, Flutter, Python, Django, Inteligencia Artificial, MappsCotas, NutriFix Care, FoodJan, STOCKJAN, Yojann Cortés Díaz, KAIROS Soluciones Digitales">
   <meta name="author" content="Yojann Cortés Díaz">
   
   <!-- Open Graph -->
@@ -13,7 +13,8 @@
   <meta property="og:description" content="Casos reales de ingeniería de software, aplicaciones móviles con IA, plataformas SaaS y arquitecturas cloud escalables.">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon_kairos.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <title>Proyectos & Casos de Éxito | KAIROS Soluciones Digitales — Yojann Cortés Díaz</title>
   
@@ -26,7 +27,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=20260914_02">
+  <link rel="stylesheet" href="styles.css?v=20261118f">
   
   <style>
     /* Dedicated Page Luxury Styles for Proyectos */
@@ -42,14 +43,14 @@
       gap: 0.6rem;
       padding: 0.45rem 1.25rem;
       border-radius: 9999px;
-      background: rgba(0, 242, 254, 0.08);
-      border: 1px solid rgba(0, 242, 254, 0.4);
-      color: #00f2fe;
+      background: rgba(200, 32, 45, 0.08);
+      border: 1px solid rgba(200, 32, 45, 0.4);
+      color: #f04452;
       font-size: 0.88rem;
       font-weight: 700;
       letter-spacing: 0.5px;
       margin-bottom: 1.25rem;
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+      box-shadow: 0 0 20px rgba(200, 32, 45, 0.25);
     }
     
     .ai-badge-header i {
@@ -57,8 +58,8 @@
     }
     
     @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #00f2fe); }
-      50% { transform: scale(1.18); filter: drop-shadow(0 0 10px #a855f7); }
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #f04452); }
+      50% { transform: scale(1.18); filter: drop-shadow(0 0 10px #e0303d); }
     }
 
     .project-detail-hero-title {
@@ -71,7 +72,7 @@
     }
     
     .project-detail-hero-desc {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 1.12rem;
       max-width: 780px;
       margin: 0 auto 2.5rem;
@@ -89,7 +90,7 @@
 
     /* Individual Full-Case Project Section */
     .project-showcase-card {
-      background: linear-gradient(180deg, rgba(20, 30, 55, 0.75) 0%, rgba(10, 15, 28, 0.9) 100%);
+      background: linear-gradient(180deg, rgba(32, 32, 34, 0.75) 0%, rgba(16, 16, 18, 0.9) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 24px;
       padding: 2.5rem;
@@ -103,8 +104,8 @@
     }
 
     .project-showcase-card:hover {
-      border-color: rgba(0, 242, 254, 0.35);
-      box-shadow: 0 25px 50px -12px rgba(0, 242, 254, 0.2);
+      border-color: rgba(200, 32, 45, 0.35);
+      box-shadow: 0 25px 50px -12px rgba(200, 32, 45, 0.2);
     }
 
     .project-showcase-card::before {
@@ -114,7 +115,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, transparent, #00f2fe, #a855f7, transparent);
+      background: linear-gradient(90deg, transparent, #f04452, #e0303d, transparent);
       opacity: 0.8;
     }
 
@@ -147,7 +148,7 @@
       height: 380px;
       border-radius: 16px;
       object-fit: cover;
-      background: #060911;
+      background: #0e0e10;
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease;
@@ -177,7 +178,7 @@
 
     .thumb-img:hover, .thumb-img.active {
       opacity: 1;
-      border-color: #00f2fe;
+      border-color: #f04452;
       transform: translateY(-2px);
     }
 
@@ -199,9 +200,9 @@
       border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 700;
-      background: rgba(0, 242, 254, 0.1);
-      color: #00f2fe;
-      border: 1px solid rgba(0, 242, 254, 0.3);
+      background: rgba(200, 32, 45, 0.1);
+      color: #f04452;
+      border: 1px solid rgba(200, 32, 45, 0.3);
     }
 
     .project-status-badge {
@@ -227,14 +228,14 @@
     }
 
     .project-overview-text {
-      color: #cbd5e1;
+      color: #d4d4d8;
       font-size: 0.98rem;
       line-height: 1.7;
       margin-bottom: 1.5rem;
     }
 
     .project-spec-box {
-      background: rgba(8, 12, 22, 0.7);
+      background: rgba(14, 14, 16, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 14px;
       padding: 1.25rem;
@@ -245,7 +246,7 @@
       font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #00f2fe;
+      color: #f04452;
       font-weight: 700;
       margin-bottom: 0.75rem;
       display: flex;
@@ -262,7 +263,7 @@
 
     .spec-list li {
       font-size: 0.9rem;
-      color: #e2e8f0;
+      color: #e4e4e7;
       display: flex;
       align-items: flex-start;
       gap: 0.6rem;
@@ -291,12 +292,12 @@
       padding: 0.35rem 0.8rem;
       border-radius: 8px;
       font-size: 0.82rem;
-      color: #f1f5f9;
+      color: #f4f4f5;
       font-weight: 500;
     }
 
     .tech-badge-item i {
-      color: #00f2fe;
+      color: #f04452;
     }
 
     /* Cuadros Grid Styling */
@@ -308,8 +309,8 @@
     }
 
     .project-cuadro-card {
-      background: rgba(13, 20, 36, 0.75);
-      border: 1px solid rgba(0, 242, 254, 0.2);
+      background: rgba(20, 20, 22, 0.75);
+      border: 1px solid rgba(200, 32, 45, 0.2);
       border-radius: 20px;
       overflow: hidden;
       display: flex;
@@ -321,15 +322,15 @@
 
     .project-cuadro-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(0, 242, 254, 0.5);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 242, 254, 0.25);
+      border-color: rgba(200, 32, 45, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(200, 32, 45, 0.25);
     }
 
     .cuadro-img-wrapper {
       position: relative;
       height: 220px;
       overflow: hidden;
-      background: #020617;
+      background: #0e0e10;
     }
 
     .cuadro-img {
@@ -353,9 +354,9 @@
       gap: 0.4rem;
       padding: 0.3rem 0.75rem;
       border-radius: 9999px;
-      background: rgba(6, 9, 17, 0.85);
-      border: 1px solid rgba(0, 242, 254, 0.4);
-      color: #00f2fe;
+      background: rgba(14, 14, 16, 0.85);
+      border: 1px solid rgba(200, 32, 45, 0.4);
+      color: #f04452;
       font-size: 0.75rem;
       font-weight: 700;
       backdrop-filter: blur(8px);
@@ -365,7 +366,7 @@
     .cuadro-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(3, 7, 18, 0.7);
+      background: rgba(10, 10, 12, 0.7);
       backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
@@ -395,7 +396,7 @@
 
     .cuadro-tag {
       font-size: 0.75rem;
-      color: #94a3b8;
+      color: #a1a1aa;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 0.2rem 0.55rem;
@@ -406,7 +407,7 @@
     }
 
     .cuadro-tag i {
-      color: #00f2fe;
+      color: #f04452;
     }
 
     .cuadro-title {
@@ -419,7 +420,7 @@
     }
 
     .cuadro-desc {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 0.88rem;
       line-height: 1.55;
       margin: 0;
@@ -452,18 +453,13 @@
   </style>
 </head>
 <body>
-  <!-- Background Canvas -->
-  <canvas id="bgCanvas"></canvas>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
 
   <!-- Header / Navbar -->
   <header class="site-header" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+          <img width="62" height="62" decoding="async" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
@@ -514,7 +510,7 @@
           
           <li class="mobile-cta-item">
             <div class="mobile-menu-card">
-              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+              <a href="index.html#contacto" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
               </a>
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20tus%20proyectos%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
@@ -526,8 +522,8 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
-          <i class="fa-solid fa-calculator"></i>
+        <a href="index.html#contacto" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-paper-plane"></i>
           <span>Cotizar</span>
         </a>
         <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20tus%20proyectos%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
@@ -552,16 +548,26 @@
         <h1 class="section-title" style="font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin: 0 0 1rem; color: #ffffff;">
           Proyectos <span class="gradient-text">Destacados & Sistemas IA</span>
         </h1>
-        <p class="section-subtitle" style="max-width: 680px; margin: 0 auto; color: #94a3b8; font-size: 1.05rem; line-height: 1.6;">
+        <p class="section-subtitle" style="max-width: 680px; margin: 0 auto; color: #a1a1aa; font-size: 1.05rem; line-height: 1.6;">
           Plataformas web transaccionales, aplicaciones móviles publicadas y soluciones industriales desarrolladas por Yojann Cortés Díaz — Fundador & CEO de KAIROS Soluciones Digitales
         </p>
       </div>
+
+      <!-- Filtros por categoría -->
+        <div class="portfolio-filters" role="toolbar" aria-label="Filtrar proyectos por categoría">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true"><i class="fa-solid fa-layer-group"></i> Todos</button>
+          <button class="filter-btn" data-filter="web" aria-pressed="false"><i class="fa-solid fa-globe"></i> Páginas Web</button>
+          <button class="filter-btn" data-filter="mobile" aria-pressed="false"><i class="fa-solid fa-mobile-screen"></i> Apps Móviles</button>
+          <button class="filter-btn" data-filter="saas" aria-pressed="false"><i class="fa-solid fa-cloud"></i> Sistemas & Gestión</button>
+          <button class="filter-btn" data-filter="ecommerce" aria-pressed="false"><i class="fa-solid fa-credit-card"></i> E-Commerce & Pagos</button>
+          <button class="filter-btn" data-filter="ai" aria-pressed="false"><i class="fa-solid fa-brain"></i> IA & Automatización</button>
+        </div>
 
       <!-- Cuadros Grid -->
       <div class="projects-cuadros-grid">
 
         <!-- Cuadro 1: Hotel PMS & Reservas Webpay (PRIMERO) -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="web saas ecommerce">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-hotel"></i> Hotel PMS & Booking</span>
             <img src="Proyectos/hotel/1.PNG" alt="Sistema de Gestión Hotelera & Reservas" class="cuadro-img" loading="lazy" id="cuadro-hotel-img">
@@ -574,7 +580,7 @@
           <div class="cuadro-body">
             <!-- Mini Selector de Pantallas -->
             <div style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.25rem;">
-              <img src="Proyectos/hotel/1.PNG" alt="Reservas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="1. Reservas Web">
+              <img src="Proyectos/hotel/1.PNG" alt="Reservas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(200, 32, 45,0.6);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="1. Reservas Web">
               <img src="Proyectos/hotel/4.PNG" alt="Dashboard" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="4. Dashboard PMS">
               <img src="Proyectos/hotel/2.PNG" alt="Habitaciones" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="2. Habitaciones">
               <img src="Proyectos/hotel/3.PNG" alt="Webpay" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-hotel-img').src=this.src" title="3. Webpay Plus">
@@ -599,7 +605,7 @@
         </article>
 
         <!-- Cuadro 2: Pasajes Webpay (SEGUNDO) -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="web ecommerce">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-shield-check"></i> Transbank Certificado</span>
             <img src="Proyectos/pagina_buses/menupasjaeros.PNG" alt="Sistema Venta de Pasajes Webpay" class="cuadro-img" loading="lazy">
@@ -629,7 +635,7 @@
         </article>
 
         <!-- Cuadro 3: STOCKJAN IA (TERCERO) -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="web saas ai">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-industry"></i> Empresas Torre S.A.</span>
             <img src="Proyectos/sistema gestion empresas torre/pagina.jfif" alt="STOCKJAN Gestión Industrial con IA" class="cuadro-img" loading="lazy">
@@ -659,7 +665,7 @@
         </article>
 
         <!-- Cuadro 4: FoodJan -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="web saas mobile">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-utensils"></i> Producción Operativa</span>
             <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Sistema Gastronómico" class="cuadro-img" loading="lazy">
@@ -689,7 +695,7 @@
         </article>
 
         <!-- Cuadro 5: MappsCotas -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="mobile ai">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-brands fa-google-play"></i> En Google Play Store</span>
             <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con IA" class="cuadro-img" loading="lazy">
@@ -718,8 +724,38 @@
           </div>
         </article>
 
+        <!-- Cuadro: NutriFix Care -->
+        <article class="project-cuadro-card" data-category="mobile ai">
+          <div class="cuadro-img-wrapper">
+            <span class="cuadro-badge"><i class="fa-solid fa-mobile-screen"></i> App Móvil Flutter</span>
+            <img src="Proyectos/nutrifix/pantallas.jpg" alt="NutriFix Care, app móvil de nutrición y cuidado de la piel con IA" class="cuadro-img" loading="lazy" width="608" height="629">
+            <div class="cuadro-overlay">
+              <a href="proyecto-detalle.html?id=nutrifix" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Ficha Completa
+              </a>
+            </div>
+          </div>
+          <div class="cuadro-body">
+            <div class="cuadro-tags">
+              <span class="cuadro-tag"><i class="fa-brands fa-android"></i> Flutter</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-brain"></i> IA Gemini</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
+              <span class="cuadro-tag"><i class="fa-solid fa-wifi"></i> NFC</span>
+            </div>
+            <h3 class="cuadro-title">NutriFix Care — App de Nutrición y Cuidado de la Piel con IA</h3>
+            <p class="cuadro-desc">
+              App para pacientes y nutricionistas: planes de alimentación con macros, diario de comidas, citas y chat, más análisis facial con Inteligencia Artificial y rutinas de piel guiadas por voz.
+            </p>
+            <div class="cuadro-footer">
+              <a href="proyecto-detalle.html?id=nutrifix" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-circle-info"></i> Ver en Detalle <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <!-- Cuadro 6: Bodega Escolar -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="web saas">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-school"></i> En Uso Institucional</span>
             <img src="Proyectos/sistema bodega escuela/portada_bodega.jpg" alt="Sistema Bodega Escuela" class="cuadro-img" loading="lazy">
@@ -749,7 +785,7 @@
         </article>
 
         <!-- Cuadro 7: POS Java -->
-        <article class="project-cuadro-card">
+        <article class="project-cuadro-card" data-category="saas">
           <div class="cuadro-img-wrapper">
             <span class="cuadro-badge"><i class="fa-solid fa-cash-register"></i> Punto de Venta Retail</span>
             <img src="Proyectos/cajpago/6.PNG" alt="Software POS Java" class="cuadro-img" loading="lazy" id="cuadro-pos-img" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
@@ -762,7 +798,7 @@
           <div class="cuadro-body">
             <!-- Mini Selector de Pantallas POS -->
             <div style="display:flex; gap:0.4rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.25rem;">
-              <img src="Proyectos/cajpago/6.PNG" alt="Ventas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="1. Pantalla Venta y Cobro" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
+              <img src="Proyectos/cajpago/6.PNG" alt="Ventas" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(200, 32, 45,0.6);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="1. Pantalla Venta y Cobro" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
               <img src="Proyectos/cajpago/12.PNG" alt="Contabilidad" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="2. Menú Contabilidad y Cierre">
               <img src="Proyectos/cajpago/17.PNG" alt="Registro" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="3. Registro y Escáner">
               <img src="Proyectos/cajpago/BOLETA.jpg" alt="Boleta" style="width:52px; height:34px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('cuadro-pos-img').src=this.src" title="4. Boleta Térmica Impresa">
@@ -791,19 +827,19 @@
     <!-- Bottom CTA Banner with AI aesthetic -->
     <section class="section" style="padding: 2rem 0 5rem;">
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(14,24,47,0.85) 0%, rgba(8,12,22,0.95) 100%); border: 1px solid rgba(0,242,254,0.3); border-radius: 24px; padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(0,242,254,0.15);">
-          <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.35rem 1rem; border-radius:999px; background:rgba(0,242,254,0.1); color:#00f2fe; font-size:0.85rem; font-weight:700; margin-bottom:1rem;">
+        <div style="background: linear-gradient(135deg, rgba(24, 24, 27,0.85) 0%, rgba(14, 14, 16,0.95) 100%); border: 1px solid rgba(200, 32, 45,0.3); border-radius: 24px; padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(200, 32, 45,0.15);">
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.35rem 1rem; border-radius:999px; background:rgba(200, 32, 45,0.1); color:#f04452; font-size:0.85rem; font-weight:700; margin-bottom:1rem;">
             <i class="fa-solid fa-wand-magic-sparkles"></i> ¿Tienes una idea o proyecto en mente?
           </div>
           <h2 style="font-size:clamp(1.8rem, 4vw, 2.7rem); color:#ffffff; font-weight:900; margin-bottom:1rem;">
             Transformemos tu requerimiento en <span class="gradient-text">Software de Clase Mundial</span>
           </h2>
-          <p style="color:#94a3b8; font-size:1.05rem; max-width:650px; margin:0 auto 2rem; line-height:1.6;">
+          <p style="color:#a1a1aa; font-size:1.05rem; max-width:650px; margin:0 auto 2rem; line-height:1.6;">
             Desde una aplicación móvil con Inteligencia Artificial hasta un sistema web transaccional o SaaS escalable. Hablemos hoy mismo para definir alcance, tiempos y presupuesto.
           </p>
           <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-            <a href="index.html#cotizador" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-bolt"></i> Cotizar Proyecto Online
+            <a href="index.html#contacto" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-bolt"></i> Solicitar Cotización
             </a>
             <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20estuve%20revisando%20tu%20p%C3%A1gina%20de%20proyectos%20y%20quisiera%20conversar%20sobre%20una%20propuesta" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
               <i class="fa-brands fa-whatsapp"></i> Iniciar Conversación por WhatsApp
@@ -820,7 +856,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+            <img width="62" height="62" decoding="async" loading="lazy" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
             <div class="brand-text-wrap">
               <span class="logo-main-text">KAIROS Soluciones Digitales</span>
               <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
@@ -838,17 +874,16 @@
             <li><a href="servicios.html">Servicios Detallados</a></li>
             <li><a href="proyectos.html">Proyectos Realizados</a></li>
             <li><a href="productos.html">Tienda POS & Hardware</a></li>
-            <li><a href="index.html#cotizador">Cotizador Online</a></li>
           </ul>
         </div>
 
         <div class="footer-links-group">
           <h4>Especialidades</h4>
           <ul>
-            <li><span><i class="fa-solid fa-brain" style="color:#00f2fe;"></i> Inteligencia Artificial & NLP</span></li>
+            <li><span><i class="fa-solid fa-brain" style="color:#f04452;"></i> Inteligencia Artificial & NLP</span></li>
             <li><span><i class="fa-brands fa-android" style="color:#10b981;"></i> Flutter Móvil iOS & Android</span></li>
             <li><span><i class="fa-brands fa-python" style="color:#f59e0b;"></i> Python, Django & FastAPI</span></li>
-            <li><span><i class="fa-solid fa-credit-card" style="color:#a855f7;"></i> Pasarelas Webpay & Pagos</span></li>
+            <li><span><i class="fa-solid fa-credit-card" style="color:#e0303d;"></i> Pasarelas Webpay & Pagos</span></li>
           </ul>
         </div>
 
@@ -931,6 +966,6 @@
   </script>
 
   <!-- Main scripts -->
-  <script src="main.js?v=20260914_01"></script>
+  <script src="main.js?v=20261118f"></script>
 </body>
 </html>

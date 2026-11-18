@@ -8,7 +8,8 @@
   <meta name="author" content="KAIROS Soluciones Digitales - Yojann Cortés Díaz">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon_kairos.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <title>Detalle de Proyecto & Arquitectura | KAIROS Soluciones Digitales</title>
   
@@ -21,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=20260914_01">
+  <link rel="stylesheet" href="styles.css?v=20261118f">
 
   <!-- Embedded Luxury Styles for Detail Page -->
   <style>
@@ -33,7 +34,7 @@
     }
 
     body {
-      background-color: #030712;
+      background-color: #0e0e10;
       color: #f3f4f6;
       font-family: var(--font-body);
       overflow-x: hidden;
@@ -41,12 +42,17 @@
       padding: 0;
     }
 
+    /* Header de esta página siempre compacto (.scrolled): 74px en escritorio */
+    @media (min-width: 961px) {
+      main .detail-nav-bar { top: 74px; }
+    }
+
     /* Detail Top Control Bar */
     .detail-nav-bar {
       position: sticky;
-      top: 75px;
+      top: var(--header-height, 75px);
       z-index: 100;
-      background: rgba(6, 9, 17, 0.95);
+      background: rgba(14, 14, 16, 0.95);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -80,9 +86,9 @@
     }
 
     .btn-back-catalog:hover {
-      background: rgba(0, 242, 254, 0.15);
-      border-color: #00f2fe;
-      color: #00f2fe;
+      background: rgba(200, 32, 45, 0.15);
+      border-color: #f04452;
+      color: #f04452;
       transform: translateX(-3px);
     }
 
@@ -95,9 +101,9 @@
     }
 
     .project-switcher-btn {
-      background: rgba(18, 26, 47, 0.6);
+      background: rgba(24, 24, 27, 0.6);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #94a3b8;
+      color: #a1a1aa;
       padding: 0.4rem 0.85rem;
       border-radius: 8px;
       font-size: 0.8rem;
@@ -113,20 +119,20 @@
 
     .project-switcher-btn:hover,
     .project-switcher-btn.active {
-      background: rgba(0, 242, 254, 0.15);
-      border-color: #00f2fe;
+      background: rgba(200, 32, 45, 0.15);
+      border-color: #f04452;
       color: #ffffff;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+      box-shadow: 0 0 15px rgba(200, 32, 45, 0.25);
     }
 
     /* Detailed Showcase Card */
     .project-showcase-card {
-      background: rgba(13, 20, 36, 0.85);
-      border: 1px solid rgba(0, 242, 254, 0.25);
+      background: rgba(20, 20, 22, 0.85);
+      border: 1px solid rgba(200, 32, 45, 0.25);
       border-radius: 24px;
       padding: 2.5rem;
       margin-bottom: 3.5rem;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 242, 254, 0.08);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(200, 32, 45, 0.08);
       position: relative;
       transition: all 0.3s ease;
     }
@@ -148,7 +154,7 @@
       width: 100%;
       height: 420px;
       object-fit: contain;
-      background: #020617;
+      background: #0e0e10;
       border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
@@ -171,14 +177,14 @@
       cursor: pointer;
       opacity: 0.7;
       transition: all 0.2s ease;
-      background: #020617;
+      background: #0e0e10;
     }
 
     .thumb-img:hover, .thumb-img.active {
       opacity: 1;
-      border-color: #00f2fe;
+      border-color: #f04452;
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+      box-shadow: 0 0 12px rgba(200, 32, 45, 0.4);
     }
 
     .project-content-side {
@@ -201,9 +207,9 @@
       gap: 0.4rem;
       padding: 0.35rem 0.85rem;
       border-radius: 9999px;
-      background: rgba(0, 242, 254, 0.12);
-      border: 1px solid rgba(0, 242, 254, 0.3);
-      color: #00f2fe;
+      background: rgba(200, 32, 45, 0.12);
+      border: 1px solid rgba(200, 32, 45, 0.3);
+      color: #f04452;
       font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -233,14 +239,14 @@
     }
 
     .project-overview-text {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 0.98rem;
       line-height: 1.65;
       margin: 0;
     }
 
     .project-spec-box {
-      background: rgba(6, 9, 17, 0.6);
+      background: rgba(14, 14, 16, 0.6);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       padding: 1.25rem;
@@ -257,7 +263,7 @@
     }
 
     .spec-title i {
-      color: #00f2fe;
+      color: #f04452;
     }
 
     .spec-list {
@@ -271,7 +277,7 @@
 
     .spec-list li {
       font-size: 0.88rem;
-      color: #cbd5e1;
+      color: #d4d4d8;
       display: flex;
       align-items: flex-start;
       gap: 0.6rem;
@@ -299,12 +305,12 @@
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.12);
       font-size: 0.82rem;
-      color: #e2e8f0;
+      color: #e4e4e7;
       font-weight: 500;
     }
 
     .tech-badge-item i {
-      color: #00f2fe;
+      color: #f04452;
     }
 
     .project-action-buttons {
@@ -329,17 +335,13 @@
   </style>
 </head>
 <body>
-  <!-- Background Canvas for Particles -->
-  <canvas id="bgCanvas"></canvas>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
 
   <!-- Header / Navbar -->
   <header class="site-header scrolled" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+          <img width="62" height="62" decoding="async" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
@@ -360,7 +362,7 @@
           <li class="nav-item"><a href="proyectos.html" class="nav-link active"><i class="fa-solid fa-shapes"></i> Proyectos</a></li>
           <li class="nav-item"><a href="servicios.html" class="nav-link"><i class="fa-solid fa-code"></i> Servicios</a></li>
           <li class="nav-item"><a href="productos.html" class="nav-link"><i class="fa-solid fa-store"></i> Tienda POS</a></li>
-          <li class="nav-item"><a href="index.html#cotizador" class="nav-link"><i class="fa-solid fa-calculator"></i> Cotizador</a></li>
+          <li class="nav-item"><a href="index.html#contacto" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contacto</a></li>
         </ul>
       </nav>
 
@@ -373,7 +375,7 @@
     </div>
   </header>
 
-  <main style="padding-top: 85px; padding-bottom: 5rem;">
+  <main style="padding-bottom: 5rem;">
 
     <!-- Top Action / Switcher Bar -->
     <div class="detail-nav-bar">
@@ -388,6 +390,7 @@
           <button class="project-switcher-btn" data-target="stockjan"><i class="fa-solid fa-industry"></i> STOCKJAN IA</button>
           <button class="project-switcher-btn" data-target="foodjan"><i class="fa-solid fa-utensils"></i> FoodJan POS</button>
           <button class="project-switcher-btn" data-target="mappscotas"><i class="fa-solid fa-paw"></i> MappsCotas</button>
+          <button class="project-switcher-btn" data-target="nutrifix"><i class="fa-solid fa-leaf"></i> NutriFix Care</button>
           <button class="project-switcher-btn" data-target="bodega-escuela"><i class="fa-solid fa-school"></i> Bodega Escolar</button>
           <button class="project-switcher-btn" data-target="pos-java"><i class="fa-solid fa-cash-register"></i> POS Java</button>
         </div>
@@ -437,7 +440,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica & Pagos</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Desarrollado sobre Django 5.0 con ORM relacional y transacciones seguras con base de datos. Integración certificada del SDK de Webpay Plus Transbank para procesamiento de tarjetas de débito/crédito, y pipeline automatizado con ReportLab para renderizado de vouchers y contratos de hospedaje en PDF.
               </p>
             </div>
@@ -454,8 +457,8 @@
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20del%20sistema%20Hotel%20PMS%20y%20quisiera%20cotizar%20un%20sistema%20para%20hotel%20o%20caba%C3%B1as" target="_blank" rel="noopener" class="btn btn-primary">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema Hotelero
               </a>
-              <a href="index.html#cotizador" class="btn btn-glass">
-                <i class="fa-solid fa-calculator"></i> Cotizar Plataforma Web
+              <a href="index.html#contacto" class="btn btn-glass">
+                <i class="fa-solid fa-paper-plane"></i> Cotizar Plataforma Web
               </a>
             </div>
           </div>
@@ -501,7 +504,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-lock"></i> Seguridad & Concurrencia Transaccional</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Manejo de transacciones atómicas con bloqueos `SELECT FOR UPDATE` en base de datos para garantizar que dos usuarios no reserven el mismo asiento en milésimas de segundo. Webhook con firma criptográfica de Transbank para verificación de pagos.
               </p>
             </div>
@@ -518,8 +521,8 @@
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20la%20plataforma%20de%20pasajes%20con%20Webpay%20y%20quisiera%20cotizar%20un%20sistema%20con%20pasarela%20de%20pago" target="_blank" rel="noopener" class="btn btn-primary">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema con Pasarela de Pago
               </a>
-              <a href="index.html#cotizador" class="btn btn-glass">
-                <i class="fa-solid fa-calculator"></i> Cotizar E-Commerce
+              <a href="index.html#contacto" class="btn btn-glass">
+                <i class="fa-solid fa-paper-plane"></i> Cotizar E-Commerce
               </a>
             </div>
           </div>
@@ -563,7 +566,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-brain"></i> Inteligencia Artificial & IoT</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Microservicio NLP de IA que interpreta consultas en lenguaje natural ("¿cuál es el stock de bobinas tipo A en línea 3?") y ejecuta queries automáticas y seguras contra el almacén de datos, reduciendo tiempos de consulta en planta a 2 segundos.
               </p>
             </div>
@@ -627,7 +630,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Backend robusto en Django REST Framework con base de datos relacional MySQL. Integración directa de protocolos ESC/POS para impresoras térmicas de 58mm y 80mm. WebSockets para actualización instantánea del estado de los platos en cocina.
               </p>
             </div>
@@ -689,7 +692,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-microchip"></i> Arquitectura Técnica</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 State Management reactivo con Provider/Bloc, arquitectura limpia desacoplada, reglas de seguridad granulares en Firebase Cloud Firestore, autenticación social OAuth y procesamiento de imágenes con modelos optimizados para respuesta en milisegundos.
               </p>
             </div>
@@ -706,8 +709,73 @@
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20de%20MappsCotas%20y%20me%20gustar%C3%ADa%20cotizar%20una%20app%20m%C3%B3vil%20similar%20o%20con%20IA" target="_blank" rel="noopener" class="btn btn-primary">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar una App Móvil Similar
               </a>
-              <a href="index.html#cotizador" class="btn btn-glass">
-                <i class="fa-solid fa-calculator"></i> Calcular Presupuesto
+              <a href="index.html#contacto" class="btn btn-glass">
+                <i class="fa-solid fa-paper-plane"></i> Solicitar Cotización
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================================================================
+           CASO: NutriFix Care (App de Nutrición y Cuidado de la Piel con IA)
+           =================================================================== -->
+      <article class="project-showcase-card" id="nutrifix" data-category="mobile ai">
+        <div class="project-showcase-grid">
+          <div class="project-gallery-wrap">
+            <img src="Proyectos/nutrifix/pantallas.jpg" alt="Pantallas de NutriFix Care" class="main-project-image" id="img-nutrifix">
+            <div class="gallery-thumbnails">
+              <img src="Proyectos/nutrifix/pantallas.jpg" alt="Pantallas de la app" class="thumb-img active" onclick="swapImage('img-nutrifix', this.src, this)" loading="lazy">
+              <img src="Proyectos/nutrifix/logo.jpg" alt="Logo NutriFix" class="thumb-img" onclick="swapImage('img-nutrifix', this.src, this)" loading="lazy">
+              <img src="Proyectos/nutrifix/icono_app.jpg" alt="Ícono de la app NutriFix Care" class="thumb-img" onclick="swapImage('img-nutrifix', this.src, this)" loading="lazy">
+            </div>
+
+            <div class="project-spec-box" style="margin-top: 0.5rem;">
+              <div class="spec-title"><i class="fa-solid fa-chart-line"></i> Funcionalidades Clave</div>
+              <ul class="spec-list">
+                <li><i class="fa-solid fa-circle-check"></i> Dos perfiles: paciente y nutricionista, vinculados por código o tag NFC.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Planes de alimentación con macros, diario de comidas, recetas y seguimiento de progreso.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Análisis facial con IA (Gemini Vision) y rutinas de piel AM/PM.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Masajes faciales guiados por voz y recordatorios de comidas.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Citas, calendario, chat, fichas clínicas y planes de suscripción premium.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="project-content-side">
+            <div class="project-header-row">
+              <span class="project-type-badge"><i class="fa-solid fa-mobile-screen"></i> App Móvil & Salud con IA</span>
+              <span class="project-status-badge"><i class="fa-solid fa-leaf"></i> Nutrición & Estética</span>
+            </div>
+
+            <h1 class="project-item-title">NutriFix Care — App de Nutrición y Cuidado de la Piel con IA</h1>
+
+            <p class="project-overview-text">
+              Aplicación móvil en <strong>Flutter</strong> que conecta a pacientes con su nutricionista. El paciente completa un onboarding con sus datos, IMC y alergias alimentarias, recibe su plan nutricional con macros y registra sus comidas. El nutricionista gestiona pacientes, fichas, historial, métricas y citas desde la misma app. Suma un módulo de estética con <strong>análisis facial por Inteligencia Artificial</strong>, rutinas de cuidado de la piel y masajes faciales guiados por voz.
+            </p>
+
+            <div class="project-spec-box">
+              <div class="spec-title"><i class="fa-solid fa-microchip"></i> Arquitectura Técnica</div>
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
+                Backend en Firebase (Authentication, Cloud Firestore, Storage y Analytics) con reglas de seguridad por rol. Análisis de imágenes del rostro con Google Gemini Vision, vinculación paciente–nutricionista mediante tags NFC, notificaciones locales programadas y síntesis de voz para las rutinas guiadas.
+              </p>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge-item"><i class="fa-brands fa-android"></i> Flutter / Dart</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-fire"></i> Firebase</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-brain"></i> Gemini Vision IA</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-wifi"></i> NFC</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-volume-high"></i> Text-to-Speech</span>
+              <span class="tech-badge-item"><i class="fa-solid fa-bell"></i> Notificaciones</span>
+            </div>
+
+            <div class="project-action-buttons">
+              <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20proyecto%20NutriFix%20Care%20y%20quisiera%20cotizar%20una%20app%20m%C3%B3vil%20similar" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar una App de Salud Similar
+              </a>
+              <a href="index.html#contacto" class="btn btn-glass">
+                <i class="fa-solid fa-paper-plane"></i> Solicitar Cotización
               </a>
             </div>
           </div>
@@ -752,7 +820,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Construido en Python y Django con base de datos MySQL relacional. Roles de usuario estrictos (administrador, bodeguero, inspector), vistas optimizadas para tablets y lectores de pistola USB, y generador de reportes Excel asíncrono.
               </p>
             </div>
@@ -769,8 +837,8 @@
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20vi%20el%20detalle%20del%20sistema%20de%20bodega%20y%20quisiera%20cotizar%20un%20sistema%20de%20gesti%C3%B3n" target="_blank" rel="noopener" class="btn btn-primary">
                 <i class="fa-brands fa-whatsapp"></i> Cotizar Sistema de Bodega
               </a>
-              <a href="index.html#cotizador" class="btn btn-glass">
-                <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+              <a href="index.html#contacto" class="btn btn-glass">
+                <i class="fa-solid fa-paper-plane"></i> Cotizar Proyecto
               </a>
             </div>
           </div>
@@ -817,7 +885,7 @@
 
             <div class="project-spec-box">
               <div class="spec-title"><i class="fa-solid fa-server"></i> Arquitectura Técnica</div>
-              <p style="font-size:0.9rem; color:#94a3b8; line-height:1.6; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:#a1a1aa; line-height:1.6; margin-bottom:0.75rem;">
                 Arquitectura Modelo-Vista-Controlador (MVC) en Java 11+, interfaz Swing de respuesta inmediata a atajos de teclado numérico, persistencia transaccional con JDBC y driver universal de impresión térmica por socket y puerto serie.
               </p>
             </div>
@@ -847,11 +915,11 @@
     <!-- Bottom CTA Banner -->
     <section class="section" style="padding: 1rem 0 4rem;">
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(14,24,47,0.85) 0%, rgba(8,12,22,0.95) 100%); border: 1px solid rgba(0,242,254,0.3); border-radius: 24px; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(0,242,254,0.15);">
+        <div style="background: linear-gradient(135deg, rgba(24, 24, 27,0.85) 0%, rgba(14, 14, 16,0.95) 100%); border: 1px solid rgba(200, 32, 45,0.3); border-radius: 24px; padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 0 40px rgba(200, 32, 45,0.15);">
           <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.3rem); color:#ffffff; font-weight:800; margin-bottom:1rem;">
             ¿Necesitas una Arquitectura Similar para tu Empresa?
           </h2>
-          <p style="color:#94a3b8; font-size:1rem; max-width:650px; margin:0 auto 2rem; line-height:1.6;">
+          <p style="color:#a1a1aa; font-size:1rem; max-width:650px; margin:0 auto 2rem; line-height:1.6;">
             Diseñamos soluciones personalizadas bajo estrictos estándares de ingeniería, seguridad y escalabilidad con facturación formal.
           </p>
           <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
@@ -873,7 +941,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+            <img width="62" height="62" decoding="async" loading="lazy" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
             <div class="brand-text-wrap">
               <span class="logo-main-text">KAIROS Soluciones Digitales</span>
               <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
@@ -891,17 +959,16 @@
             <li><a href="servicios.html">Servicios Detallados</a></li>
             <li><a href="proyectos.html">Proyectos Realizados</a></li>
             <li><a href="productos.html">Tienda POS & Hardware</a></li>
-            <li><a href="index.html#cotizador">Cotizador Online</a></li>
           </ul>
         </div>
 
         <div class="footer-links-group">
           <h4>Especialidades</h4>
           <ul>
-            <li><span><i class="fa-solid fa-brain" style="color:#00f2fe;"></i> Inteligencia Artificial & NLP</span></li>
+            <li><span><i class="fa-solid fa-brain" style="color:#f04452;"></i> Inteligencia Artificial & NLP</span></li>
             <li><span><i class="fa-brands fa-android" style="color:#10b981;"></i> Flutter Móvil iOS & Android</span></li>
             <li><span><i class="fa-brands fa-python" style="color:#f59e0b;"></i> Python, Django & FastAPI</span></li>
-            <li><span><i class="fa-solid fa-credit-card" style="color:#a855f7;"></i> Pasarelas Webpay & Pagos</span></li>
+            <li><span><i class="fa-solid fa-credit-card" style="color:#e0303d;"></i> Pasarelas Webpay & Pagos</span></li>
           </ul>
         </div>
 
@@ -957,6 +1024,7 @@
         'foodjan': 'foodjan',
         '5': 'mappscotas',
         'mappscotas': 'mappscotas',
+        'nutrifix': 'nutrifix',
         '6': 'bodega-escuela',
         'bodega-escuela': 'bodega-escuela',
         '7': 'pos-java',
@@ -1019,6 +1087,6 @@
   </script>
 
   <!-- Main Scripts -->
-  <script src="main.js?v=20260914_01"></script>
+  <script src="main.js?v=20261118f"></script>
 </body>
 </html>

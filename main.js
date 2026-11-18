@@ -4,184 +4,14 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initParticleCanvas();
   initNavbar();
   initMetricsCounter();
-  initCalculator();
   initPortfolio();
   initContactForm();
   initCurrentYear();
   initAiCopilot();
   initAutomatedMessaging();
 });
-
-/* --------------------------------------------------------------------------
-   1. Interactive Particle Canvas Background
-   -------------------------------------------------------------------------- */
-function initParticleCanvas() {
-  const canvas = document.getElementById('bgCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-
-  const particles = [];
-  // Increased density for rich neural network aesthetic
-  const particleCount = Math.min(Math.floor(window.innerWidth / 11), 125);
-
-  const mouse = {
-    x: null,
-    y: null,
-    radius: 170
-  };
-
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
-  // Lucky primed numbers (12, 17, 33) subtly integrated for subconscious priming
-  const primedNumbers = [12, 17, 33];
-  let primeIndex = 0;
-
-  class Particle {
-    constructor(index) {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.size = Math.random() * 2.2 + 1;
-      this.baseX = this.x;
-      this.baseY = this.y;
-      this.speedX = (Math.random() - 0.5) * 0.85;
-      this.speedY = (Math.random() - 0.5) * 0.85;
-      this.color = Math.random() > 0.45 ? '#00f2fe' : (Math.random() > 0.5 ? '#7f00ff' : '#38bdf8');
-      
-      // Sparsely assign lucky primed numbers to a tiny fraction of nodes (~7% of nodes)
-      this.primedNum = null;
-      if (index % 15 === 0) {
-        this.primedNum = primedNumbers[primeIndex % primedNumbers.length];
-        primeIndex++;
-      }
-
-      // Security trust sigil on 2 special guardian nodes
-      this.isSecuritySigil = (index === 7 || index === 33);
-      this.pulsePhase = Math.random() * Math.PI * 2;
-    }
-
-    draw() {
-      this.pulsePhase += 0.02;
-      const pulseAlpha = 0.45 + Math.sin(this.pulsePhase) * 0.25;
-
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = 9;
-      ctx.shadowColor = this.color;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-
-      // Subconscious primed lucky numbers (rendered softly in tiny mono font)
-      if (this.primedNum) {
-        ctx.font = '500 8.5px "JetBrains Mono", monospace';
-        ctx.fillStyle = `rgba(0, 242, 254, ${pulseAlpha * 0.38})`;
-        ctx.fillText(this.primedNum, this.x + 4, this.y - 4);
-      }
-
-      // Subtle security trust sigil: glowing shield / lock glyph to inspire safety & client confidence
-      if (this.isSecuritySigil) {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.strokeStyle = `rgba(16, 185, 129, ${pulseAlpha * 0.55})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        // Security shield path
-        ctx.moveTo(0, -7);
-        ctx.lineTo(6, -4);
-        ctx.lineTo(5, 3);
-        ctx.lineTo(0, 7);
-        ctx.lineTo(-5, 3);
-        ctx.lineTo(-6, -4);
-        ctx.closePath();
-        ctx.stroke();
-
-        // Inner lock/key core
-        ctx.beginPath();
-        ctx.arc(0, -1, 1.6, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(52, 211, 153, ${pulseAlpha * 0.65})`;
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-
-      if (this.x < 0 || this.x > width) this.speedX = -this.speedX;
-      if (this.y < 0 || this.y > height) this.speedY = -this.speedY;
-
-      // Mouse collision / repulsion
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < mouse.radius) {
-          const angle = Math.atan2(dy, dx);
-          const force = (mouse.radius - distance) / mouse.radius;
-          this.x -= Math.cos(angle) * force * 3.5;
-          this.y -= Math.sin(angle) * force * 3.5;
-        }
-      }
-    }
-  }
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle(i));
-  }
-
-  function connect() {
-    for (let a = 0; a < particles.length; a++) {
-      for (let b = a; b < particles.length; b++) {
-        const dx = particles[a].x - particles[b].x;
-        const dy = particles[a].y - particles[b].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 140) {
-          const alpha = 1 - dist / 140;
-          ctx.strokeStyle = `rgba(0, 242, 254, ${alpha * 0.22})`;
-          ctx.lineWidth = 0.9;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(particles[b].x, particles[b].y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
-    connect();
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
 
 /* --------------------------------------------------------------------------
    2. Navbar, Mobile Menu & Smooth Scroll Active Spy
@@ -306,175 +136,11 @@ function initMetricsCounter() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Interactive Project Budget Estimator (Cotizador)
-   -------------------------------------------------------------------------- */
-function initCalculator() {
-  const projectRadios = document.querySelectorAll('input[name="project_type"]');
-  const moduleCheckboxes = document.querySelectorAll('input[name="module"]');
-  const speedRadios = document.querySelectorAll('input[name="speed"]');
-
-  const totalPriceEl = document.getElementById('calcTotalPrice');
-  const deliveryTimeEl = document.getElementById('calcDeliveryTime');
-  const breakdownEl = document.getElementById('calcBreakdown');
-  const btnSendWhatsapp = document.getElementById('btnSendQuoteWhatsapp');
-  const btnCopy = document.getElementById('btnCopyQuote');
-
-  const typeLabels = {
-    landing: 'Landing Page / Web Comercial',
-    webapp: 'Plataforma Web / SaaS',
-    ecommerce: 'Tienda Online / E-Commerce',
-    mobile: 'App Móvil (iOS / Android)'
-  };
-
-  const moduleLabels = {
-    auth: 'Autenticación & Roles',
-    payments: 'Pasarela de Pagos Online',
-    admin: 'Panel de Administración',
-    seo_opt: 'SEO Técnico & Velocidad 99+',
-    ai_integration: 'Integración Inteligencia Artificial',
-    multilang: 'Soporte Multilenguaje'
-  };
-
-  function updateCalculation() {
-    let basePrice = 0;
-    let selectedType = '';
-    let estimatedTime = '';
-
-    // Step 1: Project Type
-    projectRadios.forEach((radio) => {
-      const parentLabel = radio.closest('.calc-radio-card');
-      if (radio.checked) {
-        parentLabel.classList.add('active');
-        basePrice = parseFloat(radio.getAttribute('data-base-price'));
-        selectedType = radio.value;
-        estimatedTime = radio.getAttribute('data-time');
-      } else {
-        parentLabel.classList.remove('active');
-      }
-    });
-
-    // Step 2: Modules
-    let modulesPrice = 0;
-    const selectedModules = [];
-
-    moduleCheckboxes.forEach((chk) => {
-      const parentLabel = chk.closest('.calc-checkbox-card');
-      if (chk.checked) {
-        parentLabel.classList.add('checked');
-        const price = parseFloat(chk.getAttribute('data-price'));
-        modulesPrice += price;
-        selectedModules.push({ id: chk.value, price });
-      } else {
-        parentLabel.classList.remove('checked');
-      }
-    });
-
-    // Step 3: Urgency multiplier
-    let multiplier = 1.0;
-    let speedType = 'standard';
-
-    speedRadios.forEach((radio) => {
-      const parentLabel = radio.closest('.speed-radio');
-      if (radio.checked) {
-        parentLabel.classList.add('active');
-        multiplier = parseFloat(radio.getAttribute('data-multiplier'));
-        speedType = radio.value;
-      } else {
-        parentLabel.classList.remove('active');
-      }
-    });
-
-    const subtotal = basePrice + modulesPrice;
-    const total = Math.round(subtotal * multiplier);
-    const formatCLP = (val) => new Intl.NumberFormat('es-CL').format(Math.round(val));
-
-    // Update UI Price in Chilean Pesos
-    if (totalPriceEl) {
-      totalPriceEl.innerHTML = `$${formatCLP(total)} <small>CLP</small>`;
-    }
-
-    if (deliveryTimeEl) {
-      const isExpress = speedType === 'express';
-      deliveryTimeEl.innerHTML = `<i class="fa-regular fa-clock"></i> Tiempo estimado: <strong>${estimatedTime}</strong> ${
-        isExpress ? '<span style="color:var(--primary);">(Prioritario 🚀)</span>' : ''
-      }`;
-    }
-
-    // Update Breakdown in Chilean Pesos
-    if (breakdownEl) {
-      let html = `
-        <div class="breakdown-item">
-          <span>${typeLabels[selectedType] || 'Base'}</span>
-          <span>$${formatCLP(basePrice)} CLP</span>
-        </div>
-      `;
-
-      selectedModules.forEach((mod) => {
-        html += `
-          <div class="breakdown-item">
-            <span>+ ${moduleLabels[mod.id] || mod.id}</span>
-            <span>$${formatCLP(mod.price)} CLP</span>
-          </div>
-        `;
-      });
-
-      if (multiplier > 1.0) {
-        html += `
-          <div class="breakdown-item" style="color:var(--primary)">
-            <span>+ Entrega Express Prioritaria</span>
-            <span>+25%</span>
-          </div>
-        `;
-      }
-
-      breakdownEl.innerHTML = html;
-    }
-
-    // Prepare WhatsApp Quotation Message in Chilean Pesos
-    const modulesText = selectedModules.map((m) => `• ${moduleLabels[m.id]}`).join('%0A');
-    const waMessage = `Hola Yojann! He calculado un presupuesto en tu sitio web:%0A%0A` +
-      `📌 *Tipo de Proyecto:* ${typeLabels[selectedType]}%0A` +
-      `⚙️ *Módulos seleccionados:*%0A${modulesText ? modulesText : '• Ninguno adicional'}%0A` +
-      `⚡ *Plazo:* ${speedType === 'express' ? 'Express Prioritario' : 'Estándar'} (${estimatedTime})%0A` +
-      `💰 *Presupuesto Estimado:* $${formatCLP(total)} CLP%0A%0A` +
-      `¿Podemos coordinar una llamada o reunión para definir los detalles?`;
-
-    if (btnSendWhatsapp) {
-      btnSendWhatsapp.onclick = () => {
-        window.open(`https://wa.me/56986635815?text=${waMessage}`, '_blank');
-      };
-    }
-
-    if (btnCopy) {
-      btnCopy.onclick = () => {
-        const plainText = `Cotización para Yojann Cortés Díaz (Fundador & CEO - KAIROS Soluciones Digitales):\n` +
-          `- Proyecto: ${typeLabels[selectedType]}\n` +
-          `- Módulos: ${selectedModules.map((m) => moduleLabels[m.id]).join(', ') || 'Básicos'}\n` +
-          `- Tiempo estimado: ${estimatedTime}\n` +
-          `- Total estimado: $${formatCLP(total)} CLP`;
-
-        navigator.clipboard.writeText(plainText).then(() => {
-          showToast('¡Resumen de cotización copiado al portapapeles!');
-        });
-      };
-    }
-  }
-
-  // Bind change listeners
-  projectRadios.forEach((r) => r.addEventListener('change', updateCalculation));
-  moduleCheckboxes.forEach((c) => c.addEventListener('change', updateCalculation));
-  speedRadios.forEach((s) => s.addEventListener('change', updateCalculation));
-
-  // Initial call
-  updateCalculation();
-}
-
-/* --------------------------------------------------------------------------
    5. Portfolio Filtering & Interactive Modal
    -------------------------------------------------------------------------- */
 function initPortfolio() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.project-card[data-category], .project-cuadro-card[data-category]');
   const modal = document.getElementById('projectModal');
   const modalContent = document.getElementById('modalContent');
   const modalClose = document.getElementById('modalCloseBtn');
@@ -597,20 +263,26 @@ function initPortfolio() {
   };
 
   // Filter functionality
+  // Cantidad de proyectos por filtro, ej: "Apps Móviles (2)"
+  filterBtns.forEach((btn) => {
+    const f = btn.getAttribute('data-filter');
+    const n = [...projectCards].filter((c) => f === 'all' || c.dataset.category.split(' ').includes(f)).length;
+    btn.insertAdjacentHTML('beforeend', ` <span class="filter-count">${n}</span>`);
+  });
+
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => b.classList.remove('active'));
+      filterBtns.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       const filter = btn.getAttribute('data-filter');
-
       projectCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category.includes(filter)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+        const show = filter === 'all' || card.dataset.category.split(' ').includes(filter);
+        card.style.display = show ? '' : 'none';
       });
     });
   });
@@ -624,8 +296,8 @@ function initPortfolio() {
 
       if (data && modal && modalContent) {
         modalContent.innerHTML = `
-          ${data.img ? `<div style="text-align:center; margin-bottom:1.25rem; background:rgba(6,9,17,0.7); border-radius:12px; padding:0.75rem; border:1px solid rgba(255,255,255,0.08);"><img src="${data.img}" alt="${data.title}" style="max-height:240px; margin:0 auto; border-radius:8px; object-fit:contain;"></div>` : ''}
-          <div style="display:inline-block; padding: 0.3rem 0.8rem; background:rgba(0,242,254,0.1); border:1px solid rgba(0,242,254,0.3); border-radius:999px; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:1rem;">
+          ${data.img ? `<div style="text-align:center; margin-bottom:1.25rem; background:rgba(14, 14, 16,0.7); border-radius:12px; padding:0.75rem; border:1px solid rgba(255,255,255,0.08);"><img src="${data.img}" alt="${data.title}" style="max-height:240px; margin:0 auto; border-radius:8px; object-fit:contain;"></div>` : ''}
+          <div style="display:inline-block; padding: 0.3rem 0.8rem; background:rgba(200, 32, 45,0.1); border:1px solid rgba(200, 32, 45,0.3); border-radius:999px; color:var(--primary); font-size:0.8rem; font-weight:600; margin-bottom:1rem;">
             ${data.category}
           </div>
           <h2 style="font-size:1.5rem; margin-bottom:0.75rem; color:#ffffff;">${data.title}</h2>
@@ -641,11 +313,11 @@ function initPortfolio() {
             ${data.metrics.map((m) => `<li style="font-size:0.88rem; color:#ffffff; display:flex; align-items:center; gap:0.5rem;"><i class="fa-solid fa-check" style="color:var(--accent-emerald);"></i> ${m}</li>`).join('')}
           </ul>
 
-          <h4 style="font-size:1rem; color:#ffffff; margin-bottom:0.6rem;"><i class="fa-solid fa-server" style="color:#c084fc;"></i> Arquitectura & Solución Técnica</h4>
+          <h4 style="font-size:1rem; color:#ffffff; margin-bottom:0.6rem;"><i class="fa-solid fa-server" style="color:#f87171;"></i> Arquitectura & Solución Técnica</h4>
           <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin-bottom:1.75rem;">${data.architecture}</p>
 
           <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
-            <a href="#cotizador" class="btn btn-primary" onclick="document.getElementById('projectModal').classList.remove('open')">
+            <a href="#contacto" class="btn btn-primary" onclick="document.getElementById('projectModal').classList.remove('open')">
               <i class="fa-solid fa-bolt"></i> Cotizar Proyecto Similar
             </a>
             <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20me%20interesó%20mucho%20el%20proyecto%20${encodeURIComponent(data.title)}" target="_blank" rel="noopener" class="btn btn-glass">
@@ -715,7 +387,7 @@ function initContactForm() {
         statusEl.innerHTML = `
           <div style="display:flex; flex-direction:column; gap:0.6rem; margin-top:0.75rem; padding:0.85rem; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:10px;">
             <span style="color:#34d399; font-weight:600;"><i class="fa-solid fa-circle-check"></i> ¡Gracias ${name}! Tu mensaje ha sido registrado correctamente.</span>
-            <span style="font-size:0.83rem; color:#94a3b8;">Para atención inmediata, también puedes enviar una copia directa a WhatsApp con 1 clic:</span>
+            <span style="font-size:0.83rem; color:#a1a1aa;">Para atención inmediata, también puedes enviar una copia directa a WhatsApp con 1 clic:</span>
             <a href="https://wa.me/56986635815?text=${waText}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="display:inline-flex; align-items:center; gap:0.4rem; width:fit-content;">
               <i class="fa-brands fa-whatsapp"></i> Abrir Copia en WhatsApp
             </a>
@@ -791,7 +463,7 @@ function initAiCopilot() {
           <i class="fa-solid fa-robot"></i>
         </div>
         <div class="copilot-header-titles">
-          <h4>KAIROS AI <i class="fa-solid fa-sparkles" style="color:#00f2fe; font-size:0.75rem;"></i></h4>
+          <h4>KAIROS AI <i class="fa-solid fa-sparkles" style="color:#f04452; font-size:0.75rem;"></i></h4>
           <span><i class="fa-solid fa-circle" style="font-size:0.5rem; color:#10b981;"></i> En línea • IA Copilot v3.8</span>
         </div>
       </div>
@@ -873,7 +545,7 @@ function initAiCopilot() {
       • <strong>Desarrollo Web / SaaS:</strong> Paneles modernos, dashboards y conexión con APIs.<br>
       • <strong>Apps Móviles:</strong> Creadas en Flutter (código único para iOS + Android con rendimiento nativo).<br>
       • <strong>Tiempos estimados:</strong> De 2 a 6 semanas según requerimientos.<br><br>
-      Usa nuestro cotizador o envíame la solicitud directa por WhatsApp:`,
+      Escríbeme desde el formulario de contacto o envíame la solicitud directa por WhatsApp:`,
       waText: 'Hola Yojann, estuve consultando con tu Asistente IA y quisiera cotizar un desarrollo de software/app para mi negocio.'
     },
     ia: {
@@ -887,6 +559,7 @@ function initAiCopilot() {
     proyectos: {
       text: `📁 <strong>Casos de Éxito & Portafolio Completo:</strong><br><br>
       • <strong>MappsCotas:</strong> App Flutter con IA en Google Play Store.<br>
+      • <strong>NutriFix Care:</strong> App Flutter de nutrición y cuidado de la piel con análisis facial por IA.<br>
       • <strong>FoodJan:</strong> SaaS gastronómico con comanderas y tickets térmicos.<br>
       • <strong>Venta de Pasajes:</strong> Conexión transaccional Webpay Plus Transbank.<br>
       • <strong>STOCKJAN:</strong> IA industrial operativa en Productos Torre S.A.<br><br>
@@ -1011,7 +684,18 @@ function initAutomatedMessaging() {
   let dragging = false, lastX = 0, lastY = 0, lastT = 0;
   let prev = performance.now();
 
+  // Pausa el giro cuando el logo no está en pantalla (ahorra CPU/GPU)
+  let visible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      const was = visible;
+      visible = entry.isIntersecting;
+      if (visible && !was) { prev = performance.now(); requestAnimationFrame(frame); }
+    }).observe(stage);
+  }
+
   function frame(now) {
+    if (!visible) return;
     const dt = Math.min((now - prev) / 1000, 0.05);
     prev = now;
     if (!dragging) {
@@ -1044,4 +728,28 @@ function initAutomatedMessaging() {
   const end = () => { dragging = false; stage.classList.remove('is-dragging'); };
   stage.addEventListener('pointerup', end);
   stage.addEventListener('pointercancel', end);
+})();
+
+// Imágenes de proyectos: detecta si son de celular, PC o cuadradas
+// y les pone el marco correspondiente (ver CSS "marco automático").
+(function () {
+  const SELECTOR = '.project-real-img, .cuadro-img, .main-project-image';
+
+  function classify(img) {
+    if (!img.naturalWidth) return;
+    const r = img.naturalWidth / img.naturalHeight;
+    img.dataset.device = r < 0.8 ? 'phone' : r > 1.25 ? 'desktop' : 'square';
+  }
+
+  document.querySelectorAll(SELECTOR).forEach((img) => {
+    // En la ficha de detalle, la imagen grande va dentro de un "escenario"
+    if (img.classList.contains('main-project-image') && !img.parentElement.classList.contains('media-stage')) {
+      const stage = document.createElement('div');
+      stage.className = 'media-stage';
+      img.parentNode.insertBefore(stage, img);
+      stage.appendChild(img);
+    }
+    img.addEventListener('load', () => classify(img)); // también al cambiar de miniatura
+    if (img.complete) classify(img);
+  });
 })();

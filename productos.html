@@ -8,7 +8,8 @@
   <meta name="author" content="KAIROS Soluciones Digitales - Yojann Cortés Díaz">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon_kairos.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <title>Tienda & Productos POS | KAIROS Soluciones Digitales</title>
   
@@ -21,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="styles.css?v=20260914_01">
+  <link rel="stylesheet" href="styles.css?v=20261118f">
 
   <!-- Embedded Critical Luxury Styles for Guaranteed Visual Excellence -->
   <style>
@@ -32,8 +33,8 @@
 
     body {
       font-family: var(--font-body);
-      background-color: #060911;
-      color: #f8fafc;
+      background-color: #0e0e10;
+      color: #fafafa;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
@@ -51,9 +52,9 @@
       gap: 0.5rem;
       padding: 0.4rem 1.1rem;
       border-radius: 9999px;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.3);
-      color: #00f2fe;
+      background: rgba(200, 32, 45, 0.1);
+      border: 1px solid rgba(200, 32, 45, 0.3);
+      color: #f04452;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 1rem;
@@ -69,7 +70,7 @@
     }
 
     .page-hero-subtitle {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 1.05rem;
       max-width: 680px;
       margin: 0 auto 2.5rem;
@@ -86,7 +87,7 @@
       margin-bottom: 3rem;
       padding: 1.25rem 1.5rem;
       border-radius: 16px;
-      background: rgba(18, 26, 47, 0.75);
+      background: rgba(24, 24, 27, 0.75);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -104,7 +105,7 @@
       left: 1.1rem;
       top: 50%;
       transform: translateY(-50%);
-      color: #64748b;
+      color: #71717a;
       font-size: 0.95rem;
     }
 
@@ -112,9 +113,9 @@
       width: 100%;
       padding: 0.75rem 1.1rem 0.75rem 2.8rem;
       border-radius: 9999px;
-      background: rgba(6, 9, 17, 0.8);
+      background: rgba(14, 14, 16, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #f8fafc;
+      color: #fafafa;
       font-size: 0.92rem;
       outline: none;
       transition: all 0.2s ease;
@@ -122,8 +123,8 @@
     }
 
     .store-search-box input:focus {
-      border-color: #00f2fe;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+      border-color: #f04452;
+      box-shadow: 0 0 15px rgba(200, 32, 45, 0.25);
     }
 
     .store-filter-buttons {
@@ -137,7 +138,7 @@
       border-radius: 9999px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 0.85rem;
       font-weight: 500;
       cursor: pointer;
@@ -146,17 +147,17 @@
     }
 
     .store-filter-btn:hover {
-      background: rgba(0, 242, 254, 0.12);
+      background: rgba(200, 32, 45, 0.12);
       color: #ffffff;
-      border-color: rgba(0, 242, 254, 0.4);
+      border-color: rgba(200, 32, 45, 0.4);
     }
 
     .store-filter-btn.active {
-      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-      color: #020617;
+      background: linear-gradient(135deg, #e0303d 0%, #c8202d 100%);
+      color: #ffffff;
       font-weight: 700;
       border-color: transparent;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.35);
+      box-shadow: 0 0 15px rgba(200, 32, 45, 0.35);
     }
 
     /* Products Grid */
@@ -169,7 +170,7 @@
 
     .product-card {
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(22, 32, 58, 0.7) 0%, rgba(11, 16, 30, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(32, 32, 34, 0.7) 0%, rgba(20, 20, 22, 0.85) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
       display: flex;
@@ -180,8 +181,8 @@
 
     .product-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(0, 242, 254, 0.4);
-      box-shadow: 0 15px 35px -10px rgba(0, 242, 254, 0.2);
+      border-color: rgba(200, 32, 45, 0.4);
+      box-shadow: 0 15px 35px -10px rgba(200, 32, 45, 0.2);
     }
 
     .product-card-img-wrap {
@@ -237,9 +238,9 @@
     }
 
     .product-badge.popular {
-      background: rgba(0, 242, 254, 0.25);
-      color: #00f2fe;
-      border: 1px solid rgba(0, 242, 254, 0.5);
+      background: rgba(200, 32, 45, 0.25);
+      color: #f04452;
+      border: 1px solid rgba(200, 32, 45, 0.5);
     }
 
     .product-badge.sale {
@@ -259,8 +260,8 @@
       top: 0.85rem;
       right: 0.85rem;
       font-size: 0.72rem;
-      color: #94a3b8;
-      background: rgba(6, 9, 17, 0.85);
+      color: #a1a1aa;
+      background: rgba(14, 14, 16, 0.85);
       padding: 0.25rem 0.65rem;
       border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -285,7 +286,7 @@
 
     .product-description {
       font-size: 0.88rem;
-      color: #94a3b8;
+      color: #a1a1aa;
       margin-bottom: 1.1rem;
       line-height: 1.5;
       flex: 1;
@@ -302,7 +303,7 @@
 
     .product-specs-list li {
       font-size: 0.82rem;
-      color: #cbd5e1;
+      color: #d4d4d8;
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -329,7 +330,7 @@
 
     .product-price-label {
       font-size: 0.72rem;
-      color: #64748b;
+      color: #71717a;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -338,15 +339,15 @@
       font-family: var(--font-heading);
       font-size: 1.35rem;
       font-weight: 800;
-      color: #00f2fe;
+      color: #f04452;
     }
 
     .price-tax-tag {
       font-size: 0.72rem;
       font-weight: 700;
       color: #38bdf8;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(200, 32, 45, 0.12);
+      border: 1px solid rgba(200, 32, 45, 0.3);
       padding: 0.1rem 0.4rem;
       border-radius: 4px;
       margin-left: 0.35rem;
@@ -358,7 +359,7 @@
 
     .product-price-old {
       font-size: 0.82rem;
-      color: #64748b;
+      color: #71717a;
       text-decoration: line-through;
       margin-left: 0.3rem;
     }
@@ -371,7 +372,7 @@
     .btn-quick-view {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #f8fafc;
+      color: #fafafa;
       padding: 0.55rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.82rem;
@@ -385,8 +386,8 @@
     }
 
     .btn-quick-view:hover {
-      background: rgba(0, 242, 254, 0.15);
-      border-color: #00f2fe;
+      background: rgba(200, 32, 45, 0.15);
+      border-color: #f04452;
       color: #ffffff;
     }
 
@@ -417,7 +418,7 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 18, 0.88);
+      background: rgba(10, 10, 12, 0.88);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       display: flex;
@@ -437,7 +438,7 @@
 
     .modal-container {
       background: #0d1424;
-      border: 1px solid rgba(0, 242, 254, 0.3);
+      border: 1px solid rgba(200, 32, 45, 0.3);
       border-radius: 20px;
       max-width: 600px;
       width: 100%;
@@ -445,7 +446,7 @@
       overflow-y: auto;
       padding: 2rem;
       position: relative;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.15);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(200, 32, 45, 0.15);
       transform: scale(0.95);
       transition: transform 0.3s ease;
     }
@@ -463,7 +464,7 @@
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #94a3b8;
+      color: #a1a1aa;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -492,18 +493,13 @@
   </style>
 </head>
 <body>
-  <!-- Background Canvas for Particles -->
-  <canvas id="bgCanvas"></canvas>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
 
   <!-- Header / Navbar -->
   <header class="site-header scrolled" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+          <img width="62" height="62" decoding="async" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
@@ -554,7 +550,7 @@
           
           <li class="mobile-cta-item">
             <div class="mobile-menu-card">
-              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+              <a href="index.html#contacto" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
               </a>
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
@@ -566,8 +562,8 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
-          <i class="fa-solid fa-calculator"></i>
+        <a href="index.html#contacto" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-paper-plane"></i>
           <span>Cotizar</span>
         </a>
         <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
@@ -860,27 +856,27 @@
         </div>
 
         <!-- Store Guarantees Banner -->
-        <div style="background: rgba(18, 26, 47, 0.7); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 18px; padding: 2rem; margin-top: 2rem;">
+        <div style="background: rgba(24, 24, 27, 0.7); border: 1px solid rgba(200, 32, 45, 0.2); border-radius: 18px; padding: 2rem; margin-top: 2rem;">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
             <div>
-              <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: #00f2fe; margin-bottom: 0.75rem;"></i>
+              <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: #f04452; margin-bottom: 0.75rem;"></i>
               <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Envíos a Todo Chile</h4>
-              <p style="font-size: 0.85rem; color: #94a3b8;">Despacho rápido por Starken, Chilexpress o Correos.</p>
+              <p style="font-size: 0.85rem; color: #a1a1aa;">Despacho rápido por Starken, Chilexpress o Correos.</p>
             </div>
             <div>
               <i class="fa-solid fa-shield-halved" style="font-size: 2rem; color: #10b981; margin-bottom: 0.75rem;"></i>
               <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Garantía Directa 3 Meses</h4>
-              <p style="font-size: 0.85rem; color: #94a3b8;">Soporte técnico y cambio directo ante fallas de fábrica.</p>
+              <p style="font-size: 0.85rem; color: #a1a1aa;">Soporte técnico y cambio directo ante fallas de fábrica.</p>
             </div>
             <div>
-              <i class="fa-solid fa-file-invoice-dollar" style="font-size: 2rem; color: #a855f7; margin-bottom: 0.75rem;"></i>
+              <i class="fa-solid fa-file-invoice-dollar" style="font-size: 2rem; color: #e0303d; margin-bottom: 0.75rem;"></i>
               <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Facturación Formal</h4>
-              <p style="font-size: 0.85rem; color: #94a3b8;">Emitimos boleta o factura a nombre de Desarrollo Digital Yojann Brandon Cortes Diaz E.I.R.L.</p>
+              <p style="font-size: 0.85rem; color: #a1a1aa;">Emitimos boleta o factura a nombre de Desarrollo Digital Yojann Brandon Cortes Diaz E.I.R.L.</p>
             </div>
             <div>
               <i class="fa-solid fa-headset" style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.75rem;"></i>
               <h4 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: #ffffff;">Asesoría de Configuración</h4>
-              <p style="font-size: 0.85rem; color: #94a3b8;">Te ayudamos paso a paso a vincularla con tu app de boletas.</p>
+              <p style="font-size: 0.85rem; color: #a1a1aa;">Te ayudamos paso a paso a vincularla con tu app de boletas.</p>
             </div>
           </div>
         </div>
@@ -898,11 +894,11 @@
           <img id="modalProductImg" src="" alt="" style="max-height: 200px; max-width: 100%; object-fit: contain;">
         </div>
         <h2 id="modalProductTitle" style="font-size: 1.4rem; color: #ffffff; margin-bottom: 0.5rem;"></h2>
-        <div id="modalProductPrice" style="font-size: 1.5rem; font-weight: 800; color: #00f2fe; margin-bottom: 1rem;"></div>
-        <p id="modalProductDesc" style="font-size: 0.92rem; color: #94a3b8; line-height: 1.6; margin-bottom: 1.25rem;"></p>
+        <div id="modalProductPrice" style="font-size: 1.5rem; font-weight: 800; color: #f04452; margin-bottom: 1rem;"></div>
+        <p id="modalProductDesc" style="font-size: 0.92rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 1.25rem;"></p>
         
-        <h4 style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.6rem;"><i class="fa-solid fa-list-check" style="color: #00f2fe;"></i> Especificaciones Técnicas:</h4>
-        <ul id="modalSpecsList" style="list-style: none; padding: 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #cbd5e1;"></ul>
+        <h4 style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.6rem;"><i class="fa-solid fa-list-check" style="color: #f04452;"></i> Especificaciones Técnicas:</h4>
+        <ul id="modalSpecsList" style="list-style: none; padding: 0; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem; color: #d4d4d8;"></ul>
         
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener" class="btn-whatsapp-buy" style="flex: 1; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.95rem;">
@@ -917,46 +913,45 @@
   </div>
 
   <!-- Footer -->
-  <footer class="site-footer" style="padding: 3rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); background: #060911;">
+  <footer class="site-footer" style="padding: 3rem 0 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08); background: #0e0e10;">
     <div class="container">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem;">
         <div>
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" style="height: 42px; width: 42px; border-radius:50%;">
+            <img width="62" height="62" decoding="async" loading="lazy" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" style="height: 42px; width: 42px; border-radius:50%;">
             <div>
               <strong style="color: #ffffff; font-size: 1.1rem; display: block;">KAIROS Soluciones Digitales</strong>
-              <small style="color: #00f2fe;">RUT & Empresa Constituida</small>
+              <small style="color: #f04452;">RUT & Empresa Constituida</small>
             </div>
           </div>
-          <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
+          <p style="font-size: 0.88rem; color: #a1a1aa; line-height: 1.6;">
             Comercialización de hardware POS, impresoras térmicas e insumos certificados para microempresas, pymes y profesionales en todo Chile.
           </p>
         </div>
         <div>
           <h4 style="color: #ffffff; margin-bottom: 1rem; font-size: 1rem;">Enlaces Rápidos</h4>
           <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-            <li><a href="index.html" style="color: #94a3b8; text-decoration: none;">Inicio</a></li>
-            <li><a href="servicios.html" style="color: #94a3b8; text-decoration: none;">Servicios de Desarrollo</a></li>
-            <li><a href="proyectos.html" style="color: #94a3b8; text-decoration: none;">Proyectos Realizados</a></li>
-            <li><a href="productos.html" style="color: #00f2fe; text-decoration: none;">Tienda / Catálogo</a></li>
-            <li><a href="index.html#cotizador" style="color: #94a3b8; text-decoration: none;">Cotizador Online</a></li>
+            <li><a href="index.html" style="color: #a1a1aa; text-decoration: none;">Inicio</a></li>
+            <li><a href="servicios.html" style="color: #a1a1aa; text-decoration: none;">Servicios de Desarrollo</a></li>
+            <li><a href="proyectos.html" style="color: #a1a1aa; text-decoration: none;">Proyectos Realizados</a></li>
+            <li><a href="productos.html" style="color: #f04452; text-decoration: none;">Tienda / Catálogo</a></li>
           </ul>
         </div>
         <div>
           <h4 style="color: #ffffff; margin-bottom: 1rem; font-size: 1rem;">Canales de Venta & Soporte</h4>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.5rem;">
+          <p style="font-size: 0.88rem; color: #a1a1aa; margin-bottom: 0.5rem;">
             <i class="fa-brands fa-whatsapp" style="color: #25d366; margin-right: 0.5rem;"></i> +56 9 8663 5815
           </p>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.5rem;">
-            <i class="fa-solid fa-envelope" style="color: #00f2fe; margin-right: 0.5rem;"></i> yojanncortesdiaz@gmail.com
+          <p style="font-size: 0.88rem; color: #a1a1aa; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-envelope" style="color: #f04452; margin-right: 0.5rem;"></i> yojanncortesdiaz@gmail.com
           </p>
-          <p style="font-size: 0.88rem; color: #94a3b8;">
-            <i class="fa-solid fa-location-dot" style="color: #a855f7; margin-right: 0.5rem;"></i> Combarbalá y Puerto Montt, Chile
+          <p style="font-size: 0.88rem; color: #a1a1aa;">
+            <i class="fa-solid fa-location-dot" style="color: #e0303d; margin-right: 0.5rem;"></i> Combarbalá y Puerto Montt, Chile
           </p>
         </div>
       </div>
 
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.82rem; color: #64748b;">
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.82rem; color: #71717a;">
         <p>&copy; <span id="currentYear"></span> <strong>KAIROS Soluciones Digitales</strong> — Yojann Cortés Díaz. Marca de Desarrollo Digital Yojann Brandon Cortes Diaz E.I.R.L.</p>
         <p style="color: #34d399;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #34d399; margin-right: 6px;"></span> Tienda Online & Stock Activo</p>
       </div>
@@ -973,7 +968,7 @@
   </a>
 
   <!-- Scripts -->
-  <script src="main.js?v=20260914_01"></script>
+  <script src="main.js?v=20261118f"></script>
   <script>
     // Store Logic: Search, Category Filtering, and Quick View Modal
     document.addEventListener('DOMContentLoaded', () => {

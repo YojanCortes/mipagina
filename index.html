@@ -50,9 +50,9 @@
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon_kairos.png">
-  <link rel="apple-touch-icon" href="logo_kairos_icono.png">
-  
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
   <title>KAIROS | Desarrollo de Software a Medida en Chile</title>
   
   <!-- Fonts -->
@@ -64,21 +64,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=20261116_kairos4">
+  <link rel="stylesheet" href="styles.css?v=20261118f">
 </head>
 <body>
-  <!-- Background Canvas for Particles -->
-  <canvas id="bgCanvas"></canvas>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
 
   <!-- Header / Navbar -->
   <header class="site-header" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+          <img width="62" height="62" decoding="async" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
@@ -129,7 +124,7 @@
           
           <li class="mobile-cta-item">
             <div class="mobile-menu-card">
-              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+              <a href="index.html#contacto" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
               </a>
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
@@ -141,8 +136,8 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
-          <i class="fa-solid fa-calculator"></i>
+        <a href="index.html#contacto" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-paper-plane"></i>
           <span>Cotizar</span>
         </a>
         <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
@@ -168,8 +163,8 @@
           <div class="kairos-3d-float">
             <div class="kairos-3d-coin" id="kairosCoin">
               <!-- el canto (grosor) se genera con main.js -->
-              <img src="logo_kairos.png" alt="" class="coin-face coin-front" width="640" height="640">
-              <img src="logo_kairos_reverso.svg" alt="" class="coin-face coin-back" width="640" height="640">
+              <img src="logo_kairos.png" alt="" class="coin-face coin-front" width="640" height="640" fetchpriority="high" decoding="async">
+              <img src="logo_kairos_reverso.svg" alt="" class="coin-face coin-back" width="640" height="640" decoding="async">
               <span class="coin-shine"></span>
             </div>
           </div>
@@ -189,7 +184,7 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="#cotizador" class="btn btn-lg btn-primary pulse-btn">
+          <a href="#contacto" class="btn btn-lg btn-primary pulse-btn">
             <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
           </a>
           <a href="proyectos.html" class="btn btn-lg btn-glass">
@@ -231,8 +226,8 @@
           <p class="tech-marquee-label"><i class="fa-solid fa-code"></i> Tecnologías & Soluciones de Inteligencia Artificial que domino:</p>
           <div class="tech-marquee">
             <div class="tech-track">
-              <span class="tech-pill"><i class="fa-solid fa-brain" style="color:#00f2fe;"></i> Modelos IA & LLMs</span>
-              <span class="tech-pill"><i class="fa-solid fa-robot" style="color:#a855f7;"></i> Asistentes NLP & Chatbots</span>
+              <span class="tech-pill"><i class="fa-solid fa-brain" style="color:#f04452;"></i> Modelos IA & LLMs</span>
+              <span class="tech-pill"><i class="fa-solid fa-robot" style="color:#e0303d;"></i> Asistentes NLP & Chatbots</span>
               <span class="tech-pill"><i class="fa-solid fa-eye" style="color:#10b981;"></i> Visión por Computadora</span>
               <span class="tech-pill"><i class="fa-brands fa-react"></i> React / Next.js</span>
               <span class="tech-pill"><i class="fa-brands fa-node-js"></i> Node.js / Express</span>
@@ -242,8 +237,8 @@
               <span class="tech-pill"><i class="fa-solid fa-database"></i> PostgreSQL / MySQL</span>
               <span class="tech-pill"><i class="fa-brands fa-docker"></i> Docker & Cloud CI/CD</span>
               <!-- Repeated for continuous marquee -->
-              <span class="tech-pill"><i class="fa-solid fa-brain" style="color:#00f2fe;"></i> Modelos IA & LLMs</span>
-              <span class="tech-pill"><i class="fa-solid fa-robot" style="color:#a855f7;"></i> Asistentes NLP & Chatbots</span>
+              <span class="tech-pill"><i class="fa-solid fa-brain" style="color:#f04452;"></i> Modelos IA & LLMs</span>
+              <span class="tech-pill"><i class="fa-solid fa-robot" style="color:#e0303d;"></i> Asistentes NLP & Chatbots</span>
               <span class="tech-pill"><i class="fa-solid fa-eye" style="color:#10b981;"></i> Visión por Computadora</span>
               <span class="tech-pill"><i class="fa-brands fa-react"></i> React / Next.js</span>
               <span class="tech-pill"><i class="fa-brands fa-python"></i> Python / FastAPI / Django</span>
@@ -257,124 +252,58 @@
     <!-- Services / Soluciones Section -->
     <section class="section services-section" id="servicios">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="section-tag"><i class="fa-solid fa-cubes"></i> Lo que hago por tu negocio</span>
           <h2 class="section-title">Servicios de <span class="gradient-text">Ingeniería & Desarrollo</span></h2>
           <p class="section-subtitle">Soluciones tecnológicas a medida, diseñadas con arquitectura robusta, código limpio y rendimiento de clase mundial.</p>
         </div>
 
         <div class="services-grid">
-          <!-- Card 1 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-cyan">
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h3 class="service-title">Desarrollo Web Full-Stack & SaaS</h3>
-            <p class="service-desc">
-              Creación de plataformas web de última generación, portales interactivos, paneles de administración (dashboards) y plataformas SaaS escalables con arquitecturas modernas.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Single Page Applications & SSR ultra rápidas</li>
-              <li><i class="fa-solid fa-check"></i> Paneles de control y gestión de datos en tiempo real</li>
-              <li><i class="fa-solid fa-check"></i> Pasarelas de pago seguras (Stripe, PayPal, MercadoPago)</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Desarrollo Web & SaaS</h3>
+            <p class="service-desc">Páginas web, paneles de administración y plataformas con pagos online.</p>
             <div class="service-footer">
-              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#contacto" class="service-link">Cotizar este servicio &rarr;</a>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-purple">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-            </div>
-            <h3 class="service-title">Aplicaciones Móviles & PWA</h3>
-            <p class="service-desc">
-              Desarrollo de aplicaciones móviles intuitivas y fluidas para iOS y Android, además de Progressive Web Apps con capacidad offline y notificaciones push.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Rendimiento nativo multiplataforma</li>
-              <li><i class="fa-solid fa-check"></i> Experiencias fluidas de usuario (UI/UX)</li>
-              <li><i class="fa-solid fa-check"></i> Publicación y optimización en tiendas de apps</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Aplicaciones Móviles</h3>
+            <p class="service-desc">Apps para Android e iOS, rápidas y fáciles de usar, publicadas en las tiendas.</p>
             <div class="service-footer">
-              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#contacto" class="service-link">Cotizar este servicio &rarr;</a>
             </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-blue">
-              <i class="fa-solid fa-server"></i>
-            </div>
-            <h3 class="service-title">APIs, Backend & Arquitectura Cloud</h3>
-            <p class="service-desc">
-              Diseño e implementación de microservicios, bases de datos optimizadas, APIs REST / GraphQL robustas e infraestructura en la nube segura y automatizada.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> APIs escalables y con alta seguridad</li>
-              <li><i class="fa-solid fa-check"></i> Bases de datos SQL / NoSQL de alto tráfico</li>
-              <li><i class="fa-solid fa-check"></i> Despliegues automáticos (CI/CD) y contenedores Docker</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Backend & Cloud</h3>
+            <p class="service-desc">APIs, bases de datos e infraestructura en la nube, seguras y escalables.</p>
             <div class="service-footer">
-              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#contacto" class="service-link">Cotizar este servicio &rarr;</a>
             </div>
           </div>
 
-          <!-- Card 4 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-emerald">
-              <i class="fa-solid fa-gauge-high"></i>
-            </div>
-            <h3 class="service-title">Consultoría, Auditoría & SEO Técnico</h3>
-            <p class="service-desc">
-              Diagnóstico de rendimiento, refactorización de código legacy, optimización de velocidad de carga (Core Web Vitals) y estrategias de SEO técnico para máxima visibilidad.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Auditoría de seguridad y calidad de código</li>
-              <li><i class="fa-solid fa-check"></i> Optimización de velocidad (Score 95+ en PageSpeed)</li>
-              <li><i class="fa-solid fa-check"></i> Asesoría técnica para toma de decisiones</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Consultoría & SEO</h3>
+            <p class="service-desc">Mejoramos la velocidad, la seguridad y el posicionamiento en Google de tu sitio.</p>
             <div class="service-footer">
-              <a href="#cotizador" class="service-link">Cotizar este servicio <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#contacto" class="service-link">Cotizar este servicio &rarr;</a>
             </div>
           </div>
 
-          <!-- Card 5 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-cyan">
-              <i class="fa-solid fa-print"></i>
-            </div>
-            <h3 class="service-title">Sistemas POS & Control de Caja</h3>
-            <p class="service-desc">
-              Puntos de venta a medida integrados directamente con impresoras térmicas Bluetooth/USB para emisión rápida de tickets de venta, control de inventario y caja.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Impresión térmica 58mm y 80mm en 1 clic</li>
-              <li><i class="fa-solid fa-check"></i> Control de inventario, stock y reportes de caja</li>
-              <li><i class="fa-solid fa-check"></i> Venta directa de impresoras y fundas de transporte</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Sistemas POS</h3>
+            <p class="service-desc">Punto de venta con impresión térmica, control de caja e inventario.</p>
             <div class="service-footer">
-              <a href="productos.html" class="service-link">Ver Tienda & Equipamiento <i class="fa-solid fa-store"></i></a>
+              <a href="productos.html" class="service-link">Ver tienda y equipos &rarr;</a>
             </div>
           </div>
 
-          <!-- Card 6 -->
-          <div class="service-card" data-tilt>
-            <div class="service-icon-box icon-purple">
-              <i class="fa-solid fa-robot"></i>
-            </div>
-            <h3 class="service-title">Automatización & Asistentes con IA</h3>
-            <p class="service-desc">
-              Bots inteligentes para WhatsApp y web con integración de Inteligencia Artificial para atención 24/7 y automatización de flujos comerciales.
-            </p>
-            <ul class="service-features">
-              <li><i class="fa-solid fa-check"></i> Respuestas inteligentes y captación de clientes</li>
-              <li><i class="fa-solid fa-check"></i> Conexión con hojas de cálculo y CRMs</li>
-              <li><i class="fa-solid fa-check"></i> Reducción de tiempos operativos repetitivos</li>
-            </ul>
+          <div class="service-card">
+            <h3 class="service-title">Asistentes con IA</h3>
+            <p class="service-desc">Bots para WhatsApp y web que atienden a tus clientes 24/7.</p>
             <div class="service-footer">
-              <a href="servicios.html" class="service-link">Ver Más Detalles <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="servicios.html" class="service-link">Ver más detalles &rarr;</a>
             </div>
           </div>
         </div>
@@ -390,246 +319,50 @@
       </div>
     </section>
 
-    <!-- Interactive Project Budget Calculator / Cotizador -->
-    <section class="section calculator-section" id="cotizador">
-      <div class="container">
-        <div class="calculator-wrapper">
-          <div class="section-header text-center">
-            <span class="section-tag"><i class="fa-solid fa-calculator"></i> Estimador Interactivo</span>
-            <h2 class="section-title">Calcula el Presupuesto de tu <span class="gradient-text">Próximo Proyecto</span></h2>
-            <p class="section-subtitle">Selecciona los componentes que necesitas y obtén un estimado inmediato en tiempo real con opción de envío directo a WhatsApp.</p>
-          </div>
-
-          <div class="calculator-grid">
-            <!-- Options Column -->
-            <div class="calc-options-card">
-              <!-- Step 1: Project Type -->
-              <div class="calc-group">
-                <label class="calc-group-title"><span class="step-num">1</span> Tipo de Proyecto Principal</label>
-                <div class="calc-pill-options" id="projectTypeOptions">
-                  <label class="calc-radio-card active">
-                    <input type="radio" name="project_type" value="landing" data-base-price="175000" data-time="1 semana" checked>
-                    <div class="radio-content">
-                      <i class="fa-solid fa-pager"></i>
-                      <span class="title">Landing Page / Web Comercial</span>
-                      <span class="desc">Ideal para promocionar servicios, productos o captación — <strong>$175.000 CLP</strong></span>
-                    </div>
-                  </label>
-
-                  <label class="calc-radio-card">
-                    <input type="radio" name="project_type" value="webapp" data-base-price="425000" data-time="2-3 semanas">
-                    <div class="radio-content">
-                      <i class="fa-solid fa-laptop-code"></i>
-                      <span class="title">Plataforma Web / SaaS</span>
-                      <span class="desc">Sistemas con usuarios, panel de control y lógica compleja — <strong>$425.000 CLP</strong></span>
-                    </div>
-                  </label>
-
-                  <label class="calc-radio-card">
-                    <input type="radio" name="project_type" value="ecommerce" data-base-price="375000" data-time="2-3 semanas">
-                    <div class="radio-content">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                      <span class="title">Tienda Online / E-Commerce</span>
-                      <span class="desc">Catálogo de productos, carrito, pagos online y envíos — <strong>$375.000 CLP</strong></span>
-                    </div>
-                  </label>
-
-                  <label class="calc-radio-card">
-                    <input type="radio" name="project_type" value="mobile" data-base-price="590000" data-time="4-5 semanas">
-                    <div class="radio-content">
-                      <i class="fa-solid fa-mobile-screen"></i>
-                      <span class="title">App Móvil (iOS / Android)</span>
-                      <span class="desc">Aplicación nativa o multiplataforma completa — <strong>$590.000 CLP</strong></span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Step 2: Extra Modules / Features -->
-              <div class="calc-group">
-                <label class="calc-group-title"><span class="step-num">2</span> Módulos & Características Adicionales</label>
-                <div class="calc-checkbox-grid">
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="auth" data-price="75000" checked>
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>Autenticación & Roles</strong>
-                      <small>Registro, Login, Google Auth, Permisos (+$75.000 CLP)</small>
-                    </div>
-                  </label>
-
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="payments" data-price="95000" checked>
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>Pasarela de Pagos Online</strong>
-                      <small>Webpay Transbank, MercadoPago, PayPal (+$95.000 CLP)</small>
-                    </div>
-                  </label>
-
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="admin" data-price="125000">
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>Panel de Administración Avanzado</strong>
-                      <small>Gestión de usuarios, métricas y reportes (+$125.000 CLP)</small>
-                    </div>
-                  </label>
-
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="seo_opt" data-price="60000">
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>SEO Técnico & Velocidad 99+</strong>
-                      <small>Indexación Google, Core Web Vitals (+$60.000 CLP)</small>
-                    </div>
-                  </label>
-
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="ai_integration" data-price="110000">
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>Integración Inteligencia Artificial</strong>
-                      <small>Chatbot inteligente, automatización, APIs IA (+$110.000 CLP)</small>
-                    </div>
-                  </label>
-
-                  <label class="calc-checkbox-card">
-                    <input type="checkbox" name="module" value="multilang" data-price="50000">
-                    <span class="custom-chk"></span>
-                    <div class="chk-info">
-                      <strong>Multilenguaje (Español / Inglés)</strong>
-                      <small>Traducción dinámica y soporte global (+$50.000 CLP)</small>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Step 3: Priority/Urgency -->
-              <div class="calc-group">
-                <label class="calc-group-title"><span class="step-num">3</span> Plazo de Entrega Deseado</label>
-                <div class="calc-speed-options">
-                  <label class="speed-radio active">
-                    <input type="radio" name="speed" value="standard" data-multiplier="1.0" checked>
-                    <span>⚡ Estándar (Recomendado)</span>
-                  </label>
-                  <label class="speed-radio">
-                    <input type="radio" name="speed" value="express" data-multiplier="1.25">
-                    <span>🚀 Entrega Express Prioritaria (+25%)</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Summary Column -->
-            <div class="calc-summary-card">
-              <div class="summary-header">
-                <h3>Resumen de Cotización</h3>
-                <span class="badge-live">En tiempo real</span>
-              </div>
-
-              <div class="summary-breakdown" id="calcBreakdown">
-                <!-- Dynamically updated -->
-              </div>
-
-              <div class="summary-divider"></div>
-
-              <div class="summary-total-box">
-                <span class="total-label">Inversión Estimada:</span>
-                <div class="total-price" id="calcTotalPrice">$345.000 <small>CLP</small></div>
-                <span class="total-time" id="calcDeliveryTime"><i class="fa-regular fa-clock"></i> Tiempo estimado: 1-2 semanas</span>
-              </div>
-
-              <div class="summary-features-included">
-                <p class="incl-title"><i class="fa-solid fa-shield-halved"></i> Todo proyecto incluye:</p>
-                <ul>
-                  <li><i class="fa-solid fa-check"></i> Código fuente 100% tuyo (Repositorio privado)</li>
-                  <li><i class="fa-solid fa-check"></i> Diseño 100% responsivo para móviles y PCs</li>
-                  <li><i class="fa-solid fa-check"></i> Despliegue en servidor / hosting de producción</li>
-                  <li><i class="fa-solid fa-check"></i> 30 días de garantía y soporte técnico gratuito</li>
-                </ul>
-              </div>
-
-              <div class="summary-actions">
-                <button class="btn btn-primary btn-block" id="btnSendQuoteWhatsapp">
-                  <i class="fa-brands fa-whatsapp"></i> Solicitar Esta Cotización
-                </button>
-                <button class="btn btn-glass btn-block" id="btnCopyQuote">
-                  <i class="fa-regular fa-copy"></i> Copiar Resumen
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Portfolio / Proyectos Section -->
     <section class="section portfolio-section" id="proyectos">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header text-center">
           <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Casos de Éxito & Software Real</span>
           <h2 class="section-title">Proyectos <span class="gradient-text">Destacados & Sistemas IA</span></h2>
           <p class="section-subtitle">Casos reales desarrollados con arquitectura robusta, experiencia de usuario y resultados comerciales comprobados.</p>
-          <div style="margin-top: 1.25rem;">
-            <a href="proyectos.html" class="btn btn-primary">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir Portafolio Completo en Página Aparte <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="portfolio-filters">
-          <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> Todos</button>
-          <button class="filter-btn" data-filter="mobile"><i class="fa-solid fa-mobile-screen"></i> Apps Móviles</button>
-          <button class="filter-btn" data-filter="saas"><i class="fa-solid fa-cloud"></i> SaaS & Gestión</button>
-          <button class="filter-btn" data-filter="ecommerce"><i class="fa-solid fa-credit-card"></i> E-Commerce & Pagos</button>
-          <button class="filter-btn" data-filter="ai"><i class="fa-solid fa-brain"></i> IA & Automatización</button>
         </div>
 
         <!-- Projects Grid -->
-        <div class="projects-grid" id="projectsGrid">
-          
-          <!-- Project 1: Hotel PMS & Reservas Webpay (PRIMERO) -->
-          <article class="project-card" data-category="saas ecommerce">
+        <div class="projects-grid projects-grid--three" id="projectsGrid">
+
+          <!-- Project: NutriFix Care -->
+          <article class="project-card" data-category="mobile ai">
             <div class="project-img-wrapper">
-              <span class="project-badge-live"><i class="fa-solid fa-hotel"></i> Hotel PMS & Booking</span>
-              <img src="Proyectos/hotel/1.PNG" alt="Satrana Hotel PMS & Motor de Reservas" class="project-real-img" id="index-hotel-img">
+              <span class="project-badge-live"><i class="fa-solid fa-mobile-screen"></i> App Móvil Flutter</span>
+              <img src="Proyectos/nutrifix/pantallas.jpg" alt="NutriFix Care, app móvil de nutrición y cuidado de la piel con IA" class="project-real-img" loading="lazy" width="608" height="629">
               <div class="project-overlay">
-                <a href="proyecto-detalle.html?id=hotel" class="btn btn-sm btn-primary">
+                <a href="proyecto-detalle.html?id=nutrifix" class="btn btn-sm btn-primary">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto en Página Aparte
                 </a>
               </div>
             </div>
             <div class="project-info">
-              <!-- Mini Selector de Pantallas -->
-              <div style="display:flex; gap:0.35rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.4rem;">
-                <img src="Proyectos/hotel/1.PNG" alt="Reservas" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('index-hotel-img').src=this.src" title="1. Reservas Web">
-                <img src="Proyectos/hotel/4.PNG" alt="Dashboard" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-hotel-img').src=this.src" title="4. Dashboard PMS">
-                <img src="Proyectos/hotel/2.PNG" alt="Habitaciones" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-hotel-img').src=this.src" title="2. Habitaciones">
-                <img src="Proyectos/hotel/3.PNG" alt="Webpay" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-hotel-img').src=this.src" title="3. Webpay Plus">
-                <img src="Proyectos/hotel/5.PNG" alt="Plano 2D" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-hotel-img').src=this.src" title="5. Plano 2D">
-              </div>
               <div class="project-tags">
-                <span class="tag"><i class="fa-brands fa-python"></i> Django 5.0</span>
-                <span class="tag"><i class="fa-solid fa-credit-card"></i> Webpay Transbank</span>
-                <span class="tag"><i class="fa-solid fa-calendar-check"></i> Motor Reservas</span>
-                <span class="tag"><i class="fa-solid fa-file-pdf"></i> ReportLab PDF</span>
+                <span class="tag"><i class="fa-brands fa-android"></i> Flutter</span>
+                <span class="tag"><i class="fa-solid fa-fire"></i> Firebase</span>
+                <span class="tag"><i class="fa-solid fa-brain"></i> IA Gemini</span>
+                <span class="tag"><i class="fa-solid fa-wifi"></i> NFC</span>
               </div>
-              <h3 class="project-title">Hotel PMS — Gestión Hotelera, Reservas & Webpay</h3>
+              <h3 class="project-title">NutriFix Care — App de Nutrición con IA</h3>
               <p class="project-summary">
-                Plataforma integral para hoteles y resorts: motor de reservas online 24/7 con Webpay Plus Transbank, disponibilidad de habitaciones en tiempo real, facturación PDF y CRM de huéspedes.
+                Conecta pacientes con su nutricionista: planes con macros, diario de comidas, citas y chat. Incluye análisis facial con IA y rutinas de piel guiadas por voz.
               </p>
               <div class="project-links">
-                <a href="proyecto-detalle.html?id=hotel" class="project-link-action">
+                <a href="proyecto-detalle.html?id=nutrifix" class="project-link-action">
                   Ver Ficha & Arquitectura Completa <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: Venta de Pasajes con Webpay (SEGUNDO) -->
-          <article class="project-card" data-category="ecommerce saas">
+          <!-- Project: Venta de Pasajes con Webpay -->
+          <article class="project-card" data-category="web ecommerce">
             <div class="project-img-wrapper">
               <span class="project-badge-live"><i class="fa-solid fa-bus"></i> Transbank Integrado</span>
               <img src="Proyectos/pagina_buses/menupasjaeros.PNG" alt="Sistema Venta de Pasajes" class="project-real-img">
@@ -658,38 +391,8 @@
             </div>
           </article>
 
-          <!-- Project 3: STOCKJAN IA (TERCERO) -->
-          <article class="project-card" data-category="saas ai">
-            <div class="project-img-wrapper">
-              <span class="project-badge-live"><i class="fa-solid fa-industry"></i> Empresas Torre</span>
-              <img src="Proyectos/sistema gestion empresas torre/pagina.jfif" alt="STOCKJAN Empresas Torre" class="project-real-img">
-              <div class="project-overlay">
-                <a href="proyecto-detalle.html?id=stockjan" class="btn btn-sm btn-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto en Página Aparte
-                </a>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag"><i class="fa-solid fa-microchip"></i> IoT Sensores</span>
-                <span class="tag"><i class="fa-solid fa-robot"></i> Chatbot NLP</span>
-                <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="tag"><i class="fa-solid fa-chart-line"></i> KPIs Industrial</span>
-              </div>
-              <h3 class="project-title">STOCKJAN — Gestión Industrial con IA (Empresas Torre)</h3>
-              <p class="project-summary">
-                Implementado en planta de Productos Torre S.A. Conecta sensores IoT de maquinaria, chatbot tipo ChatGPT conectado a la base de datos de la empresa y dashboard de producción.
-              </p>
-              <div class="project-links">
-                <a href="proyecto-detalle.html?id=stockjan" class="project-link-action">
-                  Ver Ficha & Arquitectura Completa <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: FoodJan -->
-          <article class="project-card" data-category="saas mobile">
+          <!-- Project: FoodJan -->
+          <article class="project-card" data-category="web saas mobile">
             <div class="project-img-wrapper">
               <span class="project-badge-live"><i class="fa-solid fa-utensils"></i> Sistema Restaurantes</span>
               <img src="Proyectos/foodjan/paginaweb.jfif" alt="FoodJan Restaurantes" class="project-real-img">
@@ -718,103 +421,10 @@
             </div>
           </article>
 
-          <!-- Project 5: MappsCotas -->
-          <article class="project-card" data-category="mobile ai">
-            <div class="project-img-wrapper">
-              <span class="project-badge-live"><i class="fa-brands fa-google-play"></i> En Google Play</span>
-              <img src="Proyectos/mappscotas/inicio.jfif" alt="MappsCotas App Móvil con IA" class="project-real-img">
-              <div class="project-overlay">
-                <a href="proyecto-detalle.html?id=mappscotas" class="btn btn-sm btn-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto en Página Aparte
-                </a>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag"><i class="fa-brands fa-android"></i> Flutter</span>
-                <span class="tag"><i class="fa-solid fa-fire"></i> Firebase</span>
-                <span class="tag"><i class="fa-solid fa-brain"></i> IA Visión</span>
-                <span class="tag"><i class="fa-brands fa-google-play"></i> Google Play</span>
-              </div>
-              <h3 class="project-title">MappsCotas / MascotaJan — App Móvil con IA</h3>
-              <p class="project-summary">
-                App publicada en Google Play para dueños de mascotas. Escaneo inteligente de ingredientes con IA, mapa colaborativo pet-friendly y reporte de mascotas extraviadas.
-              </p>
-              <div class="project-links">
-                <a href="proyecto-detalle.html?id=mappscotas" class="project-link-action">
-                  Ver Ficha & Arquitectura Completa <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
+        </div>
 
-          <!-- Project 6: Bodega Escuela -->
-          <article class="project-card" data-category="saas">
-            <div class="project-img-wrapper">
-              <span class="project-badge-live"><i class="fa-solid fa-school"></i> EdTech / Bodega</span>
-              <img src="Proyectos/sistema bodega escuela/portada_bodega.jpg" alt="Sistema Bodega Escuela" class="project-real-img">
-              <div class="project-overlay">
-                <a href="proyecto-detalle.html?id=bodega-escuela" class="btn btn-sm btn-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto en Página Aparte
-                </a>
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span class="tag"><i class="fa-brands fa-python"></i> Django</span>
-                <span class="tag"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="tag"><i class="fa-solid fa-qrcode"></i> Check-in QR</span>
-                <span class="tag"><i class="fa-solid fa-file-excel"></i> CSV/Excel</span>
-              </div>
-              <h3 class="project-title">Sistema de Bodega & Comedor Escolar (EdTech)</h3>
-              <p class="project-summary">
-                Control de ingreso y raciones con check-in express mediante códigos QR, tablero diario por turnos y cursos, kardex de bodega escolar y exportación automatizada a Excel.
-              </p>
-              <div class="project-links">
-                <a href="proyecto-detalle.html?id=bodega-escuela" class="project-link-action">
-                  Ver Ficha & Arquitectura Completa <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 7: POS Java -->
-          <article class="project-card" data-category="saas">
-            <div class="project-img-wrapper">
-              <span class="project-badge-live"><i class="fa-solid fa-cash-register"></i> Software POS & Caja</span>
-              <img src="Proyectos/cajpago/6.PNG" alt="Software POS Java — Caja de Pago" class="project-real-img" id="index-pos-img" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
-              <div class="project-overlay">
-                <a href="proyecto-detalle.html?id=pos-java" class="btn btn-sm btn-primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Proyecto en Página Aparte
-                </a>
-              </div>
-            </div>
-            <div class="project-info">
-              <!-- Mini Selector de Pantallas POS -->
-              <div style="display:flex; gap:0.35rem; overflow-x:auto; padding-bottom:4px; margin-bottom:0.4rem;">
-                <img src="Proyectos/cajpago/6.PNG" alt="Ventas" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(0,242,254,0.6);" onclick="document.getElementById('index-pos-img').src=this.src" title="1. Pantalla Venta y Cobro" onerror="this.onerror=null; this.src='productos/impresa termica.PNG';">
-                <img src="Proyectos/cajpago/12.PNG" alt="Contabilidad" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-pos-img').src=this.src" title="2. Menú Contabilidad y Cierre">
-                <img src="Proyectos/cajpago/17.PNG" alt="Registro" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-pos-img').src=this.src" title="3. Registro y Escáner">
-                <img src="Proyectos/cajpago/BOLETA.jpg" alt="Boleta" style="width:48px; height:32px; border-radius:6px; object-fit:cover; cursor:pointer; border:1px solid rgba(255,255,255,0.2);" onclick="document.getElementById('index-pos-img').src=this.src" title="4. Boleta Térmica Impresa">
-              </div>
-              <div class="project-tags">
-                <span class="tag"><i class="fa-brands fa-java"></i> Java 11+</span>
-                <span class="tag"><i class="fa-solid fa-window-maximize"></i> Swing / JDBC</span>
-                <span class="tag"><i class="fa-solid fa-print"></i> Impresora Térmica</span>
-                <span class="tag"><i class="fa-solid fa-coins"></i> Control de Caja</span>
-              </div>
-              <h3 class="project-title">Software POS Java — Caja de Pago & Control de Stock</h3>
-              <p class="project-summary">
-                Software de caja con emisión de tickets y boletas térmicas USB/Bluetooth (ESC/POS), arqueo de caja diario, conciliación de pagos y control de inventario.
-              </p>
-              <div class="project-links">
-                <a href="proyecto-detalle.html?id=pos-java" class="project-link-action">
-                  Ver Ficha & Arquitectura Completa <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
+        <div class="projects-more">
+          <a href="proyectos.html" class="btn btn-primary">Ver todos los proyectos &rarr;</a>
         </div>
       </div>
     </section>
@@ -839,7 +449,7 @@
               <div class="avatar-inner">
                 <div class="code-badge-top">KAIROS</div>
                 <div class="avatar-logo-sphere">
-                  <img src="logo_kairos.png" alt="Logo KAIROS Soluciones Digitales" class="avatar-company-logo">
+                  <img src="logo_kairos.png" alt="Logo KAIROS Soluciones Digitales" class="avatar-company-logo" width="640" height="640" loading="lazy" decoding="async">
                 </div>
                 <h3 class="avatar-name">KAIROS Soluciones Digitales</h3>
                 <p class="avatar-title">Fundador & CEO: Yojann Cortés Díaz (Ing. Informático)</p>
@@ -897,8 +507,8 @@
             </div>
 
             <div class="about-cta-row">
-              <a href="#cotizador" class="btn btn-primary">
-                <i class="fa-solid fa-calculator"></i> Cotizar con Yojann
+              <a href="#contacto" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Cotizar con Yojann
               </a>
               <a href="https://cl.linkedin.com/in/yojanncortes" target="_blank" rel="noopener" class="btn btn-glass">
                 <i class="fa-brands fa-linkedin-in"></i> Ver Perfil LinkedIn
@@ -946,67 +556,6 @@
             <div class="step-badge">Paso 05</div>
             <h4 class="step-title">Garantía & Soporte</h4>
             <p class="step-desc">30 días de garantía total post-entrega y opciones de mantenimiento evolutivo continuo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials / Client Trust Section -->
-    <section class="section testimonials-section" id="testimonios">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag"><i class="fa-solid fa-comments"></i> Opiniones de Clientes</span>
-          <h2 class="section-title">Confianza & <span class="gradient-text">Resultados Comprobados</span></h2>
-          <p class="section-subtitle">Lo que dicen fundadores, líderes de producto y empresas que han trabajado conmigo.</p>
-        </div>
-
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "Yojann entendió a la perfección la arquitectura que necesitábamos para nuestro SaaS. Entregó a tiempo, con código limpio y una velocidad de carga que asombró a nuestros inversionistas."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fa-solid fa-user-tie"></i></div>
-              <div class="author-info">
-                <strong>Matías V.</strong>
-                <span>CEO en TechStartup Chile</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "Excelente profesional. Desarrolló nuestra plataforma de e-commerce e integró el sistema de facturación electrónica sin ningún inconveniente. Comunicación 10/10 en todo momento."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fa-solid fa-user-gear"></i></div>
-              <div class="author-info">
-                <strong>Camila R.</strong>
-                <span>Directora de Operaciones Pyme</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "El trabajo en nuestra aplicación móvil superó expectativas. Muy riguroso con la seguridad y el rendimiento. Sin duda seguiremos trabajando juntos en las siguientes fases."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar"><i class="fa-solid fa-user-check"></i></div>
-              <div class="author-info">
-                <strong>Ignacio S.</strong>
-                <span>Product Manager</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1113,7 +662,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+            <img width="62" height="62" decoding="async" loading="lazy" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
             <div class="brand-text-wrap">
               <span class="logo-main-text">KAIROS Soluciones Digitales</span>
               <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
@@ -1131,7 +680,6 @@
             <li><a href="servicios.html">Servicios Detallados</a></li>
             <li><a href="proyectos.html">Proyectos Realizados</a></li>
             <li><a href="productos.html">Tienda POS & Hardware</a></li>
-            <li><a href="index.html#cotizador">Cotizador Online</a></li>
           </ul>
         </div>
 
@@ -1177,6 +725,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="main.js?v=20261116_kairos4"></script>
+  <script src="main.js?v=20261118f"></script>
 </body>
 </html>

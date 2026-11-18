@@ -8,7 +8,8 @@
   <meta name="author" content="KAIROS Soluciones Digitales - Yojann Cortés Díaz">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon_kairos.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_kairos.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   
   <title>Servicios de Ingeniería de Software, Cloud & IA | KAIROS Soluciones Digitales</title>
   
@@ -21,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
   <!-- Stylesheet with Cache Busting -->
-  <link rel="stylesheet" href="styles.css?v=20260914_01">
+  <link rel="stylesheet" href="styles.css?v=20261118f">
 
   <!-- Embedded Luxury Styles for Servicios -->
   <style>
@@ -32,8 +33,8 @@
 
     body {
       font-family: var(--font-body);
-      background-color: #060911;
-      color: #f8fafc;
+      background-color: #0e0e10;
+      color: #fafafa;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
@@ -51,9 +52,9 @@
       gap: 0.5rem;
       padding: 0.4rem 1.1rem;
       border-radius: 9999px;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.3);
-      color: #00f2fe;
+      background: rgba(200, 32, 45, 0.1);
+      border: 1px solid rgba(200, 32, 45, 0.3);
+      color: #f04452;
       font-size: 0.85rem;
       font-weight: 600;
       margin-bottom: 1rem;
@@ -69,7 +70,7 @@
     }
 
     .page-hero-subtitle {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 1.05rem;
       max-width: 680px;
       margin: 0 auto 2.5rem;
@@ -84,7 +85,7 @@
     }
 
     .service-detail-card {
-      background: linear-gradient(180deg, rgba(22, 32, 58, 0.7) 0%, rgba(11, 16, 30, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(32, 32, 34, 0.7) 0%, rgba(20, 20, 22, 0.85) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 2rem;
@@ -95,46 +96,26 @@
 
     .service-detail-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(0, 242, 254, 0.4);
-      box-shadow: 0 15px 35px -10px rgba(0, 242, 254, 0.2);
+      border-color: rgba(200, 32, 45, 0.4);
+      box-shadow: 0 15px 35px -10px rgba(200, 32, 45, 0.2);
     }
 
     .service-card-icon {
       width: 58px;
       height: 58px;
       border-radius: 14px;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid rgba(0, 242, 254, 0.3);
+      background: rgba(200, 32, 45, 0.1);
+      border: 1px solid rgba(200, 32, 45, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: #00f2fe;
+      color: #f04452;
       margin-bottom: 1.25rem;
     }
 
-    .pricing-tiers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 5rem;
-    }
 
-    .pricing-tier-card {
-      background: linear-gradient(180deg, rgba(22, 32, 58, 0.7) 0%, rgba(11, 16, 30, 0.85) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 2.25rem 2rem;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
 
-    .pricing-tier-card.featured {
-      border-color: #00f2fe;
-      box-shadow: 0 15px 40px -10px rgba(0, 242, 254, 0.3);
-    }
 
     .faq-grid {
       max-width: 800px;
@@ -145,7 +126,7 @@
     }
 
     .faq-item {
-      background: rgba(18, 26, 47, 0.7);
+      background: rgba(24, 24, 27, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       overflow: hidden;
@@ -153,7 +134,7 @@
     }
 
     .faq-item.active {
-      border-color: rgba(0, 242, 254, 0.4);
+      border-color: rgba(200, 32, 45, 0.4);
     }
 
     .faq-question {
@@ -162,7 +143,7 @@
       text-align: left;
       background: none;
       border: none;
-      color: #f8fafc;
+      color: #fafafa;
       font-size: 1.05rem;
       font-weight: 600;
       display: flex;
@@ -173,7 +154,7 @@
     }
 
     .faq-question i {
-      color: #00f2fe;
+      color: #f04452;
       transition: transform 0.3s ease;
     }
 
@@ -186,7 +167,7 @@
       overflow: hidden;
       transition: max-height 0.35s ease, padding 0.35s ease;
       padding: 0 1.5rem;
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 0.92rem;
       line-height: 1.6;
     }
@@ -198,18 +179,13 @@
   </style>
 </head>
 <body>
-  <!-- Background Canvas for Particles -->
-  <canvas id="bgCanvas"></canvas>
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
 
   <!-- Header / Navbar -->
   <header class="site-header scrolled" id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo" aria-label="KAIROS Soluciones Digitales - Inicio">
         <div class="logo-aura-wrap">
-          <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+          <img width="62" height="62" decoding="async" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
           <span class="logo-pulse-ring"></span>
         </div>
         <div class="brand-text-wrap">
@@ -260,7 +236,7 @@
           
           <li class="mobile-cta-item">
             <div class="mobile-menu-card">
-              <a href="index.html#cotizador" class="btn btn-primary btn-block">
+              <a href="index.html#contacto" class="btn btn-primary btn-block">
                 <i class="fa-solid fa-bolt"></i> Cotizar Mi Proyecto
               </a>
               <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
@@ -272,8 +248,8 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="index.html#cotizador" class="btn btn-sm btn-nav-quote">
-          <i class="fa-solid fa-calculator"></i>
+        <a href="index.html#contacto" class="btn btn-sm btn-nav-quote">
+          <i class="fa-solid fa-paper-plane"></i>
           <span>Cotizar</span>
         </a>
         <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20consultarte%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener" class="btn btn-sm btn-nav-whatsapp" title="Contactar por WhatsApp">
@@ -332,8 +308,8 @@
               <li><i class="fa-solid fa-check"></i> <strong>Pagos:</strong> Integración con Webpay Plus (Transbank), Mercado Pago y Stripe.</li>
             </ul>
             <div class="service-detail-footer">
-              <a href="index.html#cotizador" class="btn btn-outline btn-block">
-                <i class="fa-solid fa-calculator"></i> Cotizar Plataforma Web
+              <a href="index.html#contacto" class="btn btn-outline btn-block">
+                <i class="fa-solid fa-paper-plane"></i> Cotizar Plataforma Web
               </a>
             </div>
           </article>
@@ -420,7 +396,7 @@
               <li><i class="fa-solid fa-check"></i> <strong>Procesamiento Inteligente:</strong> Lectura de PDFs, facturas y clasificación de documentos con OCR.</li>
             </ul>
             <div class="service-detail-footer">
-              <a href="index.html#cotizador" class="btn btn-outline btn-block">
+              <a href="index.html#contacto" class="btn btn-outline btn-block">
                 <i class="fa-solid fa-bolt"></i> Cotizar Automatización
               </a>
             </div>
@@ -447,81 +423,6 @@
               </a>
             </div>
           </article>
-
-        </div>
-
-        <!-- Pricing Tiers Section -->
-        <div class="section-heading text-center" style="margin-top: 5rem; margin-bottom: 3.5rem;">
-          <h2 class="section-title">Planes & Modelos de Trabajo</h2>
-          <p class="section-subtitle">Opciones flexibles adaptadas a las diferentes etapas de madurez de tu proyecto o empresa.</p>
-        </div>
-
-        <div class="pricing-tiers-grid">
-          
-          <!-- Plan 1 -->
-          <div class="pricing-card">
-            <h3 class="pricing-tier-name">Plan Starter</h3>
-            <p class="pricing-tier-desc">Ideal para profesionales y pymes que buscan una presencia digital de alto impacto y conversión.</p>
-            <div class="pricing-price-wrap">
-              <span class="pricing-price">Desde $180.000</span>
-              <span class="pricing-price-sub">Pago único o 2 cuotas</span>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fa-solid fa-check"></i> Landing Page / Web Corporativa Premium</li>
-              <li><i class="fa-solid fa-check"></i> Diseño 100% Responsivo & Mobile-First</li>
-              <li><i class="fa-solid fa-check"></i> Optimización SEO para Google</li>
-              <li><i class="fa-solid fa-check"></i> Botón WhatsApp flotante + Formulario funcional</li>
-              <li><i class="fa-solid fa-check"></i> Dominio y hosting por 1 año configurados</li>
-              <li><i class="fa-solid fa-check"></i> Entrega en 5 a 7 días hábiles</li>
-            </ul>
-            <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20me%20interesa%20el%20Plan%20Starter%20de%20Desarrollo%20Web" target="_blank" rel="noopener" class="btn btn-outline btn-block">
-              Elegir Plan Starter
-            </a>
-          </div>
-
-          <!-- Plan 2 -->
-          <div class="pricing-card featured">
-            <span class="pricing-popular-badge"><i class="fa-solid fa-star"></i> Más Solicitado</span>
-            <h3 class="pricing-tier-name">Plan Pro / Business</h3>
-            <p class="pricing-tier-desc">Para empresas que requieren sistemas web a medida, catálogos interactivos o punto de venta.</p>
-            <div class="pricing-price-wrap">
-              <span class="pricing-price">Desde $390.000</span>
-              <span class="pricing-price-sub">Según módulos y alcance</span>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fa-solid fa-check"></i> Todo lo incluido en el Plan Starter</li>
-              <li><i class="fa-solid fa-check"></i> Panel de Administración & Gestión de Contenido</li>
-              <li><i class="fa-solid fa-check"></i> Catálogo de Productos / Sistema de Reservas</li>
-              <li><i class="fa-solid fa-check"></i> Pasarela de Pago Webpay / Mercado Pago</li>
-              <li><i class="fa-solid fa-check"></i> Base de datos PostgreSQL / Mongo en la nube</li>
-              <li><i class="fa-solid fa-check"></i> Integración opcional con Impresoras Térmicas POS</li>
-              <li><i class="fa-solid fa-check"></i> 1 Mes de soporte y ajustes post-lanzamiento</li>
-            </ul>
-            <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20me%20interesa%20el%20Plan%20Pro%20de%20Software%20Web" target="_blank" rel="noopener" class="btn btn-primary btn-block">
-              <i class="fa-solid fa-bolt"></i> Cotizar Plan Pro
-            </a>
-          </div>
-
-          <!-- Plan 3 -->
-          <div class="pricing-card">
-            <h3 class="pricing-tier-name">Plan Enterprise</h3>
-            <p class="pricing-tier-desc">Desarrollo de SaaS a medida, Aplicaciones Móviles completas y arquitecturas cloud de gran volumen.</p>
-            <div class="pricing-price-wrap">
-              <span class="pricing-price">A Medida</span>
-              <span class="pricing-price-sub">Cotización personalizada</span>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fa-solid fa-check"></i> Aplicación Móvil iOS + Android (Flutter / React Native)</li>
-              <li><i class="fa-solid fa-check"></i> Arquitectura de Microservicios & Cloud AWS/GCP</li>
-              <li><i class="fa-solid fa-check"></i> Multi-tenancy, Roles y Permisos avanzados</li>
-              <li><i class="fa-solid fa-check"></i> Integraciones con APIs bancarias, ERPs y Pasarelas de Pago</li>
-              <li><i class="fa-solid fa-check"></i> SLA de respuesta prioritaria y soporte continuo</li>
-              <li><i class="fa-solid fa-check"></i> Documentación técnica y código fuente 100% tuyo</li>
-            </ul>
-            <a href="index.html#cotizador" class="btn btn-outline btn-block">
-              <i class="fa-solid fa-calculator"></i> Usar Cotizador Detallado
-            </a>
-          </div>
 
         </div>
 
@@ -610,14 +511,14 @@
         </div>
 
         <!-- Bottom CTA -->
-        <div class="card" style="text-align: center; padding: 3.5rem 2rem; background: linear-gradient(135deg, rgba(19, 27, 46, 0.9) 0%, rgba(12, 18, 32, 0.95) 100%); border: 1px solid var(--border-glass-glow);">
+        <div class="card" style="text-align: center; padding: 3.5rem 2rem; background: linear-gradient(135deg, rgba(28, 28, 31, 0.9) 0%, rgba(24, 24, 27, 0.95) 100%); border: 1px solid var(--border-glass-glow);">
           <h2 style="font-size: 2rem; margin-bottom: 0.75rem;">¿Listo para hacer realidad tu proyecto?</h2>
           <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 2rem; font-size: 1.05rem;">
             Conversemos sobre tus requerimientos y te entregaré una propuesta técnica y económica detallada en menos de 24 horas.
           </p>
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="index.html#cotizador" class="btn btn-lg btn-primary pulse-btn">
-              <i class="fa-solid fa-calculator"></i> Probar Cotizador Online
+            <a href="index.html#contacto" class="btn btn-lg btn-primary pulse-btn">
+              <i class="fa-solid fa-paper-plane"></i> Solicitar Cotización
             </a>
             <a href="https://wa.me/56986635815?text=Hola%20Yojann,%20quisiera%20agendar%20una%20reuni%C3%B3n%20para%20un%20proyecto" target="_blank" rel="noopener" class="btn btn-lg btn-glass">
               <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
@@ -635,7 +536,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="brand-logo footer-logo">
-            <img src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
+            <img width="62" height="62" decoding="async" loading="lazy" src="logo_kairos_icono.png" alt="KAIROS Soluciones Digitales" class="nav-logo-img">
             <div class="brand-text-wrap">
               <span class="logo-main-text">KAIROS Soluciones Digitales</span>
               <span class="logo-lead-sub">Fundador & CEO: Yojann Cortés Díaz</span>
@@ -653,7 +554,6 @@
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="proyectos.html">Proyectos Realizados</a></li>
             <li><a href="productos.html">Tienda POS & Hardware</a></li>
-            <li><a href="index.html#cotizador">Cotizador</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
           </ul>
         </div>
@@ -697,7 +597,7 @@
   </a>
 
   <!-- Scripts -->
-  <script src="main.js?v=20260914_01"></script>
+  <script src="main.js?v=20261118f"></script>
   <script>
     // FAQ Accordion Toggle
     document.addEventListener('DOMContentLoaded', () => {
