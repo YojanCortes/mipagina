@@ -737,6 +737,11 @@ function initAutomatedMessaging() {
 
   function classify(img) {
     if (!img.naturalWidth) return;
+    // Fotografías de producto (archivo "foto_...") se muestran sin marco
+    if (/\/foto_[^/]*$/i.test(img.currentSrc || img.src)) {
+      img.dataset.device = 'photo';
+      return;
+    }
     const r = img.naturalWidth / img.naturalHeight;
     img.dataset.device = r < 0.8 ? 'phone' : r > 1.25 ? 'desktop' : 'square';
   }
